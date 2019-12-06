@@ -1,0 +1,50 @@
+backend:
+  # name: test-repo
+  name: git-gateway
+  branch: master
+
+# publish_mode: editorial_workflow
+display_url: https://www.__TODO__________________________________/blog
+logo_url: /cms-logo.svg
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    label_singular: 'Post'
+    folder: 'src/pages/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    preview_path: '/blog/{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'blog-post',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+
+  - name: 'pages'
+    label: 'Pages'
+    label_singular: 'Page'
+    files:
+      - file: 'src/pages/about.md'
+        label: 'About'
+        name: 'about'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'about-page',
+            }
+          - { label: 'Path', name: 'path', widget: 'hidden', default: '/about' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
