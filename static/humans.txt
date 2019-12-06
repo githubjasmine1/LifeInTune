@@ -1,5 +1,5 @@
-Designer & Web Developer: Maciej Leszczyński
-Site: asista.pl
-Github: github.com/asistapl
+Site Design: Ad Victorem (https://advictorem.agency)
+
+Web Developer: Maciej Leszczyński
 Twitter: twitter.com/_maciej
 Location: Opole, Poland

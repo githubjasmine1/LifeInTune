@@ -1,6 +1,6 @@
 module.exports = {
   // Can't have forward slash!
-  siteUrl: 'https://www.__TODO__________________________________',
+  siteUrl: 'https://www.lifeintune.com',
   siteName: '__TODO__________________________________',
   shortSiteName: '__TODO__________________________________',
   startUrl: '/',
