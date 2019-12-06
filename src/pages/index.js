@@ -26,6 +26,9 @@ const IndexPage = ({ data }) => (
     <Container>
       <Space y={50} />
       <Headline as="h1">Hi people</Headline>
+      <div className="bg-gray-200">
+        <h2 className="text-3xl text-red-500">Siemanko</h2>
+      </div>
       <Space y={20} />
       <Paragraph>Welcome to your new Gatsby site.</Paragraph>
       <Paragraph>Now go build something great.</Paragraph>

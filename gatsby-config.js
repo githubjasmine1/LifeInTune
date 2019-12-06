@@ -5,9 +5,16 @@ const { fontPreloadHeaders } = require('./src/styles/fonts')
 module.exports = {
   siteMetadata: siteConfig,
   plugins: [
-    'gatsby-plugin-webpack-size',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: [`src/styles/tailwind.css`],
+      },
+    },
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-nprogress',
@@ -36,21 +43,6 @@ module.exports = {
       },
     },
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/uploads`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/assets`,
@@ -60,47 +52,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: theme.maxTextContainerWidth,
-              quality: 80,
-              withWebp: true,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: siteConfig.gaTrackingId,
       },
     },
-    // This plugin must be before gatsby-plugin-netlify-cms
     // 'gatsby-plugin-layout',
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    // 'gatsby-plugin-offline',
     {
       // make sure to keep it last in the array
       resolve: 'gatsby-plugin-netlify',
