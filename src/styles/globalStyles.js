@@ -5,12 +5,12 @@ import { fontFaces } from './fonts'
 export default [
   ...fontFaces,
   {
-    ...globalSelection(theme.colors.primary, theme.colors.white),
+    ...globalSelection(theme.colors.gold['500'], theme.colors.white),
 
     html: {
-      fontWeight: 400,
+      fontWeight: 50,
       fontSize: 16,
-      fontFamily: '"proxima-nova", sans-serif',
+      fontFamily: 'turismo, sans-serif',
       textSizeAdjust: '100%',
       textRendering: 'optimizeLegibility',
       WebkitFontSmoothing: 'antialiased',

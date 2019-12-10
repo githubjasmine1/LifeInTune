@@ -1,5 +1,4 @@
-export * from 'gsap'
-
+import KonvaPlugin from './KonvaPlugin'
 // import CustomBounce from './CustomBounce'
 // import CustomEase from './CustomEase'
 // import CustomWiggle from './CustomWiggle'
@@ -12,16 +11,19 @@ export * from 'gsap'
 // import SplitText from './SplitText'
 // import ThrowPropsPlugin from './ThrowPropsPlugin'
 
-// export {
-//   CustomBounce,
-//   CustomEase,
-//   CustomWiggle,
-//   DrawSVGPlugin,
-//   GSDevTools,
-//   MorphSVGPlugin,
-//   Physics2DPlugin,
-//   PhysicsPropsPlugin,
-//   ScrambleTextPlugin,
-//   SplitText,
-//   ThrowPropsPlugin,
-// }
+export * from 'gsap'
+
+export {
+  KonvaPlugin,
+  // CustomBounce,
+  // CustomEase,
+  // CustomWiggle,
+  // DrawSVGPlugin,
+  // GSDevTools,
+  // MorphSVGPlugin,
+  // Physics2DPlugin,
+  // PhysicsPropsPlugin,
+  // ScrambleTextPlugin,
+  // SplitText,
+  // ThrowPropsPlugin,
+}
