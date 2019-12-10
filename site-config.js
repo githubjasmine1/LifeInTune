@@ -1,8 +1,8 @@
 module.exports = {
   // Can't have forward slash!
   siteUrl: 'https://www.lifeintune.com',
-  siteName: '__TODO__________________________________',
-  shortSiteName: '__TODO__________________________________',
+  siteName: 'Life In Tune',
+  shortSiteName: 'Life In Tune',
   startUrl: '/',
   defaultLang: 'en',
   defaultTitle: '__TODO__________________________________',

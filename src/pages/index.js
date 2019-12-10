@@ -168,7 +168,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" />
     <div
       className="flex flex-col items-center relative text-white"
-      css={{ height: 'calc(50vh + 28vw)' }}
+      css={{ height: 'calc(50vh + 28vw)', backgroundColor: '#2a282a' }}
     >
       <video
         src={headerBg}
