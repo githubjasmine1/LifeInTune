@@ -2,10 +2,10 @@ module.exports = {
   // Can't have forward slash!
   siteUrl: 'https://www.lifeintune.com',
   siteName: 'Life In Tune',
-  shortSiteName: 'Life In Tune',
+  shortSiteName: 'LIT',
   startUrl: '/',
   defaultLang: 'en',
-  defaultTitle: '__TODO__________________________________',
+  defaultTitle: 'Life In Tune',
   defaultDescription: '__TODO__________________________________',
   defaultKeywords: ['__TODO__________________________________'],
   twitterCreator: '__TODO__________________________________',
