@@ -5,6 +5,10 @@ const theme = require('./src/styles/theme')
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        display: 'turismo, sans-serif',
+        body: 'museo, sans-serif',
+      },
       colors: theme.colors,
     },
   },

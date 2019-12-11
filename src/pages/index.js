@@ -10,11 +10,14 @@ import useScrolledBelow from '../hooks/useScrolledBelow'
 import SEO from '../components/SEO'
 import Layout from '../layouts/index'
 import Container from '../components/Container'
-import Link from '../components/Link'
+import BookFreddie from '../components/BookFreddie'
+import FooterGallery from '../components/FooterGallery'
+import ButtonLink from '../components/ButtonLink'
 import Logo from '../components/Logo'
 import { AutoSlide, AutoScale } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
+import lifeintune from '../assets/lifeintune.mp4'
 
 export const query = graphql`
   query {
@@ -24,6 +27,9 @@ export const query = graphql`
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
+    }
+    videoBg: file(relativePath: { eq: "video-bg.png" }) {
+      ...windowWide
     }
   }
 `
@@ -165,8 +171,8 @@ const HeroLogo = () => {
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <div
+    <SEO />
+    <section
       className="flex flex-col items-center relative text-white"
       css={{ height: 'calc(50vh + 28vw)', backgroundColor: '#2a282a' }}
     >
@@ -178,7 +184,10 @@ const IndexPage = ({ data }) => (
         muted
         className="w-full h-full absolute top-0 left-0 object-cover"
       ></video>
-      <Waves className="w-full absolute left-0" css={{ bottom: '-20vw' }} />
+      <Waves
+        className="w-full absolute left-0 pointer-events-none"
+        css={{ bottom: '-20vw' }}
+      />
       <div className="w-full h-full absolute top-0 left-0 pointer-events-none overflow-hidden">
         <AutoScale
           up
@@ -209,7 +218,7 @@ const IndexPage = ({ data }) => (
           as="h2"
           up
           delay={100}
-          className="leading-tight uppercase text-center"
+          className="font-display font-hairline leading-tight uppercase text-center"
           css={{ fontSize: '3.2vw' }}
         >
           At lorem donec
@@ -217,43 +226,105 @@ const IndexPage = ({ data }) => (
           massa consectetur
         </AutoSlide>
         <AutoSlide up delay={200}>
-          <Link
+          <ButtonLink
             to="/"
-            className="flex items-center relative mt-8 py-2 pl-10 pr-5 text-sm uppercase rounded-full"
-            css={{
-              backgroundSize: '500% 100%',
-              backgroundPosition: '100% center',
-              backgroundImage:
-                'linear-gradient(to right, #91742d 7%, #fffea6 24.5%, #91742d 47%, #91742d 50%, transparent 60%, transparent 120%)',
-              transition:
-                'background-position 1s cubic-bezier(0.76, 0.01, 0.19, 0.99), background-size .8s cubic-bezier(0.76, 0.01, 0.19, 0.99)',
-              ':hover': {
-                backgroundSize: '200% 100%',
-                backgroundPosition: '0% center',
-                borderColor: 'transparent',
-              },
-            }}
+            className="mt-8"
+            icon={
+              <svg
+                viewBox="0 0 150 150"
+                className="w-6 h-6 ml-3 -mr-5 fill-current"
+              >
+                <path d="M75 0C33.65 0 0 33.65 0 75s33.65 75 75 75 75-33.65 75-75S116.36 0 75 0zm33.67 77.25l-50.73 39.31a3.66 3.66 0 01-5.92-2.86V35.08a3.66 3.66 0 015.92-2.85l50.73 39.3a3.6 3.6 0 010 5.72z" />
+              </svg>
+            }
           >
-            <div
-              className="w-full h-full absolute top-0 left-0 border border-solid border-white rounded-full pointer-events-none"
-              css={{
-                transition: '.7s .4s',
-                '*:hover > &': {
-                  opacity: 0,
-                  transform: 'scale(1.1)',
-                  transition: '.5s cubic-bezier(0.76, 0.01, 0.19, 0.99)',
-                },
-              }}
-            ></div>
             Watch speaking demo
-            <svg viewBox="0 0 150 150" className="w-6 h-6 ml-3 fill-current">
-              <path d="M75 0C33.65 0 0 33.65 0 75s33.65 75 75 75 75-33.65 75-75S116.36 0 75 0zm33.67 77.25l-50.73 39.31a3.66 3.66 0 01-5.92-2.86V35.08a3.66 3.66 0 015.92-2.85l50.73 39.3a3.6 3.6 0 010 5.72z" />
-            </svg>
-          </Link>
+          </ButtonLink>
         </AutoSlide>
       </Container>
-    </div>
-    <div className="h-screen"></div>
+    </section>
+    <section>
+      <div css={{ height: '12vw' }}></div>
+      <Container className="flex flex-col items-center mb-20">
+        <div
+          css={{
+            width: '100%',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridGap: '8%',
+          }}
+        >
+          <div className="flex flex-col items-center">
+            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+              Communication
+              <br />
+              expert
+            </h3>
+            <p
+              className="mt-5 text-gray-600 text-center"
+              css={{ maxWidth: '20em' }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna.
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+              Business
+              <br />
+              speaker
+            </h3>
+            <p
+              className="mt-5 text-gray-600 text-center"
+              css={{ maxWidth: '20em' }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna.
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+              Celebrated
+              <br />
+              perfomer
+            </h3>
+            <p
+              className="mt-5 text-gray-600 text-center"
+              css={{ maxWidth: '20em' }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna.
+            </p>
+          </div>
+        </div>
+        <ButtonLink to="/" className="mt-16">
+          Book Freddie
+        </ButtonLink>
+      </Container>
+    </section>
+    <section className="relative pt-20 pb-32 bg-gray-900">
+      <Img
+        fluid={data.videoBg.childImageSharp.fluid}
+        className="w-full h-full top-0 left-0"
+        css={{ position: 'absolute !important' }}
+      />
+      <Container>
+        <h2
+          className="relative font-display font-hairline text-3xl text-center uppercase"
+          css={{
+            backgroundImage:
+              'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Lorem donec mass
+        </h2>
+        <video src={lifeintune} className="mt-10" />
+      </Container>
+    </section>
+    <BookFreddie />
+    <FooterGallery />
   </Layout>
 )
 

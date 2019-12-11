@@ -26,6 +26,7 @@ const colorsByName = {
     1000: '#111',
   },
   gold: {
+    300: '#e5cc75',
     500: '#b4903a',
   },
 }

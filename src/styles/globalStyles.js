@@ -8,9 +8,9 @@ export default [
     ...globalSelection(theme.colors.gold['500'], theme.colors.white),
 
     html: {
-      fontWeight: 50,
+      fontWeight: 300,
       fontSize: 16,
-      fontFamily: 'turismo, sans-serif',
+      fontFamily: 'museo, sans-serif',
       textSizeAdjust: '100%',
       textRendering: 'optimizeLegibility',
       WebkitFontSmoothing: 'antialiased',
