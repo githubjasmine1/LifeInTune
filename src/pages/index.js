@@ -212,7 +212,7 @@ const IndexPage = ({ data }) => (
       </AutoSlide>
       <Container
         className="flex flex-col items-center relative"
-        css={{ marginTop: 'calc(6vh + 3vw)' }}
+        css={{ marginTop: 'calc(6vh + 4vw)' }}
       >
         <AutoSlide
           as="h2"
@@ -221,9 +221,7 @@ const IndexPage = ({ data }) => (
           className="font-display font-hairline leading-tight uppercase text-center"
           css={{ fontSize: '3.2vw' }}
         >
-          At lorem donec
-          <br />
-          massa consectetur
+          Amplify Success
         </AutoSlide>
         <AutoSlide up delay={200}>
           <ButtonLink
