@@ -13,11 +13,12 @@ import Container from '../components/Container'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
+import RotateWords from '../components/RotateWords'
 import Logo from '../components/Logo'
-import { AutoSlide, AutoScale } from '../components/Animated'
+import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
-import lifeintune from '../assets/lifeintune.mp4'
+import signet from '../assets/signet.svg'
 
 export const query = graphql`
   query {
@@ -28,7 +29,38 @@ export const query = graphql`
         }
       }
     }
+    expert: file(relativePath: { eq: "expert.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    speaker: file(relativePath: { eq: "speaker.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    performer: file(relativePath: { eq: "performer.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    model: file(relativePath: { eq: "model.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     videoBg: file(relativePath: { eq: "video-bg.png" }) {
+      ...windowWide
+    }
+    keynoteBg: file(relativePath: { eq: "keynotes-bg.png" }) {
       ...windowWide
     }
   }
@@ -221,7 +253,9 @@ const IndexPage = ({ data }) => (
           className="font-display font-hairline leading-tight uppercase text-center"
           css={{ fontSize: '3.2vw' }}
         >
-          Amplify Success
+          <RotateWords
+            words={['Amplify Success', 'Energize Impact', 'Increase Business']}
+          />
         </AutoSlide>
         <AutoSlide up delay={200}>
           <ButtonLink
@@ -249,11 +283,22 @@ const IndexPage = ({ data }) => (
             width: '100%',
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gridGap: '8%',
           }}
         >
-          <div className="flex flex-col items-center">
-            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+          <AutoSlide
+            up
+            translate="50"
+            duraiton={2000}
+            delay={150}
+            className="flex-col items-center"
+            css={{ display: 'flex' }}
+          >
+            <Img
+              className="w-full h-48 xl:h-64"
+              fluid={data.expert.childImageSharp.fluid}
+              imgStyle={{ objectFit: 'contain' }}
+            />
+            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
               Communication
               <br />
               expert
@@ -265,9 +310,20 @@ const IndexPage = ({ data }) => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna.
             </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+          </AutoSlide>
+          <AutoSlide
+            up
+            translate="50"
+            duraiton={2000}
+            className="flex-col items-center"
+            css={{ display: 'flex' }}
+          >
+            <Img
+              className="w-full h-48 xl:h-64"
+              fluid={data.speaker.childImageSharp.fluid}
+              imgStyle={{ objectFit: 'contain' }}
+            />
+            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
               Business
               <br />
               speaker
@@ -279,9 +335,21 @@ const IndexPage = ({ data }) => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna.
             </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+          </AutoSlide>
+          <AutoSlide
+            up
+            translate="50"
+            duraiton={2000}
+            delay={150}
+            className="flex-col items-center"
+            css={{ display: 'flex' }}
+          >
+            <Img
+              className="w-full h-48 xl:h-64"
+              fluid={data.performer.childImageSharp.fluid}
+              imgStyle={{ objectFit: 'contain' }}
+            />
+            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
               Celebrated
               <br />
               perfomer
@@ -293,7 +361,7 @@ const IndexPage = ({ data }) => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna.
             </p>
-          </div>
+          </AutoSlide>
         </div>
         <ButtonLink to="/" className="mt-16">
           Book Freddie
@@ -318,7 +386,136 @@ const IndexPage = ({ data }) => (
         >
           Lorem donec mass
         </h2>
-        <video src={lifeintune} className="mt-10" />
+        <div className="w-4/5 mx-auto">
+          <div
+            className="relative w-full h-0 mt-10"
+            css={{ paddingTop: '56.25%' }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/foAQL5Dp4QY"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              title="Lorem donec mass"
+              allowFullScreen
+              className="w-full h-full absolute top-0 left-0"
+            />
+          </div>
+        </div>
+      </Container>
+    </section>
+    <section className="flex flex-col items-center relative py-20 bg-gray-900">
+      <AutoFade>
+        <img src={signet} alt="" className="w-24 h-24 text-white" />
+      </AutoFade>
+      <AutoFade>
+        <h3
+          className="relative mt-6 font-display font-hairline text-3xl leading-tight text-center uppercase"
+          css={{
+            maxWidth: '16em',
+            backgroundImage:
+              'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          DISCOVER YOUR
+          <br />
+          LIFE IN TUNE
+        </h3>
+      </AutoFade>
+      <AutoFade>
+        <p className="mt-5 text-center text-white" css={{ maxWidth: '34em' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
+          ullamcorper malesuada proin libero nunc consequat interdum varius.
+        </p>
+      </AutoFade>
+      <AutoFade>
+        <ButtonLink to="/" className="mt-6 text-white">
+          OUR MISSION
+        </ButtonLink>
+      </AutoFade>
+      <AutoScale className="w-1/3 mt-16">
+        <Img fluid={data.model.childImageSharp.fluid} />
+      </AutoScale>
+    </section>
+    <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
+      <Img
+        fluid={data.keynoteBg.childImageSharp.fluid}
+        className="w-full h-full top-0 left-0"
+        css={{ position: 'absolute !important' }}
+      />
+      <Container>
+        <AutoFade>
+          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
+            Featured keynote topics
+          </h3>
+        </AutoFade>
+        <ul className="flex -m-5 mt-12 relative">
+          <AutoFade
+            as="li"
+            delay={0 * 100}
+            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <h4 className="text-xl leading-none">Rhythm of Success</h4>
+            <p className="mt-5">
+              The Rhythm of Success is a one-of-a-kind program designed to
+              challenge and inspire organizations to discover their untapped
+              potential through the power of Active Listening.
+            </p>
+            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
+              Read more
+            </ButtonLink>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            delay={1 * 100}
+            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <h4 className="text-xl leading-none">Listen Up</h4>
+            <p className="mt-5">
+              The Rhythm of Success is a one-of-a-kind program designed to
+              challenge and inspire organizations to discover their untapped
+              potential through the power of Active Listening.
+            </p>
+            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
+              Read more
+            </ButtonLink>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            delay={2 * 100}
+            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <h4 className="text-xl leading-none">Keynote Maestro</h4>
+            <p className="mt-5">
+              The Rhythm of Success is a one-of-a-kind program designed to
+              challenge and inspire organizations to discover their untapped
+              potential through the power of Active Listening.
+            </p>
+            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
+              Read more
+            </ButtonLink>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            delay={3 * 100}
+            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <h4 className="text-xl leading-none">Master of Ceremonies</h4>
+            <p className="mt-5">
+              The Rhythm of Success is a one-of-a-kind program designed to
+              challenge and inspire organizations to discover their untapped
+              potential through the power of Active Listening.
+            </p>
+            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
+              Read more
+            </ButtonLink>
+          </AutoFade>
+        </ul>
       </Container>
     </section>
     <BookFreddie />
