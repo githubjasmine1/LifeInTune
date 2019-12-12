@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTransition, animated, config } from 'react-spring'
 
-const RotateWords = ({ words = [], duration = 2000, ...props }) => {
+const RotateWords = ({ words = [], duration = 5000, ...props }) => {
   const [index, setIndex] = useState(0)
   const transitions = useTransition(words[index], item => item, {
     from: { opacity: 0, transform: 'scaleX(1.2)' },
