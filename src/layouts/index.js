@@ -62,19 +62,39 @@ const Navbar = props => {
             </div>
             <Link
               to="/"
-              className="block px-2 font-hairline text-2xl uppercase transition-slow ease-out"
-              css={{
-                backgroundImage:
-                  'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
+              className="block px-2 transition-slow ease-out"
+              // css={{
+              //   backgroundImage:
+              //     'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+              //   WebkitBackgroundClip: 'text',
+              //   WebkitTextFillColor: 'transparent',
+              // }}
               style={{
                 opacity: isBelow ? 1 : 0,
                 transform: isBelow ? 'none' : 'scale(.9)',
               }}
             >
-              LIFE IN TUNE
+              <svg
+                viewBox="0 0 103.304 6"
+                css={{ display: 'block', width: 240, height: 50 }}
+              >
+                <linearGradient
+                  id="a"
+                  x1="0"
+                  x2="103.304"
+                  y1="3"
+                  y2="3"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset=".1" stopColor="#d6b65f" />
+                  <stop offset=".49" stopColor="#fffea6" />
+                  <stop offset=".94" stopColor="#91742d" />
+                </linearGradient>
+                <path
+                  fill="url(#a)"
+                  d="M9.9 5.5v.1c0 .2-.1.3-.3.3H.3c-.2 0-.3-.1-.3-.3V.4C0 .2.1.1.3.1h.2C.7.1.8.2.8.4v4.8h8.8c.2 0 .4.1.3.3zM12.6.1h-.2c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V.4c0-.2-.1-.3-.3-.3zm11.3 0h-9.2c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V3.5h8.2c.2 0 .3-.1.3-.3v-.1c0-.2-.1-.3-.3-.3h-8.2V.9h8.6c.2 0 .3-.1.3-.3V.4c.1-.2 0-.3-.2-.3zm11.4 0h-9.2c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h9.2c.2 0 .3-.1.3-.3v-.1c0-.2-.1-.3-.3-.3h-8.6V3.5h8.2c.2 0 .3-.1.3-.3V3c0-.2-.1-.3-.3-.3h-8.2V.9h8.6c.2 0 .3-.1.3-.3V.4c0-.2-.1-.3-.3-.3zm65.4.8c.2 0 .3-.1.3-.3V.4c0-.2-.1-.3-.3-.3h-9.2c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h9.2c.2 0 .3-.1.3-.3v-.1c0-.2-.1-.3-.3-.3h-8.6V3.5h8.2c.2 0 .3-.1.3-.3V3c0-.2-.1-.3-.3-.3h-8.2V.9h8.6zM68.4.1h-9.3c-.2 0-.3.1-.3.3v.1c0 .2.1.3.3.3h4.1v4.7c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V.9h4.4c.2 0 .3-.1.3-.3V.4c.1-.2-.1-.3-.3-.3zm9.8 0H78c-.2 0-.3.1-.3.3V3c0 1.4-1.2 2.2-3.2 2.2h-.3C72.1 5.2 71 4.4 71 3V.4c0-.2-.1-.3-.3-.3h-.2c-.2 0-.3.1-.3.3V3c0 2 1.4 3 4 3h.3c2.6 0 4-1 4-3V.4c0-.2-.1-.3-.3-.3zm11.3 0h-.2c-.2 0-.3.1-.3.3v4.4l-6-3.5c-.1 0-2-1.2-2.2-1.3h-.1-.4c-.2.1-.3.2-.3.4v5.2c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V1.2l3.9 2.3c.4.2 4.2 2.4 4.2 2.4.1 0 .2.1.3.1h.2c.2 0 .3-.1.3-.3V.4c.1-.2 0-.3-.2-.3zM53.1.1h-.2c-.2 0-.3.1-.3.3v4.4l-6-3.5c-.1 0-2-1.2-2.2-1.3h-.1H44c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V1.2l3.9 2.3c.4.2 4.2 2.4 4.2 2.4.1 0 .2.1.3.1h.2c.2 0 .3-.1.3-.3V.4c0-.2-.1-.3-.3-.3zM41.8.1h-.2c-.2 0-.3.1-.3.3v5.2c0 .2.1.3.3.3h.2c.2 0 .3-.1.3-.3V.4c.1-.2-.1-.3-.3-.3zm60.576.653V.197h.213V.1h-.533v.097h.211v.556h.109zm.386 0V.197l.175.556h.098l.168-.548v.548h.099V.1h-.157l-.159.521-.163-.521h-.16v.653h.099z"
+                />
+              </svg>
             </Link>
             <div
               className="flex items-center absolute"

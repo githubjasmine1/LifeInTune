@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import Konva from 'konva'
 import Img from 'gatsby-image'
@@ -14,10 +14,13 @@ import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
 import RotateWords from '../components/RotateWords'
+import VideoPlayer from '../components/VideoPlayer'
 import Logo from '../components/Logo'
 import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
+import bgVideoColor from '../assets/bg-video-color.mp4'
+import lifeInTune from '../assets/lifeintune.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
@@ -235,6 +238,80 @@ const HeroLogo = () => {
   )
 }
 
+const Demo = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <>
+      <AutoSlide up delay={200}>
+        <ButtonLink
+          as="button"
+          onClick={() => setIsOpen(true)}
+          className="mt-8 outline-none"
+          icon={
+            <svg
+              viewBox="0 0 150 150"
+              className="w-6 h-6 ml-3 -mr-5 fill-current"
+            >
+              <path d="M75 0C33.65 0 0 33.65 0 75s33.65 75 75 75 75-33.65 75-75S116.36 0 75 0zm33.67 77.25l-50.73 39.31a3.66 3.66 0 01-5.92-2.86V35.08a3.66 3.66 0 015.92-2.85l50.73 39.3a3.6 3.6 0 010 5.72z" />
+            </svg>
+          }
+        >
+          Watch speaking demo
+        </ButtonLink>
+      </AutoSlide>
+      <div
+        className="flex justify-center items-center w-full h-full fixed z-50 top-0 left-0 transition-slow ease-out"
+        style={
+          isOpen
+            ? { visibility: 'visible', opacity: 1 }
+            : { visibility: 'hidden', opacity: 0 }
+        }
+      >
+        <div
+          className="w-full h-full absolute top-0 left-0 bg-black opacity-50"
+          onClick={() => setIsOpen(false)}
+        ></div>
+        <button
+          onClick={() => setIsOpen(false)}
+          css={{
+            display: 'block',
+            position: 'absolute',
+            top: 20,
+            right: 20,
+            fontSize: 30,
+            lineHeight: 1,
+            color: '#fff',
+            outline: 'none',
+          }}
+        >
+          &times;
+        </button>
+        <div
+          className="w-4/5 transition-slow ease-out"
+          style={{
+            transform: isOpen ? 'scale(1)' : 'scale(.9)',
+            pointerEvents: isOpen ? 'all' : 'none',
+          }}
+        >
+          <div
+            className="w-full h-0 relative mt-10"
+            css={{ paddingTop: '56.25%' }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/foAQL5Dp4QY"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              title="Lorem donec mass"
+              allowFullScreen
+              className="w-full h-full absolute top-0 left-0"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
@@ -291,22 +368,7 @@ const IndexPage = ({ data }) => (
             words={['Amplify Success', 'Energize Impact', 'Increase Business']}
           />
         </AutoSlide>
-        <AutoSlide up delay={200}>
-          <ButtonLink
-            to="/"
-            className="mt-8"
-            icon={
-              <svg
-                viewBox="0 0 150 150"
-                className="w-6 h-6 ml-3 -mr-5 fill-current"
-              >
-                <path d="M75 0C33.65 0 0 33.65 0 75s33.65 75 75 75 75-33.65 75-75S116.36 0 75 0zm33.67 77.25l-50.73 39.31a3.66 3.66 0 01-5.92-2.86V35.08a3.66 3.66 0 015.92-2.85l50.73 39.3a3.6 3.6 0 010 5.72z" />
-              </svg>
-            }
-          >
-            Watch speaking demo
-          </ButtonLink>
-        </AutoSlide>
+        <Demo />
       </Container>
     </section>
     <section>
@@ -422,18 +484,12 @@ const IndexPage = ({ data }) => (
           Lorem donec mass
         </AutoFade>
         <AutoFade className="w-4/5 mx-auto">
-          <div
-            className="relative w-full h-0 mt-10"
-            css={{ paddingTop: '56.25%' }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/foAQL5Dp4QY"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              title="Lorem donec mass"
-              allowFullScreen
-              className="w-full h-full absolute top-0 left-0"
-            />
-          </div>
+          <VideoPlayer
+            webroll={bgVideoColor}
+            video={lifeInTune}
+            ratio={1080 / 1920}
+            className="mt-10"
+          />
         </AutoFade>
       </Container>
     </section>

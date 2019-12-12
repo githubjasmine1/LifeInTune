@@ -22,7 +22,7 @@ const ButtonLink = ({ as: As = Link, className, icon, children, ...props }) => {
       {...props}
     >
       <div
-        className="w-full h-full absolute top-0 left-0 border border-solid rounded-full pointer-events-none"
+        className="w-full h-full absolute top-0 left-0 border border-solid rounded-full pointer-events-none outline-none"
         css={{
           borderColor: 'currentColor',
           transition: '.7s .4s',
