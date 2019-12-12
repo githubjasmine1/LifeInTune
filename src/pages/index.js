@@ -21,6 +21,7 @@ import headerBg from '../assets/header-bg.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
+import anz from '../assets/logos/anz.svg'
 import apple from '../assets/logos/apple.svg'
 import bluesCross from '../assets/logos/blue-cross.svg'
 import bluecross from '../assets/logos/bluecross.svg'
@@ -552,48 +553,173 @@ const IndexPage = ({ data }) => (
           <AutoScale as="li">
             <img src={livenation} alt="" />
           </AutoScale>
-          {/* <AutoScale as="li">
-            <img src={bluecross} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={cox} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={cvent} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={em} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={iasb} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={ibm} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={jdpower} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={microsoft} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={morgan} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={reuters} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={roland} alt="" />
-          </AutoScale>
-          <AutoScale as="li">
-            <img src={sheraton} alt="" />
-          </AutoScale> */}
         </ul>
         <AutoFade>
           <ButtonLink to="/" className="mt-6 text-gray-900">
             MEETING PLANNER INFO
           </ButtonLink>
         </AutoFade>
+      </Container>
+    </section>
+    <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
+      <Img
+        fluid={data.keynoteBg.childImageSharp.fluid}
+        className="w-full h-full top-0 left-0"
+        css={{ position: 'absolute !important' }}
+      />
+      <Container>
+        <AutoFade>
+          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
+            Featured keynote topics
+          </h3>
+        </AutoFade>
+        <ul
+          className="mt-12 relative"
+          css={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridGap: 30,
+          }}
+        >
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={cvent} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">
+              “The energy level was off the hook!
+              <br />
+              <br />
+              "He did a terrific job weaving our message into his presentation.”
+            </p>
+            <p className="mt-5 text-sm">cVent</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={anz} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">
+              “He made it so relevant and so real for out audience.”
+            </p>
+            <p className="mt-5 text-sm">Australia New Zealand Bank</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={bluecross} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “Transformative, Collaborative and Effective.”
+            </p>
+            <p className="mt-5 text-sm">Blue Cross/Blue Shield</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={cox} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “Spellbinding stories to connect points of real importance to our
+              culture”
+            </p>
+            <p className="mt-5 text-sm">CoxMedia</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={ibm} alt="" className="block w-20 opacity-50" />
+            <p className="mt-6">
+              “By far the best motivational performance we have seen”
+            </p>
+            <p className="mt-5 text-sm">IBM</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={toyota} alt="" className="block w-16 opacity-50" />
+            <p className="mt-6">“Fantastic and Profound”</p>
+            <p className="mt-5 text-sm">Toyota Motor Sales, USA</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={twitter} alt="" className="block w-12 opacity-50" />
+            <p className="mt-6">
+              “His masterful mapping of music to our everyday cadence was
+              AMAZING!”
+            </p>
+            <p className="mt-5 text-sm">Twitter</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={nasa} alt="" className="block w-16 opacity-50" />
+            <p className="mt-6">
+              “Dazzling and Phenomenal - we are grateful for his exceptional
+              legacy.”
+            </p>
+            <p className="mt-5 text-sm">NASA</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={walmart} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">"His incredible talent delivers”</p>
+            <p className="mt-5 text-sm">WalMart</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={jdpower} alt="" className="block w-16 opacity-50" />
+            <p className="mt-6">
+              “He spoke to our employees as though he were one of us…. people
+              walked out of the room electrified.”
+            </p>
+            <p className="mt-5 text-sm">
+              Bangor Savings Bank
+              <br />
+              Voted # 1 by JD Powers
+            </p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={aia} alt="" className="block w-16 opacity-50" />
+            <p className="mt-6">
+              “He rocked our conference with relevant messages delivered
+              magnificently.”
+            </p>
+            <p className="mt-5 text-sm">AIA</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={reuters} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">"A Fantastic Experience”</p>
+            <p className="mt-5 text-sm">Reuters</p>
+          </AutoFade>
+        </ul>
       </Container>
     </section>
     <section
