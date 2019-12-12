@@ -20,6 +20,36 @@ import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 import headerBg from '../assets/header-bg.mp4'
 import signet from '../assets/signet.svg'
 
+import aia from '../assets/logos/aia.svg'
+import apple from '../assets/logos/apple.svg'
+import bluesCross from '../assets/logos/blue-cross.svg'
+import bluecross from '../assets/logos/bluecross.svg'
+import citi from '../assets/logos/citi.svg'
+import cox from '../assets/logos/cox.svg'
+import cvent from '../assets/logos/cvent.svg'
+import disney from '../assets/logos/disney.svg'
+import em from '../assets/logos/em.svg'
+import google from '../assets/logos/google.svg'
+import grammy from '../assets/logos/grammy.svg'
+import iasb from '../assets/logos/iasb.svg'
+import ibm from '../assets/logos/ibm.svg'
+import jdpower from '../assets/logos/jdpower.svg'
+import livenation from '../assets/logos/livenation.svg'
+import microsoft from '../assets/logos/microsoft.svg'
+import morgan from '../assets/logos/morgan.svg'
+import nasa from '../assets/logos/nasa.svg'
+import nbc from '../assets/logos/nbc.svg'
+import prudential from '../assets/logos/prudential.svg'
+import redbull from '../assets/logos/redbull.svg'
+import reuters from '../assets/logos/reuters.svg'
+import roland from '../assets/logos/roland.svg'
+import sheraton from '../assets/logos/sheraton.svg'
+import ted from '../assets/logos/ted.svg'
+import toyota from '../assets/logos/toyota.svg'
+import twitter from '../assets/logos/twitter.svg'
+import universal from '../assets/logos/universal.svg'
+import walmart from '../assets/logos/walmart.svg'
+
 export const query = graphql`
   query {
     freddieHero: file(relativePath: { eq: "Freddie-hero.png" }) {
@@ -61,6 +91,9 @@ export const query = graphql`
       ...windowWide
     }
     keynoteBg: file(relativePath: { eq: "keynotes-bg.png" }) {
+      ...windowWide
+    }
+    bioBg: file(relativePath: { eq: "bio.png" }) {
       ...windowWide
     }
   }
@@ -375,7 +408,8 @@ const IndexPage = ({ data }) => (
         css={{ position: 'absolute !important' }}
       />
       <Container>
-        <h2
+        <AutoFade
+          as="h3"
           className="relative font-display font-hairline text-3xl text-center uppercase"
           css={{
             backgroundImage:
@@ -385,8 +419,8 @@ const IndexPage = ({ data }) => (
           }}
         >
           Lorem donec mass
-        </h2>
-        <div className="w-4/5 mx-auto">
+        </AutoFade>
+        <AutoFade className="w-4/5 mx-auto">
           <div
             className="relative w-full h-0 mt-10"
             css={{ paddingTop: '56.25%' }}
@@ -399,44 +433,253 @@ const IndexPage = ({ data }) => (
               className="w-full h-full absolute top-0 left-0"
             />
           </div>
-        </div>
+        </AutoFade>
       </Container>
     </section>
-    <section className="flex flex-col items-center relative py-20 bg-gray-900">
-      <AutoFade>
-        <img src={signet} alt="" className="w-24 h-24 text-white" />
-      </AutoFade>
-      <AutoFade>
-        <h3
-          className="relative mt-6 font-display font-hairline text-3xl leading-tight text-center uppercase"
+    <section className="flex flex-col items-center relative py-20 bg-black">
+      <Container as="ul" className="flex">
+        <AutoFade delay={0 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            314M
+          </div>
+          <p className="text-gray-600">Over 314 million Attendees Impacted</p>
+        </AutoFade>
+        <AutoFade delay={1 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            27
+          </div>
+          <p className="text-gray-600">Topics Addressed</p>
+        </AutoFade>
+        <AutoFade delay={2 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            81
+          </div>
+          <p className="text-gray-600">Countries for Live Presentations</p>
+        </AutoFade>
+        <AutoFade delay={3 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            43,000
+          </div>
+          <p className="mx-auto text-gray-600" css={{ maxWidth: '20em' }}>
+            Years from when the first musical instrument was found
+          </p>
+        </AutoFade>
+      </Container>
+    </section>
+    <section className="relative py-20 pb-24 bg-white">
+      <Container className="flex flex-col items-center">
+        <AutoFade>
+          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
+            gravida cum sociis
+            <br />
+            natoque penatibus et
+          </h3>
+        </AutoFade>
+        <ul
+          className="mt-16 mb-10"
           css={{
-            maxWidth: '16em',
-            backgroundImage:
-              'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            width: '100%',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(6, 1fr)',
+            gridGap: '1vw',
+            li: {
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: '#efefef',
+              padding: '3vw',
+            },
+            img: {
+              display: 'block',
+              width: '6.5vw',
+              height: '6.5vw',
+              objectFit: 'contain',
+              opacity: 0.5,
+            },
           }}
         >
-          DISCOVER YOUR
-          <br />
-          LIFE IN TUNE
-        </h3>
-      </AutoFade>
-      <AutoFade>
-        <p className="mt-5 text-center text-white" css={{ maxWidth: '34em' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
-          ullamcorper malesuada proin libero nunc consequat interdum varius.
-        </p>
-      </AutoFade>
-      <AutoFade>
-        <ButtonLink to="/" className="mt-6 text-white">
-          OUR MISSION
-        </ButtonLink>
-      </AutoFade>
-      <AutoScale className="w-1/3 mt-16">
-        <Img fluid={data.model.childImageSharp.fluid} />
-      </AutoScale>
+          <AutoScale as="li">
+            <img src={redbull} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={citi} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={ibm} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={google} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={disney} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={nasa} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={walmart} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={nbc} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={toyota} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={twitter} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={universal} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={ted} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={apple} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={aia} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={prudential} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={grammy} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={bluesCross} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={livenation} alt="" />
+          </AutoScale>
+          {/* <AutoScale as="li">
+            <img src={bluecross} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={cox} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={cvent} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={em} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={iasb} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={ibm} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={jdpower} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={microsoft} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={morgan} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={reuters} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={roland} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={sheraton} alt="" />
+          </AutoScale> */}
+        </ul>
+        <AutoFade>
+          <ButtonLink to="/" className="mt-6 text-gray-900">
+            MEETING PLANNER INFO
+          </ButtonLink>
+        </AutoFade>
+      </Container>
+    </section>
+    <section
+      className="relative py-20 bg-gray-900"
+      css={{ paddingBottom: '37vh' }}
+    >
+      <Img
+        fluid={data.bioBg.childImageSharp.fluid}
+        className="w-full h-full top-0 left-0"
+        css={{ position: 'absolute !important' }}
+        imgStyle={{ objectFit: 'contain', objectPosition: 'right bottom' }}
+      />
+      <Container className="relative">
+        <AutoFade>
+          <h3
+            className="relative mt-6 font-display font-hairline text-3xl leading-tight uppercase"
+            css={{
+              backgroundImage:
+                'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            MEET FREDDIE RAVEL
+          </h3>
+        </AutoFade>
+        <AutoFade>
+          <p className="mt-8 text-white" css={{ maxWidth: '26em' }}>
+            Freddie Ravel’s realization of music’s power to affect human
+            behavior was launched in a most unlikely way. At age eight, he found
+            himself suddenly trapped in a sealed container facing sure death
+            when an impulse to pound out specific rhythms would alert and lead
+            to his eventual rescue.
+          </p>
+          <p className="mt-5 text-white" css={{ maxWidth: '26em' }}>
+            Having learned to overcome adversity and adapt, he grew to cultivate
+            a mastery of music that would propel him onto the world stage with
+            the music legends and top social change makers of our time. Today,
+            Freddie shares the lessons he’s learned by giving his clients the
+            vital tools to live their own Life In Tune.
+          </p>
+        </AutoFade>
+        <AutoFade>
+          <ButtonLink to="/" className="inline-flex mt-10 text-white">
+            Read full BIO
+          </ButtonLink>
+        </AutoFade>
+      </Container>
+    </section>
+    <section className="relative py-20 bg-black">
+      <Container className="flex flex-col items-center">
+        <AutoFade>
+          <img src={signet} alt="" className="w-24 h-24 text-white" />
+        </AutoFade>
+        <AutoFade>
+          <h3
+            className="relative mt-6 font-display font-hairline text-3xl leading-tight text-center uppercase"
+            css={{
+              maxWidth: '16em',
+              backgroundImage:
+                'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            DISCOVER YOUR
+            <br />
+            LIFE IN TUNE
+          </h3>
+        </AutoFade>
+        <AutoFade>
+          <p className="mt-5 text-center text-white" css={{ maxWidth: '34em' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
+            ullamcorper malesuada proin libero nunc consequat interdum varius.
+          </p>
+        </AutoFade>
+        <AutoFade>
+          <ButtonLink to="/" className="mt-6 text-white">
+            OUR MISSION
+          </ButtonLink>
+        </AutoFade>
+        <AutoScale className="w-1/3 mt-16">
+          <Img fluid={data.model.childImageSharp.fluid} />
+        </AutoScale>
+      </Container>
     </section>
     <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
       <Img
