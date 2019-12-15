@@ -2,8 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-// import { rem } from '../styles/tools'
-
 import useScrolledBelow from '../hooks/useScrolledBelow'
 
 import Head from '../components/Head'

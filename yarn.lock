@@ -1220,13 +1220,6 @@
     string-width "^2.0.0"
     strip-ansi "^3"
 
-"@reach/component-component@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@reach/component-component/-/component-component-0.6.2.tgz#83b367b6476ef928f101319d37416bc15bd01e2f"
-  integrity sha512-Sb0p8qgzaAzFLNeOXGMz24LLmZuLzzNA5w04FfZJ+2BsMOHv/yw6P+orzeVYSclTriLurWJjb8gbdvxho+2usw==
-  dependencies:
-    prop-types "^15.7.2"
-
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"
