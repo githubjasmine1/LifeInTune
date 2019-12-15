@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import Konva from 'konva'
 import Img from 'gatsby-image'
+import Masonry from 'react-masonry-css'
 
 import { TimelineMax, Back, Power4 } from '../lib/gsap'
 
@@ -15,6 +16,7 @@ import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
 import RotateWords from '../components/RotateWords'
 import VideoPlayer from '../components/VideoPlayer'
+import Link from '../components/Link'
 import Logo from '../components/Logo'
 import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
@@ -32,22 +34,22 @@ import citi from '../assets/logos/citi.svg'
 import cox from '../assets/logos/cox.svg'
 import cvent from '../assets/logos/cvent.svg'
 import disney from '../assets/logos/disney.svg'
-import em from '../assets/logos/em.svg'
+// import em from '../assets/logos/em.svg'
 import google from '../assets/logos/google.svg'
 import grammy from '../assets/logos/grammy.svg'
-import iasb from '../assets/logos/iasb.svg'
+// import iasb from '../assets/logos/iasb.svg'
 import ibm from '../assets/logos/ibm.svg'
 import jdpower from '../assets/logos/jdpower.svg'
 import livenation from '../assets/logos/livenation.svg'
-import microsoft from '../assets/logos/microsoft.svg'
-import morgan from '../assets/logos/morgan.svg'
+// import microsoft from '../assets/logos/microsoft.svg'
+// import morgan from '../assets/logos/morgan.svg'
 import nasa from '../assets/logos/nasa.svg'
 import nbc from '../assets/logos/nbc.svg'
 import prudential from '../assets/logos/prudential.svg'
 import redbull from '../assets/logos/redbull.svg'
 import reuters from '../assets/logos/reuters.svg'
-import roland from '../assets/logos/roland.svg'
-import sheraton from '../assets/logos/sheraton.svg'
+// import roland from '../assets/logos/roland.svg'
+// import sheraton from '../assets/logos/sheraton.svg'
 import ted from '../assets/logos/ted.svg'
 import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
@@ -227,14 +229,20 @@ const HeroLogo = () => {
   const isBelow = useScrolledBelow(60)
 
   return (
-    <Logo
-      className="relative mt-6 transition-slow ease-out"
-      css={{ width: 150 }}
-      style={{
-        opacity: isBelow ? 0 : 1,
-        transform: isBelow ? 'scale(1.2)' : 'none',
-      }}
-    ></Logo>
+    <AutoSlide
+      up
+      className="relative z-50 mt-6"
+      style={{ pointerEvents: isBelow ? 'none' : 'all' }}
+    >
+      <Logo
+        className="hover:text-gold-300 transition-slow ease-out"
+        css={{ width: 150 }}
+        style={{
+          opacity: isBelow ? 0 : 1,
+          transform: isBelow ? 'scale(1.2)' : 'none',
+        }}
+      />
+    </AutoSlide>
   )
 }
 
@@ -257,7 +265,7 @@ const Demo = () => {
             </svg>
           }
         >
-          Watch speaking demo
+          Watch Freddie Speak
         </ButtonLink>
       </AutoSlide>
       <div
@@ -299,9 +307,9 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src="https://www.youtube.com/embed/foAQL5Dp4QY"
+              src="https://player.vimeo.com/video/259618922?color=f00004&title=0&byline=0&portrait=0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              title="Lorem donec mass"
+              title="Watch The Experience"
               allowFullScreen
               className="w-full h-full absolute top-0 left-0"
             />
@@ -350,9 +358,9 @@ const IndexPage = ({ data }) => (
           />
         </AutoScale>
       </div>
-      <AutoSlide up>
-        <HeroLogo className="relative mt-6" css={{ width: 150 }} />
-      </AutoSlide>
+      <Link to="/">
+        <HeroLogo />
+      </Link>
       <Container
         className="flex flex-col items-center relative"
         css={{ marginTop: 'calc(6vh + 4vw)' }}
@@ -365,7 +373,7 @@ const IndexPage = ({ data }) => (
           css={{ fontSize: '3.2vw' }}
         >
           <RotateWords
-            words={['Amplify Success', 'Energize Impact', 'Increase Business']}
+            words={['Amplify Success', 'Unlock Potential', 'Increase Business']}
           />
         </AutoSlide>
         <Demo />
@@ -460,7 +468,7 @@ const IndexPage = ({ data }) => (
           </AutoSlide>
         </div>
         <ButtonLink to="/" className="mt-16">
-          Book Freddie
+          Meet Freddie Ravel
         </ButtonLink>
       </Container>
     </section>
@@ -473,7 +481,7 @@ const IndexPage = ({ data }) => (
       <Container>
         <AutoFade
           as="h3"
-          className="relative font-display font-hairline text-3xl text-center uppercase"
+          className="relative font-display font-hairline text-3xl leading-tight text-center uppercase"
           css={{
             backgroundImage:
               'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -481,14 +489,14 @@ const IndexPage = ({ data }) => (
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Lorem donec mass
+          Watch The Experience
         </AutoFade>
-        <AutoFade className="w-4/5 mx-auto">
+        <AutoFade className="w-full sm:w-4/5 mx-auto">
           <VideoPlayer
             webroll={bgVideoColor}
             video={lifeInTune}
             ratio={1080 / 1920}
-            className="mt-10"
+            className="mt-16"
           />
         </AutoFade>
       </Container>
@@ -526,10 +534,11 @@ const IndexPage = ({ data }) => (
     <section className="relative py-20 pb-24 bg-white">
       <Container className="flex flex-col items-center">
         <AutoFade>
-          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
-            gravida cum sociis
-            <br />
-            natoque penatibus et
+          <h3
+            className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase"
+            css={{ maxWidth: '27em' }}
+          >
+            Inspiring Entrepreneurs, Start-ups and The Fortune 100
           </h3>
         </AutoFade>
         <ul
@@ -612,7 +621,7 @@ const IndexPage = ({ data }) => (
         </ul>
         <AutoFade>
           <ButtonLink to="/" className="mt-6 text-gray-900">
-            MEETING PLANNER INFO
+            Start Your Experience
           </ButtonLink>
         </AutoFade>
       </Container>
@@ -626,20 +635,20 @@ const IndexPage = ({ data }) => (
       <Container>
         <AutoFade>
           <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
-            Featured keynote topics
+            Client Raves and Reviews
           </h3>
         </AutoFade>
-        <ul
-          className="mt-12 relative"
-          css={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gridGap: 30,
+        <Masonry
+          breakpointCols={{
+            default: 3,
+            1024: 2,
+            500: 1,
           }}
+          className="flex -ml-5 mt-12 relative"
         >
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={cvent} alt="" className="block w-24 opacity-50" />
@@ -653,7 +662,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={anz} alt="" className="block w-24 opacity-50" />
@@ -664,7 +673,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={bluecross} alt="" className="block w-32 opacity-50" />
@@ -675,7 +684,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={cox} alt="" className="block w-32 opacity-50" />
@@ -687,7 +696,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={ibm} alt="" className="block w-20 opacity-50" />
@@ -698,7 +707,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={toyota} alt="" className="block w-16 opacity-50" />
@@ -707,7 +716,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={twitter} alt="" className="block w-12 opacity-50" />
@@ -719,7 +728,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={nasa} alt="" className="block w-16 opacity-50" />
@@ -731,7 +740,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={walmart} alt="" className="block w-24 opacity-50" />
@@ -740,7 +749,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={jdpower} alt="" className="block w-16 opacity-50" />
@@ -756,7 +765,7 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={aia} alt="" className="block w-16 opacity-50" />
@@ -768,14 +777,14 @@ const IndexPage = ({ data }) => (
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
             <img src={reuters} alt="" className="block w-24 opacity-50" />
             <p className="mt-6">"A Fantastic Experience”</p>
             <p className="mt-5 text-sm">Reuters</p>
           </AutoFade>
-        </ul>
+        </Masonry>
       </Container>
     </section>
     <section
