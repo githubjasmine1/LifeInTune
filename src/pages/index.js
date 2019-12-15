@@ -102,6 +102,9 @@ export const query = graphql`
     bioBg: file(relativePath: { eq: "bio.png" }) {
       ...windowWide
     }
+    testimonialsBg: file(relativePath: { eq: "testimonials-bg.png" }) {
+      ...windowWide
+    }
   }
 `
 
@@ -626,10 +629,14 @@ const IndexPage = ({ data }) => (
         </AutoFade>
       </Container>
     </section>
-    <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
+    <section
+      className="flex flex-col items-center relative py-20 bg-white"
+      css={{ paddingBottom: '20vw', background: '#f4f4f4' }}
+    >
       <Img
-        fluid={data.keynoteBg.childImageSharp.fluid}
+        fluid={data.testimonialsBg.childImageSharp.fluid}
         className="w-full h-full top-0 left-0"
+        imgStyle={{ objectFit: 'contain', objectPosition: 'bottom' }}
         css={{ position: 'absolute !important' }}
       />
       <Container>
