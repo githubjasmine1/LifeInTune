@@ -640,7 +640,8 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <Masonry
           breakpointCols={{
-            default: 3,
+            default: 4,
+            1200: 3,
             1024: 2,
             500: 1,
           }}
@@ -743,7 +744,7 @@ const IndexPage = ({ data }) => (
             className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <img src={walmart} alt="" className="block w-24 opacity-50" />
+            <img src={walmart} alt="" className="block w-32 opacity-50" />
             <p className="mt-6">"His incredible talent delivers”</p>
             <p className="mt-5 text-sm">WalMart</p>
           </AutoFade>
@@ -780,7 +781,7 @@ const IndexPage = ({ data }) => (
             className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <img src={reuters} alt="" className="block w-24 opacity-50" />
+            <img src={reuters} alt="" className="block w-32 opacity-50" />
             <p className="mt-6">"A Fantastic Experience”</p>
             <p className="mt-5 text-sm">Reuters</p>
           </AutoFade>
