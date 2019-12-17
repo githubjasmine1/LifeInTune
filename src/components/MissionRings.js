@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from 'react'
-import { Power1, Power2, Power3, Power4 } from 'gsap'
+import { Power1, Power2, Power3 } from 'gsap'
 
 import { useControlledTimeline } from '../hooks/animation'
 import useInView from '../hooks/useInView'
@@ -49,7 +49,7 @@ const MissionRings = memo(({ className, ...props }) => {
         rotation: -90,
         strokeWidth: 0,
         drawSVG: '0% 0%',
-        ease: Power4.easeInOut,
+        ease: Power3.easeInOut,
       },
       0.5,
       0
