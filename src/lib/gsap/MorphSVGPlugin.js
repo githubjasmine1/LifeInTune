@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*!
  * VERSION: 0.8.11
  * DATE: 2018-05-30
@@ -997,3 +998,4 @@ var _DEG2RAD = Math.PI / 180,
 
 
 export { MorphSVGPlugin, MorphSVGPlugin as default };
+/* eslint-enable */
