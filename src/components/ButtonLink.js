@@ -5,7 +5,7 @@ import Link from './Link'
 const ButtonLink = ({ as: As = Link, className, icon, children, ...props }) => {
   return (
     <As
-      className={`flex justify-center items-center relative py-2 px-10 font-display font-hariline text-sm leading-relaxed text-center uppercase rounded-full hover:text-white outline-none ${className}`}
+      className={`flex justify-center items-center relative py-2 px-10 font-display font-hariline text-sm leading-relaxed text-center uppercase rounded-full hover:text-white focus:outline-none ${className}`}
       css={{
         backgroundSize: '500% 100%',
         backgroundPosition: '100% center',

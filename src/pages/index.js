@@ -18,6 +18,7 @@ import RotateWords from '../components/RotateWords'
 import VideoPlayer from '../components/VideoPlayer'
 import Link from '../components/Link'
 import Logo from '../components/Logo'
+import MissionRings from '../components/MissionRings'
 import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
@@ -55,6 +56,7 @@ import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
+import { media } from '../styles/tools'
 
 export const query = graphql`
   query {
@@ -285,16 +287,7 @@ const Demo = () => {
         ></div>
         <button
           onClick={() => setIsOpen(false)}
-          css={{
-            display: 'block',
-            position: 'absolute',
-            top: 20,
-            right: 20,
-            fontSize: 30,
-            lineHeight: 1,
-            color: '#fff',
-            outline: 'none',
-          }}
+          className="block absolute top-0 right-0 p-5 text-4xl leading-none text-white hover:text-gold-300 transition focus:outline-none"
         >
           &times;
         </button>
@@ -652,6 +645,7 @@ const IndexPage = ({ data }) => (
             1024: 2,
             500: 1,
           }}
+          columnClassName=""
           className="flex -ml-5 mt-12 relative"
         >
           <AutoFade
@@ -875,9 +869,7 @@ const IndexPage = ({ data }) => (
             OUR MISSION
           </ButtonLink>
         </AutoFade>
-        <AutoScale className="w-1/3 mt-16">
-          <Img fluid={data.model.childImageSharp.fluid} />
-        </AutoScale>
+        <MissionRings className="w-1/3 mt-16" />
       </Container>
     </section>
     <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
