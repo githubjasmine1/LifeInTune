@@ -1,29 +1,30 @@
-import React, { memo, useEffect, useRef, useState } from 'react'
-import { Power1, Power2, Power3 } from 'gsap'
+import React, { useMemo, useEffect, useRef, useState } from 'react'
+import { TimelineMax, Power1, Power2, Power3 } from '../lib/gsap'
 
-import { useControlledTimeline } from '../hooks/animation'
 import useInView from '../hooks/useInView'
 import { media } from '../styles/tools'
 
 import ButtonLink from './ButtonLink'
 
-const MissionRings = memo(({ className, ...props }) => {
+const MissionRings = ({ className, ...props }) => {
   const [canReplay, setCanReplay] = useState(false)
   const [inViewRef, inView] = useInView({ rootMargin: '-30% 0px' })
-  const tl = useControlledTimeline(
-    {
-      delay: 0.5,
-      repeat: -1,
-      // onStart() {
-      //   console.log(false)
-      //   setCanReplay(false)
-      // },
-      // onComplete() {
-      //   setCanReplay(true)
-      // },
-    },
-    inView
+  const tl = useMemo(
+    () =>
+      new TimelineMax({
+        delay: 0.5,
+        onStart() {
+          setCanReplay(false)
+        },
+        onComplete() {
+          setCanReplay(true)
+        },
+      }),
+    []
   )
+
+  useEffect(() => () => tl.current && tl.current.kill(), [])
+  useEffect(() => void tl.paused(!inView), [inView])
 
   useEffect(() => {
     tl.staggerFrom(
@@ -168,7 +169,6 @@ const MissionRings = memo(({ className, ...props }) => {
   const circle1 = useRef()
   const circle2 = useRef()
   const circle3 = useRef()
-  const button = useRef()
   const man = useRef()
   const manPath = useRef()
   const keys = useRef()
@@ -343,26 +343,31 @@ const MissionRings = memo(({ className, ...props }) => {
           </div>
         </div>
       </div>
-      <ButtonLink
-        ref={button}
-        as="button"
-        className="-mt-20 text-white transition-slow"
+      <div
+        className="-mt-20 text-white transition-slow ease-out"
         style={{
           opacity: canReplay ? 1 : 0,
           visibility: canReplay ? 'visible' : 'hidden',
         }}
-        disabled={!canReplay}
-        icon={
-          <svg viewBox="0 0 24 24" className="w-5 h-5 ml-1 -mr-3 fill-current">
-            <path d="M12 5V1L7 6l5 5V7a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6H4a8 8 0 008 8 8 8 0 008-8 8 8 0 00-8-8z" />
-          </svg>
-        }
       >
-        {' '}
-        Replay
-      </ButtonLink>
+        <ButtonLink
+          as="button"
+          disabled={!canReplay}
+          icon={
+            <svg
+              viewBox="0 0 24 24"
+              className="w-5 h-5 ml-1 -mr-3 fill-current"
+            >
+              <path d="M12 5V1L7 6l5 5V7a6 6 0 016 6 6 6 0 01-6 6 6 6 0 01-6-6H4a8 8 0 008 8 8 8 0 008-8 8 8 0 00-8-8z" />
+            </svg>
+          }
+          onClick={() => tl.restart()}
+        >
+          Replay
+        </ButtonLink>
+      </div>
     </div>
   )
-})
+}
 
 export default MissionRings
