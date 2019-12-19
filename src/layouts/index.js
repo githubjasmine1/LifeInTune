@@ -237,27 +237,27 @@ const Footer = props => {
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/keynotes" className="hover:text-gold-300 transition">
               Keynotes
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/speaker" className="hover:text-gold-300 transition">
               Speaker
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/mission" className="hover:text-gold-300 transition">
               Mission
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/buzz" className="hover:text-gold-300 transition">
               Buzz
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/planners" className="hover:text-gold-300 transition">
               Planners
             </Link>
           </li>
@@ -268,7 +268,7 @@ const Footer = props => {
             <li>
               <Link
                 out
-                href="http://example.com"
+                href="http://www.linkedin.com/in/freddieravel"
                 className="flex items-center hover:text-gold-300 transition"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
@@ -280,7 +280,7 @@ const Footer = props => {
             <li className="mt-2">
               <Link
                 out
-                href="http://example.com"
+                href="http://twitter.com/freddieravel"
                 className="flex items-center hover:text-gold-300 transition"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
@@ -292,7 +292,7 @@ const Footer = props => {
             <li className="mt-2">
               <Link
                 out
-                href="http://example.com"
+                href="https://www.instagram.com/freddieravel/"
                 className="flex items-center hover:text-gold-300 transition"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
@@ -304,7 +304,7 @@ const Footer = props => {
             <li className="mt-2">
               <Link
                 out
-                href="http://example.com"
+                href="http://www.facebook.com/pages/Freddie-Ravel/63497511550"
                 className="flex items-center hover:text-gold-300 transition"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
@@ -316,7 +316,7 @@ const Footer = props => {
             <li className="mt-2">
               <Link
                 out
-                href="http://example.com"
+                href="https://www.youtube.com/user/maximjasmine"
                 className="flex items-center hover:text-gold-300 transition"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">

@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => (
           }}
         >
           <VideoPlayer
-            // label="Watch speaking demo"
+            label="Watch speaking demo"
             webroll={bgVideoColor}
             video={
               <iframe
