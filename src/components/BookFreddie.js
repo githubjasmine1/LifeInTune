@@ -35,7 +35,7 @@ const BookFreddie = () => {
 
       <AutoFade>
         <h3
-          className="relative font-display font-hairline text-3xl leading-tight text-center uppercase"
+          className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
           css={{
             maxWidth: '16em',
             backgroundImage:

@@ -57,7 +57,7 @@ module.exports = {
         trackingId: siteConfig.gaTrackingId,
       },
     },
-    // 'gatsby-plugin-layout',
+    'gatsby-plugin-layout',
     {
       // make sure to keep it last in the array
       resolve: 'gatsby-plugin-netlify',

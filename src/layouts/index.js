@@ -8,17 +8,14 @@ import Head from '../components/Head'
 import Container from '../components/Container'
 import Link from '../components/Link'
 import ButtonLink from '../components/ButtonLink'
+import Logo from '../components/Logo'
 import { AutoFade } from '../components/Animated'
 
 const Navbar = props => {
-  const isBelow = useScrolledBelow(60)
+  const isBelow = useScrolledBelow(30)
 
   return (
-    <AutoFade
-      delay={1000}
-      duration={1500}
-      className="w-full z-40 fixed top-0 left-0"
-    >
+    <AutoFade duration={1500} className="w-full z-40 fixed top-0 left-0">
       <header
         className="py-5 font-display font-hairline text-white transition-slow ease-out"
         style={{
@@ -40,36 +37,45 @@ const Navbar = props => {
           <div className="relative">
             <div className="flex absolute" css={{ top: 0, right: '100%' }}>
               <Link
-                to="/"
+                to="/keynotes"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                activeClassName="text-gold-300"
               >
                 Keynotes
               </Link>
               <Link
-                to="/"
+                to="/speaker"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                activeClassName="text-gold-300"
               >
                 Speaker
               </Link>
               <Link
-                to="/"
+                to="/mission"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                activeClassName="text-gold-300"
               >
                 Mission
               </Link>
             </div>
             <Link
               to="/"
-              className="block px-2 transition-slow ease-out"
-              style={{
-                opacity: isBelow ? 1 : 0,
-                visibility: isBelow ? 'visible' : 'hidden',
-                transform: isBelow ? 'none' : 'scale(.9)',
+              className="block px-2"
+              css={{
+                display: 'grid',
+                gridTemplate: '"center" 1fr  / 1fr',
+                justifyItems: 'center',
               }}
             >
               <svg
                 viewBox="0 0 330 17.6"
-                css={{ display: 'block', width: 260, height: 50 }}
+                className="transition-slow ease-out"
+                css={{ gridArea: 'center', width: 260, height: 50 }}
+                style={{
+                  opacity: isBelow ? 1 : 0,
+                  visibility: isBelow ? 'visible' : 'hidden',
+                  transform: isBelow ? 'none' : 'scale(.9)',
+                }}
               >
                 <linearGradient
                   id="a"
@@ -88,25 +94,41 @@ const Navbar = props => {
                   d="M28.5 15h-26V1c.1-.5-.3-.9-.8-1H1a1 1 0 00-1 .8v15.5c-.1.5.3.9.8 1h27.7c.5.1.9-.3 1-.8V16c.1-.5-.3-.9-.8-1h-.2zm8.3-15h.5c.5 0 1 .4 1 1v15.3c0 .5-.4 1-1 1h-.5a1 1 0 01-1-1V1c0-.5.5-1 1-1zm33.9 0H43.6c-.5-.1-.9.3-1 .8v15.5c-.1.5.3.9.8 1h.7c.5.1.9-.3 1-.8v-6.4h24.1c.5.1.9-.3 1-.8v-.5c.1-.5-.3-.9-.8-1H45.1V2.3h25.6c.5 0 1-.3 1-.8V1c0-.5-.3-1-.8-1h-.2zm33.7 0H77.3c-.5-.1-.9.3-1 .8v15.5c-.1.5.3.9.8 1h27.3c.5.1.9-.3 1-.8V16c0-.5-.3-1-.8-1H78.8v-5H103c.5 0 1-.3 1-.8V8.6c0-.5-.3-1-.8-1H78.8V2.3h25.6c.5.1.9-.3 1-.8V1c.1-.5-.3-.9-.8-1h-.2zM298 2.3c.5 0 1-.3 1-.8V1c0-.5-.3-1-.8-1h-27.3c-.5-.1-.9.3-1 .8v15.5c-.1.5.3.9.8 1H298c.5 0 1-.3 1-.8V16c0-.5-.3-1-.9-1H272.4v-5h24.1c.5 0 1-.3 1-.8V8.6c.1-.5-.3-.9-.8-1h-24.3V2.3H298zM202.4 0h-27.5c-.5-.1-.9.3-1 .8v.5c-.1.5.3.9.8 1H187v14c-.1.5.3.9.8 1h.7c.5.1.9-.3 1-.8V2.3h13c.5.1.9-.3 1-.8V1c.1-.5-.3-.9-.8-1h-.3zm28.8 0h-.5c-.5-.1-.9.3-1 .8v7.8c0 4.2-3.4 6.6-9.4 6.6h-.8c-6.1 0-9.4-2.3-9.4-6.6V1c.1-.5-.3-.9-.8-1h-.7c-.5-.1-.9.3-1 .8v7.8c0 5.8 4.1 8.9 11.8 8.9h.8c7.8 0 11.9-3.1 11.9-8.9V1c.1-.5-.3-.9-.9-1 .1 0 .1 0 0 0zm33.4 0h-.5c-.5-.1-.9.3-1 .8V14.1L245.3 3.8 238.8 0h-1.3c-.5-.1-.9.3-1 .8v15.5c-.1.5.3.9.8 1h.7c.5.1.9-.3 1-.8V3.2l11.6 6.7 12.5 7.2 1 .2h.5c.5.1.9-.3 1-.8V1c.1-.5-.3-.9-.8-1h-.2zM157.1 0h-.5c-.5-.1-.9.3-1 .8V14.1L137.8 3.8 131.3 0l-.3-.1h-1c-.5-.1-.9.3-1 .8v15.5c-.1.5.3.9.8 1h.7c.5.1.9-.3 1-.8V3.2l11.6 6.7 12.5 7.2 1 .2h.5c.5.1.9-.3 1-.8V1c.1-.5-.3-.9-.8-1h-.2zm-33.9 0h.5c.5 0 1 .4 1 1v15.3c0 .5-.4 1-1 1h-.5a1 1 0 01-1-1V1c0-.5.5-1 1-1zm192.3.7v.7c0 .2-.1.4-.3.4H310.3v6.4c0 .2-.1.4-.3.4h-1c-.2 0-.4-.1-.4-.3V1.8h-4.8c-.2 0-.4-.1-.4-.3V.7c0-.2.1-.4.3-.4H315c.2 0 .4.1.5.3v.1zm14.5 0v7.5c0 .2-.1.4-.3.4h-.9c-.2 0-.4-.1-.4-.3v-6L324 6.7l-.6.2c-.2 0-.4 0-.6-.2l-4.4-4.3v5.9c0 .2-.1.4-.3.4h-.9c-.2 0-.4-.1-.4-.3V.7c0-.2.1-.4.3-.4h.9c.2 0 .5 0 .7.2l4.7 4.6 4.7-4.6c.2-.2.4-.2.7-.2h.8c.2-.1.4.1.4.4 0-.1 0 0 0 0z"
                 />
               </svg>
+              <Logo
+                className="absolute hover:text-gold-300 transition-slow ease-out"
+                css={{
+                  gridArea: 'center',
+                  width: 150,
+                  left: 'calc(50% - 75px)',
+                  marginTop: -24,
+                }}
+                style={{
+                  opacity: isBelow ? 0 : 1,
+                  visibility: isBelow ? 'hidden' : 'visible',
+                  transform: isBelow ? 'scale(1.1) translateY(-25%)' : 'none',
+                }}
+              />
             </Link>
             <div
               className="flex items-center absolute"
               css={{ top: 0, left: '100%' }}
             >
               <Link
-                to="/"
+                to="/buzz"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                activeClassName="text-gold-300"
               >
                 Buzz
               </Link>
               <Link
-                to="/"
+                to="/planners"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                activeClassName="text-gold-300"
               >
                 Planners
               </Link>
               <div className="px-2 lg:px-5 xl:px-10">
-                <ButtonLink to="/">Booking</ButtonLink>
+                <ButtonLink to="/contact">Booking</ButtonLink>
               </div>
             </div>
           </div>

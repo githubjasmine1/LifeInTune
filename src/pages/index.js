@@ -2,45 +2,40 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import Konva from 'konva'
 import Img from 'gatsby-image'
-import Masonry from 'react-masonry-css'
 
 import { TimelineMax, Back, Power4 } from '../lib/gsap'
 
-import useScrolledBelow from '../hooks/useScrolledBelow'
-
 import SEO from '../components/SEO'
-import Layout from '../layouts/index'
 import Container from '../components/Container'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
 import RotateWords from '../components/RotateWords'
 import VideoPlayer from '../components/VideoPlayer'
-import Link from '../components/Link'
-import Logo from '../components/Logo'
+import ClientRaves from '../components/ClientRaves'
 import MissionRings from '../components/MissionRings'
 import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
 import bgVideoColor from '../assets/bg-video-color.mp4'
-import lifeInTune from '../assets/lifeintune.mp4'
+// import lifeInTune from '../assets/lifeintune.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
-import anz from '../assets/logos/anz.svg'
+// import anz from '../assets/logos/anz.svg'
 import apple from '../assets/logos/apple.svg'
 import bluesCross from '../assets/logos/blue-cross.svg'
-import bluecross from '../assets/logos/bluecross.svg'
+// import bluecross from '../assets/logos/bluecross.svg'
 import citi from '../assets/logos/citi.svg'
-import cox from '../assets/logos/cox.svg'
-import cvent from '../assets/logos/cvent.svg'
+// import cox from '../assets/logos/cox.svg'
+// import cvent from '../assets/logos/cvent.svg'
 import disney from '../assets/logos/disney.svg'
 // import em from '../assets/logos/em.svg'
 import google from '../assets/logos/google.svg'
 import grammy from '../assets/logos/grammy.svg'
 // import iasb from '../assets/logos/iasb.svg'
 import ibm from '../assets/logos/ibm.svg'
-import jdpower from '../assets/logos/jdpower.svg'
+// import jdpower from '../assets/logos/jdpower.svg'
 import livenation from '../assets/logos/livenation.svg'
 // import microsoft from '../assets/logos/microsoft.svg'
 // import morgan from '../assets/logos/morgan.svg'
@@ -48,7 +43,7 @@ import nasa from '../assets/logos/nasa.svg'
 import nbc from '../assets/logos/nbc.svg'
 import prudential from '../assets/logos/prudential.svg'
 import redbull from '../assets/logos/redbull.svg'
-import reuters from '../assets/logos/reuters.svg'
+// import reuters from '../assets/logos/reuters.svg'
 // import roland from '../assets/logos/roland.svg'
 // import sheraton from '../assets/logos/sheraton.svg'
 import ted from '../assets/logos/ted.svg'
@@ -56,7 +51,6 @@ import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
-import { media } from '../styles/tools'
 
 export const query = graphql`
   query {
@@ -102,9 +96,6 @@ export const query = graphql`
       ...windowWide
     }
     bioBg: file(relativePath: { eq: "bio.png" }) {
-      ...windowWide
-    }
-    testimonialsBg: file(relativePath: { eq: "testimonials-bg.png" }) {
       ...windowWide
     }
   }
@@ -230,27 +221,6 @@ const Waves = props => {
   return <div ref={el} {...props}></div>
 }
 
-const HeroLogo = () => {
-  const isBelow = useScrolledBelow(60)
-
-  return (
-    <AutoSlide
-      up
-      className="relative z-50 mt-6"
-      style={{ pointerEvents: isBelow ? 'none' : 'all' }}
-    >
-      <Logo
-        className="hover:text-gold-300 transition-slow ease-out"
-        css={{ width: 150 }}
-        style={{
-          opacity: isBelow ? 0 : 1,
-          transform: isBelow ? 'scale(1.2)' : 'none',
-        }}
-      />
-    </AutoSlide>
-  )
-}
-
 const Demo = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -303,11 +273,13 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src="https://player.vimeo.com/video/259618922?color=f00004&title=0&byline=0&portrait=0"
+              src={`https://player.vimeo.com/video/259618922?color=b4903a${
+                isOpen ? '&autoplay=1' : ''
+              }`}
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               title="Watch The Experience"
               allowFullScreen
-              className="w-full h-full absolute top-0 left-0"
+              className="w-full h-full absolute top-0 left-0 bg-black"
             />
           </div>
         </div>
@@ -317,7 +289,7 @@ const Demo = () => {
 }
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <>
     <SEO />
     <section
       className="flex flex-col items-center relative text-white"
@@ -354,12 +326,9 @@ const IndexPage = ({ data }) => (
           />
         </AutoScale>
       </div>
-      <Link to="/">
-        <HeroLogo />
-      </Link>
       <Container
         className="flex flex-col items-center relative"
-        css={{ marginTop: 'calc(6vh + 4vw)' }}
+        css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
           as="h2"
@@ -489,8 +458,17 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <AutoFade className="w-full sm:w-4/5 mx-auto">
           <VideoPlayer
+            // label="Watch speaking demo"
             webroll={bgVideoColor}
-            video={lifeInTune}
+            video={
+              <iframe
+                src="https://www.youtube.com/embed/t5-jZ-01b2I?autoplay=1"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                title="Watch The Experience"
+                allowFullScreen
+                className="w-full h-full absolute top-0 left-0 bg-black"
+              />
+            }
             ratio={1080 / 1920}
             className="mt-16"
           />
@@ -622,173 +600,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
       </Container>
     </section>
-    <section
-      className="flex flex-col items-center relative py-20 bg-white"
-      css={{ paddingBottom: '20vw', background: '#f4f4f4' }}
-    >
-      <Img
-        fluid={data.testimonialsBg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
-        imgStyle={{ objectFit: 'contain', objectPosition: 'bottom' }}
-        css={{ position: 'absolute !important' }}
-      />
-      <Container>
-        <AutoFade>
-          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
-            Client Raves and Reviews
-          </h3>
-        </AutoFade>
-        <Masonry
-          breakpointCols={{
-            default: 4,
-            1200: 3,
-            1024: 2,
-            500: 1,
-          }}
-          columnClassName=""
-          className="flex -ml-5 mt-12 relative"
-        >
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={cvent} alt="" className="block w-24 opacity-50" />
-            <p className="mt-6">
-              “The energy level was off the hook!
-              <br />
-              <br />
-              "He did a terrific job weaving our message into his presentation.”
-            </p>
-            <p className="mt-5 text-sm">cVent</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={anz} alt="" className="block w-24 opacity-50" />
-            <p className="mt-6">
-              “He made it so relevant and so real for out audience.”
-            </p>
-            <p className="mt-5 text-sm">Australia New Zealand Bank</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={bluecross} alt="" className="block w-32 opacity-50" />
-            <p className="mt-6">
-              “Transformative, Collaborative and Effective.”
-            </p>
-            <p className="mt-5 text-sm">Blue Cross/Blue Shield</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={cox} alt="" className="block w-32 opacity-50" />
-            <p className="mt-6">
-              “Spellbinding stories to connect points of real importance to our
-              culture”
-            </p>
-            <p className="mt-5 text-sm">CoxMedia</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={ibm} alt="" className="block w-20 opacity-50" />
-            <p className="mt-6">
-              “By far the best motivational performance we have seen”
-            </p>
-            <p className="mt-5 text-sm">IBM</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={toyota} alt="" className="block w-16 opacity-50" />
-            <p className="mt-6">“Fantastic and Profound”</p>
-            <p className="mt-5 text-sm">Toyota Motor Sales, USA</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={twitter} alt="" className="block w-12 opacity-50" />
-            <p className="mt-6">
-              “His masterful mapping of music to our everyday cadence was
-              AMAZING!”
-            </p>
-            <p className="mt-5 text-sm">Twitter</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={nasa} alt="" className="block w-16 opacity-50" />
-            <p className="mt-6">
-              “Dazzling and Phenomenal - we are grateful for his exceptional
-              legacy.”
-            </p>
-            <p className="mt-5 text-sm">NASA</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={walmart} alt="" className="block w-32 opacity-50" />
-            <p className="mt-6">"His incredible talent delivers”</p>
-            <p className="mt-5 text-sm">WalMart</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={jdpower} alt="" className="block w-16 opacity-50" />
-            <p className="mt-6">
-              “He spoke to our employees as though he were one of us…. people
-              walked out of the room electrified.”
-            </p>
-            <p className="mt-5 text-sm">
-              Bangor Savings Bank
-              <br />
-              Voted # 1 by JD Powers
-            </p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={aia} alt="" className="block w-16 opacity-50" />
-            <p className="mt-6">
-              “He rocked our conference with relevant messages delivered
-              magnificently.”
-            </p>
-            <p className="mt-5 text-sm">AIA</p>
-          </AutoFade>
-          <AutoFade
-            as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
-            css={{ display: 'flex' }}
-          >
-            <img src={reuters} alt="" className="block w-32 opacity-50" />
-            <p className="mt-6">"A Fantastic Experience”</p>
-            <p className="mt-5 text-sm">Reuters</p>
-          </AutoFade>
-        </Masonry>
-      </Container>
-    </section>
+    <ClientRaves />
     <section
       className="relative py-20 bg-gray-900"
       css={{ paddingBottom: '37vh' }}
@@ -865,7 +677,7 @@ const IndexPage = ({ data }) => (
           </p>
         </AutoFade>
         <AutoFade>
-          <ButtonLink to="/" className="mt-6 text-white">
+          <ButtonLink to="/mission" className="mt-6 text-white">
             OUR MISSION
           </ButtonLink>
         </AutoFade>
@@ -954,7 +766,7 @@ const IndexPage = ({ data }) => (
     </section>
     <BookFreddie />
     <FooterGallery />
-  </Layout>
+  </>
 )
 
 export default IndexPage

@@ -48,7 +48,6 @@ const MissionRings = ({ className, ...props }) => {
       {
         transformOrigin: 'center',
         rotation: -90,
-        strokeWidth: 0,
         drawSVG: '0% 0%',
         ease: Power3.easeInOut,
       },

@@ -31,7 +31,13 @@ const PlayButton = ({ size = 160, color = '#fff' }) => (
   </svg>
 )
 
-const WebrollPlayer = ({ visible, src, ratio = 1080 / 1920, ...rest }) => (
+const WebrollPlayer = ({
+  label,
+  visible,
+  src,
+  ratio = 1080 / 1920,
+  ...rest
+}) => (
   <div className="transition-slow ease-out cursor-pointer" {...rest}>
     <div
       css={{ width: '100%', position: 'absolute', top: 0, left: 0 }}
@@ -55,6 +61,7 @@ const WebrollPlayer = ({ visible, src, ratio = 1080 / 1920, ...rest }) => (
             position: 'absolute',
             left: 0,
             top: 0,
+            objectFit: 'cover',
           },
         }}
       >
@@ -65,6 +72,7 @@ const WebrollPlayer = ({ visible, src, ratio = 1080 / 1920, ...rest }) => (
       <div
         css={{
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
@@ -75,29 +83,25 @@ const WebrollPlayer = ({ visible, src, ratio = 1080 / 1920, ...rest }) => (
         }}
       >
         <PlayButton size={130} />
+        {label && (
+          <div className="mt-5 font-display uppercase text-white">{label}</div>
+        )}
       </div>
     </div>
   </div>
 )
 
-const VideoPlayer = ({ webroll, video, ratio, ...props }) => {
+const VideoPlayer = ({ label, webroll, video, ratio, ...props }) => {
   const [webrollPlaying, setWebrollPlaying] = useState(true)
 
   return (
     <div css={{ position: 'relative' }} {...props}>
       <div className="w-full relative">
-        <div css={{ paddingTop: '56.25%' }} />
-        {!webrollPlaying && (
-          <iframe
-            src="https://www.youtube.com/embed/t5-jZ-01b2I?autoplay=1"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            title="Watch The Experience"
-            allowFullScreen
-            className="w-full h-full absolute top-0 left-0"
-          />
-        )}
+        <div css={{ paddingTop: `${ratio * 100}%` }} />
+        {!webrollPlaying && video}
       </div>
       <WebrollPlayer
+        label={label}
         style={{
           opacity: webrollPlaying ? 1 : 0,
           visibility: webrollPlaying ? 'visible' : 'hidden',
