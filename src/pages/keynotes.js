@@ -173,7 +173,7 @@ const IndexPage = ({ data }) => (
                   ultimately, more profitable. This presentation is sure to open
                   or close your meeting on a dynamic high note.
                 </p>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
@@ -227,7 +227,7 @@ const IndexPage = ({ data }) => (
                   ultimately, more profitable. This presentation is sure to open
                   or close your meeting on a dynamic high note.
                 </p>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
@@ -312,7 +312,7 @@ const IndexPage = ({ data }) => (
                     The only way to manage change is to create change.
                   </li>
                 </ul>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
@@ -372,7 +372,7 @@ const IndexPage = ({ data }) => (
                     music and daily life.
                   </li>
                 </ul>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
@@ -452,7 +452,7 @@ const IndexPage = ({ data }) => (
                   mundane transforms to magnificent and why so many clients
                   invite him back year after year!
                 </p>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   Request Freddie
                 </ButtonLink>
               </div>
@@ -489,7 +489,7 @@ const IndexPage = ({ data }) => (
                   of surprises. In this multimedia, interactive “Keynote
                   Concert” experience, your audience will learn to
                 </p>
-                <ButtonLink className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   INQUIRE FOR MORE INFO
                 </ButtonLink>
               </div>

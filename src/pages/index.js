@@ -98,6 +98,13 @@ export const query = graphql`
     bioBg: file(relativePath: { eq: "bio.png" }) {
       ...windowWide
     }
+    headerBgPoster: file(relativePath: { eq: "header-bg-poster.png" }) {
+      childImageSharp {
+        fixed(width: 1920, quality: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `
 
@@ -297,6 +304,7 @@ const IndexPage = ({ data }) => (
     >
       <video
         src={headerBg}
+        poster={data.headerBgPoster.childImageSharp.fixed.src}
         autoPlay
         playsInline
         loop
@@ -432,7 +440,7 @@ const IndexPage = ({ data }) => (
             </p>
           </AutoSlide>
         </div>
-        <ButtonLink to="/" className="mt-16">
+        <ButtonLink to="/speaker" className="mt-16">
           Meet Freddie Ravel
         </ButtonLink>
       </Container>
