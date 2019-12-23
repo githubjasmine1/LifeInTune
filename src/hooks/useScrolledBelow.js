@@ -17,7 +17,7 @@ const useScrolledBelow = userValue => {
         typeof userValue === 'function' ? userValue() : userValue
       update()
     })
-  }, [])
+  }, []) // eslint-disable-line
 
   useEffect(() => {
     const handleResize = debounce(() => {
@@ -33,7 +33,7 @@ const useScrolledBelow = userValue => {
       window.removeEventListener('scroll', update)
       window.removeEventListener('resize', handleResize)
     }
-  }, [update])
+  }, [update]) // eslint-disable-line
 
   return isBelow
 }

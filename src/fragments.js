@@ -65,3 +65,16 @@ export const textContainerWide = graphql`
     }
   }
 `
+
+export const photoSwipeImage = graphql`
+  fragment photoSwipeImage on File {
+    childImageSharp {
+      msrc: fixed(width: 500, quality: 90) {
+        ...GatsbyImageSharpFixed_noBase64
+      }
+      src: fixed(width: 1920, quality: 90) {
+        ...GatsbyImageSharpFixed_noBase64
+      }
+    }
+  }
+`

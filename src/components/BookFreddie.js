@@ -26,7 +26,7 @@ const BookFreddie = () => {
   `)
 
   return (
-    <section className="flex flex-col items-center relative py-20 bg-gray-900">
+    <section className="flex flex-col items-center relative py-20 bg-gray-900 overflow-hidden">
       <Img
         fluid={data.bg.childImageSharp.fluid}
         className="w-full h-full top-0 left-0"

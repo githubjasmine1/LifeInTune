@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import Konva from 'konva'
 import Img from 'gatsby-image'
+import { useInView } from 'react-intersection-observer'
 
 import { TimelineMax, Back, Power4 } from '../lib/gsap'
 
@@ -82,13 +83,6 @@ export const query = graphql`
         }
       }
     }
-    model: file(relativePath: { eq: "model.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     videoBg: file(relativePath: { eq: "video-bg.png" }) {
       ...windowWide
     }
@@ -100,7 +94,13 @@ export const query = graphql`
     }
     headerBgPoster: file(relativePath: { eq: "header-bg-poster.png" }) {
       childImageSharp {
-        fixed(width: 1920, quality: 60) {
+        fixed(
+          width: 1920
+          height: 1080
+          quality: 90
+          cropFocus: CENTER
+          toFormat: JPG
+        ) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -144,7 +144,7 @@ const paths = [
   'M2556.295,801.047c-3.257-1.607-329.576-162.391-665.171-306.185 c-197.094-84.449-358.77-146.599-480.536-184.723c-152.025-47.598-241.792-57.685-266.805-29.978 c-13.057,14.461-8.448,39.688,13.699,74.981c34.583,55.11,57.768,98.961,68.913,130.334c10.422,29.339,10.578,48.587,0.465,57.209 c-17.896,15.256-68.302-2.596-149.823-53.062c-65.067-40.28-150.073-101.315-252.657-181.41 C649.73,171.852,482.416,25.522,480.746,24.059',
 ]
 
-const Waves = props => {
+const Waves = ({ onComplete = () => {}, ...props }) => {
   const el = useRef()
 
   useEffect(() => {
@@ -203,7 +203,7 @@ const Waves = props => {
       return path
     })
 
-    const tl = new TimelineMax({ delay: 1 })
+    const tl = new TimelineMax({ delay: 1, onComplete })
 
     tl.from(el.current, 5, { y: -300, ease: Power4.easeOut }, 0)
     tl.staggerTo(
@@ -211,11 +211,13 @@ const Waves = props => {
       4,
       {
         konva: { x: '-=290', y: 0, dashOffset: 0 },
-        ease: Back.easeOut,
+        ease: Back.easeOut.config(1),
       },
       0.05,
       0
     )
+
+    tl.timeScale(1.5)
 
     fitStageIntoParentContainer()
     window.addEventListener('resize', fitStageIntoParentContainer)
@@ -223,7 +225,7 @@ const Waves = props => {
     return () => {
       window.removeEventListener('resize', fitStageIntoParentContainer)
     }
-  }, [])
+  }, []) // eslint-disable-line
 
   return <div ref={el} {...props}></div>
 }
@@ -261,7 +263,7 @@ const Demo = () => {
         <div
           className="w-full h-full absolute top-0 left-0 bg-black opacity-50"
           onClick={() => setIsOpen(false)}
-        ></div>
+        />
         <button
           onClick={() => setIsOpen(false)}
           className="block absolute top-0 right-0 p-5 text-4xl leading-none text-white hover:text-gold-300 transition focus:outline-none"
@@ -295,17 +297,27 @@ const Demo = () => {
   )
 }
 
-const IndexPage = ({ data }) => (
-  <>
-    <SEO />
-    <section
-      className="flex flex-col items-center relative text-white"
-      css={{ height: 'calc(50vh + 28vw)', backgroundColor: '#2a282a' }}
-    >
+const CrazyShenanigans = ({ video, videoPoster }) => {
+  const [wavesCompleted, setWavesCompleted] = useState(false)
+  const [inViewRef, inView] = useInView({ rootMargin: '-40% 0px' })
+
+  useEffect(() => {
+    inView && wavesCompleted
+      ? videoRef.current.play()
+      : videoRef.current.pause()
+  }, [inView, wavesCompleted])
+
+  const videoRef = useRef()
+
+  return (
+    <>
       <video
-        src={headerBg}
-        poster={data.headerBgPoster.childImageSharp.fixed.src}
-        autoPlay
+        ref={ref => {
+          inViewRef(ref)
+          videoRef.current = ref
+        }}
+        src={video}
+        poster={videoPoster}
         playsInline
         loop
         muted
@@ -314,6 +326,22 @@ const IndexPage = ({ data }) => (
       <Waves
         className="w-full absolute left-0 pointer-events-none"
         css={{ bottom: '-20vw' }}
+        onComplete={() => setWavesCompleted(true)}
+      />
+    </>
+  )
+}
+
+const IndexPage = ({ data }) => (
+  <>
+    <SEO />
+    <section
+      className="flex flex-col items-center relative text-white"
+      css={{ height: 'calc(50vh + 28vw)', backgroundColor: '#2a282a' }}
+    >
+      <CrazyShenanigans
+        video={headerBg}
+        videoPoster={data.headerBgPoster.childImageSharp.fixed.src}
       />
       <div className="w-full h-full absolute top-0 left-0 pointer-events-none overflow-hidden">
         <AutoScale
@@ -352,9 +380,9 @@ const IndexPage = ({ data }) => (
         <Demo />
       </Container>
     </section>
-    <section>
+    <section className="bg-white pb-20">
       <div css={{ height: '12vw' }}></div>
-      <Container className="flex flex-col items-center mb-20">
+      <Container className="flex flex-col items-center">
         <div
           css={{
             width: '100%',

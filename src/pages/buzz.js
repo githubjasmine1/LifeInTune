@@ -7,12 +7,7 @@ import Container from '../components/Container'
 import ClientRaves from '../components/ClientRaves'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
-import MissionRings from '../components/MissionRings'
-import VideoPlayer from '../components/VideoPlayer'
-import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
-
-import bgVideoColor from '../assets/bg-video-color.mp4'
 
 export const query = graphql`
   query {
@@ -27,27 +22,6 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 600, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    img1: file(relativePath: { eq: "keynotes-img-1.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    img2: file(relativePath: { eq: "keynotes-img-2.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    signature: file(relativePath: { eq: "signature.png" }) {
-      childImageSharp {
-        fixed(width: 1928, height: 883, quality: 80) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

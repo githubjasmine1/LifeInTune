@@ -23,8 +23,8 @@ const MissionRings = ({ className, ...props }) => {
     []
   )
 
-  useEffect(() => () => tl.current && tl.current.kill(), [])
-  useEffect(() => void tl.paused(!inView), [inView])
+  useEffect(() => () => tl.current && tl.current.kill(), []) // eslint-disable-line
+  useEffect(() => void tl.paused(!inView), [inView]) // eslint-disable-line
 
   useEffect(() => {
     tl.staggerFrom(
@@ -163,7 +163,7 @@ const MissionRings = ({ className, ...props }) => {
       },
       -0.02
     )
-  }, [])
+  }, []) // eslint-disable-line
 
   const circle1 = useRef()
   const circle2 = useRef()

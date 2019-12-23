@@ -59,3 +59,10 @@ export const getBreakpoint = key => min(getBreakpointRaw(key))
 export const supports = {
   grid: `@supports (grid-area: auto)`,
 }
+
+export const isTouchDevice = () => {
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(hover: none)').matches
+  }
+  return false
+}

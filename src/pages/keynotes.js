@@ -22,13 +22,6 @@ export const query = graphql`
         }
       }
     }
-    freddie: file(relativePath: { eq: "freddie.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
     img1: file(relativePath: { eq: "keynotes-img-1.png" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80) {
@@ -40,13 +33,6 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 600, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    signature: file(relativePath: { eq: "signature.png" }) {
-      childImageSharp {
-        fixed(width: 1928, height: 883, quality: 80) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

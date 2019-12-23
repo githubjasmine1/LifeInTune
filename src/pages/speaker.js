@@ -1,20 +1,15 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { media } from '../styles/tools'
 
 import SEO from '../components/SEO'
-import Container from '../components/Container'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
-import RotateWords from '../components/RotateWords'
 import VideoPlayer from '../components/VideoPlayer'
-import Link from '../components/Link'
-import Logo from '../components/Logo'
-import Space from '../components/Space'
-import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
+import { AutoSlide, AutoFade } from '../components/Animated'
 
 import bgVideoColor from '../assets/bg-video-color.mp4'
 
