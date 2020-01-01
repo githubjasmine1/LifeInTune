@@ -32,7 +32,7 @@ const colorsByName = {
 }
 
 const colorsByRole = {
-  primary: colorsByName.red,
+  primary: colorsByName.gold['300'],
 }
 
 const colorsByUseCase = {
