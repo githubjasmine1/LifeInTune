@@ -153,7 +153,7 @@ const Footer = props => {
 
   return (
     <footer
-      className="py-20 text-white"
+      className="relative py-20 text-white"
       css={{ backgroundColor: '#0a0a0a' }}
       {...props}
     >
@@ -327,6 +327,18 @@ const Footer = props => {
             </li>
           </ul>
         </div>
+        <Link
+          out
+          href="https://advictorem.agency"
+          className="block absolute right-0 bottom-0 mr-6 mb-5 text-gray-700 hover:text-white transition"
+          css={{ width: 28, height: 28 }}
+        >
+          <svg viewBox="0 0 153.4 128.1" fill="currentColor">
+            <title>Design by Ad Victorem</title>
+            <polygon points="24.8,9.5 0,9.5 59,128.1 71.9,102.3"></polygon>
+            <path d="M112.7,46.8c2.7-0.6,5.3-1.3,7.6-2.1c7.1-2.3,12.7-5.1,17.1-8.1C157.4,22.9,153,0.8,153,0.8s-14.2,28.8-51.4,3.9C76.5-8.3,59.3,9.6,59.3,9.6l28,55c1.4-2.5,3.2-4.6,5-6.7C99.1,49.9,110.2,47.4,112.7,46.8z"></path>
+          </svg>
+        </Link>
       </Container>
     </footer>
   )

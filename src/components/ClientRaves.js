@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Masonry from 'react-masonry-css'
 
 import Container from '../components/Container'
+import ButtonLink from '../components/ButtonLink'
 import { AutoFade } from '../components/Animated'
 
 import aia from '../assets/logos/aia.svg'
@@ -194,6 +195,11 @@ const ClientRaves = () => {
             <p className="mt-5 text-sm">Reuters</p>
           </AutoFade>
         </Masonry>
+        <AutoFade css={{ display: 'flex', justifyContent: 'center' }}>
+          <ButtonLink to="/buzz" className="mt-20 text-gray-900">
+            READ MORE TESTIMONIALS
+          </ButtonLink>
+        </AutoFade>
       </Container>
     </section>
   )

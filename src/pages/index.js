@@ -2,9 +2,10 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import Konva from 'konva'
 import Img from 'gatsby-image'
-import { useInView } from 'react-intersection-observer'
+import { CountUp } from 'countup.js'
 
 import { TimelineMax, Back, Power4 } from '../lib/gsap'
+import useInView from '../hooks/useInView'
 
 import SEO from '../components/SEO'
 import Container from '../components/Container'
@@ -19,7 +20,6 @@ import { AutoSlide, AutoScale, AutoFade } from '../components/Animated'
 
 import headerBg from '../assets/header-bg.mp4'
 import bgVideoColor from '../assets/bg-video-color.mp4'
-// import lifeInTune from '../assets/lifeintune.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
@@ -52,6 +52,13 @@ import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
+
+import anz from '../assets/logos/anz.svg'
+import bluecross from '../assets/logos/bluecross.svg'
+import cox from '../assets/logos/cox.svg'
+import cvent from '../assets/logos/cvent.svg'
+import jdpower from '../assets/logos/jdpower.svg'
+import reuters from '../assets/logos/reuters.svg'
 
 export const query = graphql`
   query {
@@ -104,6 +111,9 @@ export const query = graphql`
           ...GatsbyImageSharpFixed
         }
       }
+    }
+    testimonialsBg: file(relativePath: { eq: "testimonials-bg.png" }) {
+      ...windowWide
     }
   }
 `
@@ -332,6 +342,79 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
   )
 }
 
+const Numbers = () => {
+  const [inViewRef, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      const countUp1 = new CountUp(n1.current, 314, {
+        // startVal: 314 - 27,
+        duration: 3,
+      })
+      countUp1.start()
+
+      const countUp2 = new CountUp(n2.current, 27, {
+        // startVal: 27 - 27,
+        duration: 3,
+      })
+      countUp2.start()
+
+      const countUp3 = new CountUp(n3.current, 81, {
+        // startVal: 81 - 27,
+        duration: 3,
+      })
+      countUp3.start()
+
+      const countUp4 = new CountUp(n4.current, 43, {
+        // startVal: 43 - 27,
+        duration: 3,
+      })
+      countUp4.start()
+    }
+  }, [inView])
+
+  const n1 = useRef()
+  const n2 = useRef()
+  const n3 = useRef()
+  const n4 = useRef()
+
+  return (
+    <section
+      ref={inViewRef}
+      className="flex flex-col items-center relative py-20 bg-black"
+    >
+      <Container as="ul" className="flex">
+        <AutoFade delay={0 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            <span ref={n1}></span>M
+          </div>
+          <p className="text-gray-600">Over 314 million Attendees Impacted</p>
+        </AutoFade>
+        <AutoFade delay={1 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            <span ref={n2}></span>
+          </div>
+          <p className="text-gray-600">Topics Addressed</p>
+        </AutoFade>
+        <AutoFade delay={2 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            <span ref={n3}></span>
+          </div>
+          <p className="text-gray-600">Countries for Live Presentations</p>
+        </AutoFade>
+        <AutoFade delay={3 * 150} className="flex-1 text-center">
+          <div className="text-white" css={{ fontSize: 78 }}>
+            <span ref={n4}></span>,000
+          </div>
+          <p className="mx-auto text-gray-600" css={{ maxWidth: '20em' }}>
+            Years from when the first musical instrument was found
+          </p>
+        </AutoFade>
+      </Container>
+    </section>
+  )
+}
+
 const IndexPage = ({ data }) => (
   <>
     <SEO />
@@ -511,36 +594,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
       </Container>
     </section>
-    <section className="flex flex-col items-center relative py-20 bg-black">
-      <Container as="ul" className="flex">
-        <AutoFade delay={0 * 150} className="flex-1 text-center">
-          <div className="text-white" css={{ fontSize: 78 }}>
-            314M
-          </div>
-          <p className="text-gray-600">Over 314 million Attendees Impacted</p>
-        </AutoFade>
-        <AutoFade delay={1 * 150} className="flex-1 text-center">
-          <div className="text-white" css={{ fontSize: 78 }}>
-            27
-          </div>
-          <p className="text-gray-600">Topics Addressed</p>
-        </AutoFade>
-        <AutoFade delay={2 * 150} className="flex-1 text-center">
-          <div className="text-white" css={{ fontSize: 78 }}>
-            81
-          </div>
-          <p className="text-gray-600">Countries for Live Presentations</p>
-        </AutoFade>
-        <AutoFade delay={3 * 150} className="flex-1 text-center">
-          <div className="text-white" css={{ fontSize: 78 }}>
-            43,000
-          </div>
-          <p className="mx-auto text-gray-600" css={{ maxWidth: '20em' }}>
-            Years from when the first musical instrument was found
-          </p>
-        </AutoFade>
-      </Container>
-    </section>
+    <Numbers />
     <section className="relative py-20 pb-24 bg-white">
       <Container className="flex flex-col items-center">
         <AutoFade>
@@ -714,7 +768,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <AutoFade>
           <ButtonLink to="/mission" className="mt-6 text-white">
-            OUR MISSION
+            Watch Our Mission
           </ButtonLink>
         </AutoFade>
         <MissionRings className="w-1/3 mt-16" />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Global } from '@emotion/core'
 import PhotoSwipe from 'photoswipe'
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 import 'photoswipe/dist/photoswipe.css'

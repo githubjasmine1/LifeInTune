@@ -14,7 +14,7 @@ const Arrow = props => (
 const FooterGallery = () => {
   const data = useStaticQuery(graphql`
     {
-      img01: file(relativePath: { eq: "gallery/freddie-stage.png" }) {
+      img01: file(relativePath: { eq: "gallery/freddie-tony.png" }) {
         ...photoSwipeImage
       }
       img02: file(relativePath: { eq: "gallery/freddie-audience.png" }) {
@@ -38,7 +38,7 @@ const FooterGallery = () => {
       img08: file(relativePath: { eq: "gallery/freddie-stage2.png" }) {
         ...photoSwipeImage
       }
-      img09: file(relativePath: { eq: "gallery/freddie-tony.png" }) {
+      img09: file(relativePath: { eq: "gallery/freddie-stage.png" }) {
         ...photoSwipeImage
       }
       img10: file(relativePath: { eq: "gallery/ravel-audience.png" }) {

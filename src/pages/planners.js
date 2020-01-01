@@ -65,33 +65,6 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <VideoPlayer
-            label="Watch speaking demo"
-            webroll={bgVideoColor}
-            video={
-              <iframe
-                src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                title="Watch The Experience"
-                allowFullScreen
-                className="w-full h-full absolute top-0 left-0 bg-black"
-              />
-            }
-            ratio={1080 / 1920}
-          />
-        </AutoSlide>
-      </div>
-    </section>
-    <div className="pb-20" css={{ backgroundColor: '#1b1b1b' }}>
-      <Container>
-        <h3
-          className="mx-auto font-display leading-none text-white uppercase text-center"
-          css={{ fontSize: '3.5vw', padding: '7vw 0', maxWidth: '20em' }}
-        >
-          TRANSFORM YOUR EVENT
-        </h3>
-
-        <AutoSlide up>
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3
               className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
@@ -179,8 +152,8 @@ const IndexPage = ({ data }) => (
             </div>
           </div>
         </AutoSlide>
-      </Container>
-    </div>
+      </div>
+    </section>
     <BookFreddie />
     <FooterGallery />
   </>
