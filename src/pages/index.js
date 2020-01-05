@@ -53,13 +53,6 @@ import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
 
-import anz from '../assets/logos/anz.svg'
-import bluecross from '../assets/logos/bluecross.svg'
-import cox from '../assets/logos/cox.svg'
-import cvent from '../assets/logos/cvent.svg'
-import jdpower from '../assets/logos/jdpower.svg'
-import reuters from '../assets/logos/reuters.svg'
-
 export const query = graphql`
   query {
     freddieHero: file(relativePath: { eq: "Freddie-hero.png" }) {

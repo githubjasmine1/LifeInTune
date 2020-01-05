@@ -38,6 +38,27 @@ export const query = graphql`
         }
       }
     }
+    carlosSantana: file(relativePath: { eq: "carlos-santana.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    madonna: file(relativePath: { eq: "madonna.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    chopra: file(relativePath: { eq: "chopra.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     testimonialsBg: file(relativePath: { eq: "testimonials-bg.png" }) {
       ...windowWide
     }
@@ -83,15 +104,160 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
     <div className="pb-20" css={{ backgroundColor: '#1b1b1b' }}>
-      <Container>
-        <h3
-          className="mx-auto font-display leading-none text-white uppercase text-center"
-          css={{ fontSize: '3.5vw', paddingTop: '7vw' }}
-        >
-          BUZZ & Accolades
-        </h3>
-      </Container>
+      <AutoFade>
+        <Container>
+          <h3
+            className="mx-auto font-display leading-none text-white uppercase text-center"
+            css={{ fontSize: '3.5vw', paddingTop: '7vw' }}
+          >
+            BUZZ & Accolades
+          </h3>
+        </Container>
+      </AutoFade>
     </div>
+    <section
+      className="flex flex-col items-center relative py-20"
+      css={{ backgroundColor: '#1b1b1b' }}
+    >
+      <Container>
+        <AutoSlide as="blockquote" className="relative bg-white">
+          <svg
+            viewBox="0 0 146.9 95.8"
+            className="w-24 h-24 absolute left-0 ml-12"
+            css={{ top: '-3.1rem' }}
+          >
+            <path
+              fill="#c1b063"
+              d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
+            />
+          </svg>
+          <div className="relative px-12 py-20">
+            <div
+              className="inline-flex flex-col items-center"
+              css={{ width: 'calc(100% - 28% + 2%)' }}
+            >
+              <p className="font-display text-3xl text-gray-1000 text-center uppercase">
+                “Freddie es puro corazon.”
+              </p>
+              <p
+                className="mt-3 text-gray-600 text-center"
+                css={{ maxWidth: '26em' }}
+              >
+                Carlos Santana, Rock and Roll Hall of Fame, 8 Grammys and over
+                100 million albums sold
+              </p>
+            </div>
+            <Img
+              fluid={data.carlosSantana.childImageSharp.fluid}
+              css={{
+                width: '28%',
+                position: 'absolute !important',
+                bottom: 0,
+                right: '-5%',
+              }}
+            />
+          </div>
+          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+            CARLOS SANTANA
+          </div>
+        </AutoSlide>
+        <AutoSlide
+          right
+          as="blockquote"
+          className="relative bg-white"
+          css={{ marginTop: '8vw' }}
+        >
+          <svg
+            viewBox="0 0 146.9 95.8"
+            className="w-24 h-24 absolute left-0 ml-12"
+            css={{ top: '-3.1rem' }}
+          >
+            <path
+              fill="#c1b063"
+              d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
+            />
+          </svg>
+          <div className="relative px-12 py-20">
+            <Img
+              fluid={data.madonna.childImageSharp.fluid}
+              css={{
+                width: '20%',
+                position: 'absolute !important',
+                bottom: 0,
+                left: '10%',
+              }}
+            />
+            <div
+              className="flex flex-col items-center ml-auto"
+              css={{ width: 'calc(100% - 28% + 2%)' }}
+            >
+              <p className="font-display text-3xl text-gray-1000 text-center uppercase">
+                “Freddie is brilliant.”
+              </p>
+              <p
+                className="mt-3 text-gray-600 text-center"
+                css={{ maxWidth: '28em' }}
+              >
+                Madonna, regarding Freddie’s studio and live performances with
+                her for the flim, “EVITA”
+              </p>
+            </div>
+          </div>
+          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+            Madonna
+          </div>
+        </AutoSlide>
+        <AutoSlide
+          as="blockquote"
+          className="relative bg-white"
+          css={{ marginTop: '8vw' }}
+        >
+          <svg
+            viewBox="0 0 146.9 95.8"
+            className="w-24 h-24 absolute left-0 ml-12"
+            css={{ top: '-3.1rem' }}
+          >
+            <path
+              fill="#c1b063"
+              d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
+            />
+          </svg>
+          <div className="relative px-12 py-16">
+            <div
+              className="inline-flex flex-col items-center"
+              css={{ width: 'calc(100% - 28% + 2%)' }}
+            >
+              <p
+                className="font-display text-3xl leading-tight text-gray-1000 text-center uppercase"
+                css={{ maxWidth: '23em' }}
+              >
+                “Freddie’s spirit is infinite silence and dynamism at the same
+                time.”
+              </p>
+              <p
+                className="mt-4 text-gray-600 text-center"
+                css={{ maxWidth: '26em' }}
+              >
+                Dr. Deepak Chopra, TIME magazine: “One of the top 100 heroes and
+                icons of the 20th century.”
+              </p>
+            </div>
+            <Img
+              fluid={data.chopra.childImageSharp.fluid}
+              css={{
+                width: '20%',
+                position: 'absolute !important',
+                bottom: 0,
+                right: '4%',
+              }}
+            />
+          </div>
+          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+            Dr. Deepak Chopra
+          </div>
+        </AutoSlide>
+      </Container>
+    </section>
     <section
       className="flex flex-col items-center relative py-20 bg-white"
       css={{ paddingBottom: '17vw', background: '#f4f4f4' }}

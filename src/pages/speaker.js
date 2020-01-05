@@ -280,7 +280,6 @@ const IndexPage = ({ data }) => (
       <Swiper
         {...{
           freeMode: true,
-          initialSlide: 1000,
           slidesPerView: 4,
           spaceBetween: 30,
           grabCursor: true,

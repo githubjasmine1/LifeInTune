@@ -3,14 +3,10 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import SEO from '../components/SEO'
-import Container from '../components/Container'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
-import VideoPlayer from '../components/VideoPlayer'
 import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
-
-import bgVideoColor from '../assets/bg-video-color.mp4'
 
 export const query = graphql`
   query {
