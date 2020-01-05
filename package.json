@@ -1,7 +1,7 @@
 {
   "name": "lifeintune.com",
   "scripts": {
-    "build": "gatsby build",
+    "build": "echo SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY >> .env.production && gatsby build",
     "develop": "gatsby develop --open",
     "start": "npm run develop",
     "serve": "gatsby serve --open",
