@@ -137,7 +137,7 @@ const ContactForm = () => {
                 <div className="flex items-center">
                   <svg
                     viewBox="0 0 48 47"
-                    className="w-6 h-6 ml-4 -mr-10 relative fill-current"
+                    className="w-6 h-6 ml-4 -mr-10 relative fill-current pointer-events-none"
                   >
                     <path d="M47 4.3h-5.8V0h-2v4.3h-4.6V0h-2v4.3H15.4V0h-2v4.3H8.8V0h-2v4.3H1c-.6 0-1 .4-1 1V46c0 .6.4 1 1 1h46c.6 0 1-.4 1-1V5.3c0-.6-.4-1-1-1zm-40.2 2v3.2h2V6.3h4.6v3.2h2V6.3h17.2v3.2h2V6.3h4.6v3.2h2V6.3H46v6.6H2V6.3h4.8zM2 45V14.9h44V45H2z" />
                     <path d="M11.3 18.2H6.6c-.6 0-1 .4-1 1v4.7c0 .6.4 1 1 1h4.7c.6 0 1-.4 1-1v-4.7c0-.6-.4-1-1-1zm-1 4.7H7.6v-2.7h2.7v2.7z" />
