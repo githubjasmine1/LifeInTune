@@ -44,7 +44,11 @@ const ContactForm = () => {
         message: Yup.string(),
       })}
       onSubmit={(formData, { setStatus }) => {
-        // return console.log(formData)
+        const recaptchaValue = recaptchaRef.current.getValue()
+
+        if (!recaptchaValue) {
+          return alert('Please complete Google ReCaptcha verification below')
+        }
 
         fetch('/', {
           method: 'POST',
@@ -53,7 +57,7 @@ const ContactForm = () => {
           },
           body: encode({
             'form-name': 'contact',
-            'g-recaptcha-response': recaptchaRef.current.getValue(),
+            'g-recaptcha-response': recaptchaValue,
             ...formData,
           }),
         })
