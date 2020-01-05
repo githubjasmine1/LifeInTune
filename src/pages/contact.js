@@ -70,6 +70,7 @@ const ContactForm = () => {
         handleBlur,
       }) => (
         <Form
+          name="contact"
           data-netlify="true"
           data-netlify-recaptcha="true"
           className="h-full"
