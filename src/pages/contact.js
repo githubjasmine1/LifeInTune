@@ -249,7 +249,7 @@ const ContactForm = () => {
               <div className="w-full px-4 py-2">
                 <Recaptcha
                   ref={recaptchaRef}
-                  sitekey={process.env.GATSBY_APP_SITE_RECAPTCHA_KEY || 'test'}
+                  sitekey={process.env.SITE_RECAPTCHA_KEY || 'test'}
                   className="mt-2"
                 />
               </div>
