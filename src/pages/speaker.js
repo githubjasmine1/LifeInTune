@@ -99,7 +99,39 @@ export const query = graphql`
       ...textContainerWide
     }
     tl2015DonMiguel: file(
-      relativePath: { eq: "timeline/2015-don-miguel.png" }
+      relativePath: { eq: "timeline/freddie-ravel-don-miguel.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    felipeCaldron: file(
+      relativePath: { eq: "timeline/freddie-ravel-felipe-caldron.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    rajivGhandi: file(
+      relativePath: { eq: "timeline/freddie-ravel-rajiv-ghandi.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    thailand: file(
+      relativePath: { eq: "timeline/freddie-ravel-thailand.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    georgeBenson: file(
+      relativePath: { eq: "timeline/freddie-ravel-george-benson.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    achuarTribe: file(
+      relativePath: { eq: "timeline/freddie-ravel-achuar-tribe.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    cityOfLosAngelesAward: file(
+      relativePath: {
+        eq: "timeline/freddie-ravel-city-of-los-angeles-award.jpg"
+      }
     ) {
       ...textContainerWide
     }
@@ -262,7 +294,7 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
     <section
-      className="relative z-0 px-20 pt-20 pb-10 text-white"
+      className="relative z-0 px-20 pt-20 pb-10 text-white overflow-hidden"
       css={{
         backgroundColor: '#1b1b1b',
         '.swiper-container': {
@@ -299,6 +331,25 @@ const IndexPage = ({ data }) => (
           >
             <Img fluid={data.tl1988Sergiomendes.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">Sergio Mendes</div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            1989
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.rajivGhandi.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Director of USA-Indian Nehru Centenary concert for the Prime
+              Minister of India, Rajiv Ghandi
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -397,6 +448,25 @@ const IndexPage = ({ data }) => (
             css={{ width: 13, height: 13 }}
           ></div>
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            1999
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.thailand.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Freddie brings his band to Bangkok to perform for the King of
+              Thailand
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2001
           </div>
           <div
@@ -442,6 +512,63 @@ const IndexPage = ({ data }) => (
             <Img fluid={data.tl2003Mlk.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Open my Eyes, Open my Soul
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2006
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.georgeBenson.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Produced and Co-wrote “Givin’ it Up for Love”, the title track of
+              George Benson and Al Jarreau’s double-Grammy-award-winning project
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2008
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.achuarTribe.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Intercultural ambassador and environmental steward with the Achuar
+              tribe leaders of the Amazon, Ecuador, S.A.
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2009
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.cityOfLosAngelesAward.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Awarded by the City of Los Angeles for a music-based system to
+              “renew the national and international economy.”
             </div>
           </div>
         </div>
@@ -527,7 +654,26 @@ const IndexPage = ({ data }) => (
           >
             <Img fluid={data.tl2015DonMiguel.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
-              Don Miguel Ruiz Collaborations
+              Creating with author of ‘The Four Agreements
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2016
+          </div>
+          <div
+            className="w-full transition"
+            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+          >
+            <Img fluid={data.felipeCaldron.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Speaking at IASB alongside Mexico’s former President, Felipe
+              Caldron
             </div>
           </div>
         </div>
