@@ -294,27 +294,44 @@ const IndexPage = ({ data }) => (
       </div>
     </section>
     <section
-      className="relative z-0 px-20 pt-20 pb-10 text-white overflow-hidden"
+      className="relative z-0 px-5 lg:px-20 pt-10 lg:pt-20 pb-5 lg:pb-10 text-white overflow-hidden"
       css={{
         backgroundColor: '#1b1b1b',
         '.swiper-container': {
           overflow: 'visible !important',
+        },
+        '.img-hover-effect': {
+          '@media (hover: hover)': {
+            filter: 'grayscale(1)',
+            ':hover': { filter: 'none' },
+          },
         },
       }}
     >
       <div
         className="w-full h-px absolute left-0 bg-gray-600"
         css={{
-          top: 'calc(20 * 4 / 16 * 1rem +  6 / 16 * 1rem)',
+          top: 'calc(10 * 4 / 16 * 1rem +  6 / 16 * 1rem)',
+          [media.laptop]: { top: 'calc(20 * 4 / 16 * 1rem +  6 / 16 * 1rem)' },
           zIndex: -1,
         }}
       ></div>
       <Swiper
         {...{
-          freeMode: true,
-          slidesPerView: 4,
-          spaceBetween: 30,
+          spaceBetween: 20,
           grabCursor: true,
+          slidesPerView: 1.1,
+          breakpoints: {
+            600: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              freeMode: true,
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          },
         }}
       >
         <div className="flex flex-col items-center">
@@ -325,10 +342,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1988-90
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1988Sergiomendes.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">Sergio Mendes</div>
           </div>
@@ -341,10 +355,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1989
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.rajivGhandi.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Director of USA-Indian Nehru Centenary concert for the Prime
@@ -360,10 +371,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1990
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1990RavelAlbum1.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               1st Solo Release: Midnight Passion on Verve 1990
@@ -378,10 +386,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1990-95
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1995Earthwindfire.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Earth, Wind and Fire
@@ -396,10 +401,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1995
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1995Chopra.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Deepak Chopra Seminars - "Life in Tune” Presentation debut
@@ -414,10 +416,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1996
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1996RavelAlbum2.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               2nd Solo Release: Sol to Soul on Verve
@@ -432,10 +431,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1996
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1996EvitaFilm.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Madonna - 1996 “Evita” Film
@@ -450,10 +446,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             1999
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.thailand.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Freddie brings his band to Bangkok to perform for the King of
@@ -469,10 +462,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2001
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2001RavelAlbum3.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               3rd Solo Release: Freddie Ravel, Universal
@@ -487,10 +477,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2001
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2001Top30chart.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               #1 song in America on R&R Charts - Sunny Side Up 2001
@@ -505,10 +492,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2003
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2003Mlk.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Open my Eyes, Open my Soul
@@ -523,10 +507,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2006
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.georgeBenson.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Produced and Co-wrote “Givin’ it Up for Love”, the title track of
@@ -542,10 +523,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2008
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.achuarTribe.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Intercultural ambassador and environmental steward with the Achuar
@@ -561,10 +539,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2009
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.cityOfLosAngelesAward.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Awarded by the City of Los Angeles for a music-based system to
@@ -580,10 +555,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2009
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2009Santanatour.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">Santana World Tour</div>
           </div>
@@ -596,10 +568,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2010
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2010FreddieSantana.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">Santana World Tour</div>
           </div>
@@ -612,10 +581,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2011
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2011Santana.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Santana’s Guitar Heaven
@@ -630,10 +596,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2014
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2014RavelAlbum4.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               4th Solo Release: If Music Could Speak
@@ -648,10 +611,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2015
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2015DonMiguel.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Creating with author of ‘The Four Agreements
@@ -666,10 +626,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             2016
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <Img fluid={data.felipeCaldron.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Speaking at IASB alongside Mexico’s former President, Felipe
@@ -685,10 +642,7 @@ const IndexPage = ({ data }) => (
           <div className="mb-4 font-display text-3xl text-gold-300 text-center">
             PRESENT
           </div>
-          <div
-            className="w-full transition"
-            css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
-          >
+          <div className="img-hover-effect w-full transition">
             <div css={{ display: 'grid' }}>
               <Img
                 fluid={data.tl2019Lit.childImageSharp.fluid}

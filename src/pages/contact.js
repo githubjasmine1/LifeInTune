@@ -84,7 +84,7 @@ const ContactForm = () => {
               <img src={litSignetBlack} alt="Logo" className="w-64 mb-10" />
               <div
                 className="font-display leading-none uppercase text-center"
-                css={{ fontSize: '3.5vw' }}
+                css={{ fontSize: '3.2vw' }}
               >
                 THANK YOU!
               </div>
@@ -326,7 +326,7 @@ const IndexPage = ({ data }) => (
         >
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-xl sm:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',

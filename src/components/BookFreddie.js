@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 
 import ButtonLink from './ButtonLink'
 import { AutoSlide, AutoFade } from './Animated'
+import { media } from '../styles/tools'
 
 const BookFreddie = () => {
   const data = useStaticQuery(graphql`
@@ -32,10 +33,9 @@ const BookFreddie = () => {
         className="w-full h-full top-0 left-0"
         css={{ position: 'absolute !important' }}
       />
-
       <AutoFade>
         <h3
-          className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+          className="relative font-display font-hairline text-xl sm:text-3xl text-gold-500 leading-tight text-center uppercase"
           css={{
             maxWidth: '16em',
             backgroundImage:
@@ -56,7 +56,16 @@ const BookFreddie = () => {
         <Img
           fluid={data.freddie.childImageSharp.fluid}
           className="mt-6"
-          css={{ width: '25vw', marginBottom: '-24vw', marginLeft: '-2vw' }}
+          css={{
+            width: '50vw',
+            marginBottom: '-50vw',
+            marginLeft: '-2vw',
+            [media.tabletMd]: {
+              width: '25vw',
+              marginBottom: '-24vw',
+              marginLeft: '-2vw',
+            },
+          }}
         />
       </AutoSlide>
     </section>

@@ -94,7 +94,7 @@ const IndexPage = ({ data }) => (
       <Container>
         <h3
           className="mx-auto font-display leading-none text-white uppercase text-center"
-          css={{ fontSize: '3.5vw', padding: '7vw 0', maxWidth: '20em' }}
+          css={{ fontSize: '3.2vw', padding: '7vw 0', maxWidth: '20em' }}
         >
           FEATURED KEYNOTE TOPICS
         </h3>

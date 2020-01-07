@@ -52,6 +52,8 @@ import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
+import useMedia from '../hooks/useMedia'
+import { media } from '../styles/tools'
 
 export const query = graphql`
   query {
@@ -243,6 +245,7 @@ const Demo = () => {
           as="button"
           onClick={() => setIsOpen(true)}
           className="mt-8 outline-none"
+          css={{ [media.max.tabletMd]: { fontSize: 11 } }}
           icon={
             <svg
               viewBox="0 0 150 150"
@@ -326,11 +329,13 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
         muted
         className="w-full h-full absolute top-0 left-0 object-cover"
       ></video>
-      <Waves
-        className="w-full absolute left-0 pointer-events-none"
-        css={{ bottom: '-20vw' }}
-        onComplete={() => setWavesCompleted(true)}
-      />
+      {useMedia('(min-width: 768px)') && (
+        <Waves
+          className="w-full absolute left-0 pointer-events-none"
+          css={{ bottom: '-20vw' }}
+          onComplete={() => setWavesCompleted(true)}
+        />
+      )}
     </>
   )
 }
@@ -412,23 +417,31 @@ const IndexPage = ({ data }) => (
   <>
     <SEO />
     <section
-      className="flex flex-col items-center relative text-white"
-      css={{ height: 'calc(50vh + 28vw)', backgroundColor: '#2a282a' }}
+      className="flex flex-col items-center h-screen relative text-white"
+      css={{
+        backgroundColor: '#2a282a',
+        [media.tabletMd]: { height: 'calc(50vh + 28vw)' },
+      }}
     >
       <CrazyShenanigans
         video={headerBg}
         videoPoster={data.headerBgPoster.childImageSharp.fixed.src}
       />
-      <div className="w-full h-full absolute top-0 left-0 pointer-events-none overflow-hidden">
+      <div className="w-full md:h-full md:absolute order-last md:order-first mt-auto md:mt-0 top-0 left-0 pointer-events-none overflow-hidden">
         <AutoScale
           up
           delay={300}
           duration={2000}
           css={{
-            width: '45vw',
-            left: '-15vw',
-            bottom: '-9vw',
-            position: 'absolute !important',
+            width: '80vw',
+            margin: '2rem 0 -10vw 5vw',
+            [media.tabletMd]: {
+              margin: 0,
+              position: 'absolute !important',
+              width: '45vw',
+              left: '-15vw',
+              bottom: '-9vw',
+            },
           }}
         >
           <Img
@@ -447,7 +460,7 @@ const IndexPage = ({ data }) => (
           up
           delay={100}
           className="font-display font-hairline leading-tight uppercase text-center"
-          css={{ fontSize: '3.2vw' }}
+          css={{ fontSize: '8vw', [media.tabletMd]: { fontSize: '3.2vw' } }}
         >
           <RotateWords
             words={['Amplify Success', 'Unlock Potential', 'Increase Business']}
@@ -479,7 +492,7 @@ const IndexPage = ({ data }) => (
               fluid={data.expert.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
               Communication
               <br />
               expert
@@ -504,7 +517,7 @@ const IndexPage = ({ data }) => (
               fluid={data.speaker.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
               Business
               <br />
               speaker
@@ -530,7 +543,7 @@ const IndexPage = ({ data }) => (
               fluid={data.performer.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
               Celebrated
               <br />
               perfomer
@@ -558,7 +571,7 @@ const IndexPage = ({ data }) => (
       <Container>
         <AutoFade
           as="h3"
-          className="relative font-display font-hairline text-3xl leading-tight text-center uppercase"
+          className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center uppercase"
           css={{
             backgroundImage:
               'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -592,7 +605,7 @@ const IndexPage = ({ data }) => (
       <Container className="flex flex-col items-center">
         <AutoFade>
           <h3
-            className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase"
+            className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase"
             css={{ maxWidth: '27em' }}
           >
             Inspiring Entrepreneurs, Start-ups and The Fortune 100
@@ -603,21 +616,39 @@ const IndexPage = ({ data }) => (
           css={{
             width: '100%',
             display: 'grid',
-            gridTemplateColumns: 'repeat(6, 1fr)',
-            gridGap: '1vw',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridGap: 10,
+            [media.tablet]: {
+              gridTemplateColumns: 'repeat(3, 1fr)',
+            },
+            [media.laptop]: {
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              gridGap: '1vw',
+            },
             li: {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: '#efefef',
-              padding: '3vw',
+              padding: '6vw',
+              [media.laptop]: {
+                padding: '3vw',
+              },
             },
             img: {
               display: 'block',
-              width: '6.5vw',
-              height: '6.5vw',
+              width: '20vw',
+              height: '12vw',
               objectFit: 'contain',
               opacity: 0.5,
+              // [media.tablet]: {
+              //   width: '6.5vw',
+              //   height: '6.5vw',
+              // },
+              [media.laptop]: {
+                width: '6.5vw',
+                height: '6.5vw',
+              },
             },
           }}
         >
@@ -697,7 +728,7 @@ const IndexPage = ({ data }) => (
       <Container className="relative">
         <AutoFade>
           <h3
-            className="relative mt-6 font-display font-hairline text-3xl leading-tight uppercase"
+            className="relative mt-6 font-display font-hairline text-xl sm:text-3xl leading-tight uppercase"
             css={{
               backgroundImage:
                 'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -738,7 +769,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <AutoFade>
           <h3
-            className="relative mt-6 font-display font-hairline text-3xl leading-tight text-center uppercase"
+            className="relative mt-6 font-display font-hairline text-xl sm:text-3xl leading-tight text-center uppercase"
             css={{
               maxWidth: '16em',
               backgroundImage:
@@ -775,11 +806,11 @@ const IndexPage = ({ data }) => (
       />
       <Container>
         <AutoFade>
-          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
+          <h3 className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase">
             Featured keynote topics
           </h3>
         </AutoFade>
-        <ul className="flex -m-5 mt-12 relative">
+        <ul className="flex flex-col lg:flex-row -m-5 mt-12 relative">
           <AutoFade
             as="li"
             delay={0 * 100}

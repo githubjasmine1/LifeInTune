@@ -11,10 +11,11 @@ import VideoPlayer from '../components/VideoPlayer'
 import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
 
-import bgVideoColor from '../assets/bg-video-color.mp4'
-
 export const query = graphql`
   query {
+    missionPoster: file(relativePath: { eq: "freddie-mission-video.png" }) {
+      ...pageContainerWide
+    }
     waves: file(relativePath: { eq: "gold-wave.png" }) {
       childImageSharp {
         fluid(maxWidth: 2500, quality: 80) {
@@ -61,10 +62,11 @@ const IndexPage = ({ data }) => (
         >
           <VideoPlayer
             // label="Watch speaking demo"
-            webroll={bgVideoColor}
+            // webroll={}
+            poster={<Img fluid={data.missionPoster.childImageSharp.fluid} />}
             video={
               <iframe
-                src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
+                src="https://www.youtube.com/embed/foAQL5Dp4QY?autoplay=1"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 title="Watch The Experience"
                 allowFullScreen
@@ -80,7 +82,7 @@ const IndexPage = ({ data }) => (
       <Container>
         <h3
           className="mx-auto font-display leading-none text-white uppercase text-center"
-          css={{ fontSize: '3.5vw', paddingTop: '7vw', maxWidth: '13em' }}
+          css={{ fontSize: '3.2vw', paddingTop: '7vw', maxWidth: '13em' }}
         >
           DISCOVER YOUR LIFE IN TUNE
         </h3>

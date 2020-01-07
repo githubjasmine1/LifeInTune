@@ -31,11 +31,12 @@ const PlayButton = ({ size = 160, color = '#fff' }) => (
   </svg>
 )
 
-const WebrollPlayer = ({
-  label,
+const VideoPlaceholder = ({
   visible,
-  src,
+  label,
   ratio = 1080 / 1920,
+  webroll,
+  poster,
   ...rest
 }) => (
   <div className="transition-slow ease-out cursor-pointer" {...rest}>
@@ -54,20 +55,24 @@ const WebrollPlayer = ({
             display: 'block',
             paddingTop: `${ratio * 100}%`,
           },
-          '& video': {
+          '> *': {
             display: 'block',
             width: '100%',
             height: '100%',
-            position: 'absolute',
+            position: 'absolute !important',
             left: 0,
             top: 0,
             objectFit: 'cover',
           },
         }}
       >
-        <video autoPlay loop playsInline muted>
-          <source src={src} type="video/mp4" />
-        </video>
+        {webroll ? (
+          <video autoPlay loop playsInline muted>
+            <source src={webroll} type="video/mp4" />
+          </video>
+        ) : (
+          poster
+        )}
       </div>
       <div
         css={{
@@ -91,24 +96,25 @@ const WebrollPlayer = ({
   </div>
 )
 
-const VideoPlayer = ({ label, webroll, video, ratio, ...props }) => {
-  const [webrollPlaying, setWebrollPlaying] = useState(true)
+const VideoPlayer = ({ label, webroll, poster, video, ratio, ...props }) => {
+  const [placeholderVisible, setPlaceholderVisible] = useState(true)
 
   return (
     <div css={{ position: 'relative' }} {...props}>
       <div className="w-full relative">
         <div css={{ paddingTop: `${ratio * 100}%` }} />
-        {!webrollPlaying && video}
+        {!placeholderVisible && video}
       </div>
-      <WebrollPlayer
+      <VideoPlaceholder
         label={label}
-        style={{
-          opacity: webrollPlaying ? 1 : 0,
-          visibility: webrollPlaying ? 'visible' : 'hidden',
-        }}
-        onClick={() => setWebrollPlaying(false)}
-        src={webroll}
         ratio={ratio}
+        webroll={webroll}
+        poster={poster}
+        onClick={() => setPlaceholderVisible(false)}
+        style={{
+          opacity: placeholderVisible ? 1 : 0,
+          visibility: placeholderVisible ? 'visible' : 'hidden',
+        }}
       />
     </div>
   )

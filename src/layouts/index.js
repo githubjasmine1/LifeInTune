@@ -10,6 +10,7 @@ import Link from '../components/Link'
 import ButtonLink from '../components/ButtonLink'
 import Logo from '../components/Logo'
 import { AutoFade } from '../components/Animated'
+import { media } from '../styles/tools'
 
 const Navbar = props => {
   const isBelow = useScrolledBelow(30)
@@ -153,18 +154,22 @@ const Footer = props => {
 
   return (
     <footer
-      className="relative py-20 text-white"
+      className="relative py-20 pt-10 lg:pt-20 text-white"
       css={{ backgroundColor: '#0a0a0a' }}
       {...props}
     >
       <Container
         css={{
           display: 'grid',
-          gridTemplateColumns: '1fr 2fr .5fr .5fr',
+          gridTemplateColumns: '1fr 1fr',
           gridGap: 32,
+
+          [media.laptop]: {
+            gridTemplateColumns: '1fr 2fr .5fr .5fr',
+          },
         }}
       >
-        <div className="flex flex-col items-center">
+        <div className="hidden lg:flex flex-col items-center">
           <Img
             fluid={data.goldLogo.childImageSharp.fluid}
             css={{ width: 150 }}
@@ -175,21 +180,33 @@ const Footer = props => {
             Life In Tune™ with Freddie Ravel.
           </p>
         </div>
-        <div className="">
-          <p css={{ maxWidth: '30em' }}>
-            Freddie Ravel Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ligula ullamcorper malesuada proin libero nunc consequat
-            interdum varius.
-          </p>
+        <div
+          css={{ gridColumn: 'span 2', [media.laptop]: { gridColumn: 'auto' } }}
+        >
+          <div className="flex items-center">
+            <p
+              className="flex-1 text-xs md:text-sm lg:text-base"
+              css={{ [media.laptopLg]: { maxWidth: '30em' } }}
+            >
+              Freddie Ravel Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ligula ullamcorper malesuada proin libero nunc consequat
+              interdum varius.
+            </p>
+            <Img
+              fluid={data.goldLogo.childImageSharp.fluid}
+              className="lg:hidden ml-5"
+              css={{ width: 85 }}
+            />
+          </div>
           <Link
             out
             href="https://www.google.pl/maps/place/22287+Mulholland+Hwy+%23516,+Calabasas,+CA+91302,+Stany+Zjednoczone/@34.1485337,-118.6140125,13.84z/data=!4m5!3m4!1s0x80c29ee517aca377:0x493574b19ff5cd59!8m2!3d34.1468839!4d-118.6130005"
-            className="flex items-start mt-5 hover:text-gold-300 transition"
+            className="flex items-start mt-6 hover:text-gold-300 transition"
           >
             <svg
               viewBox="0 0 34 26.18"
-              className="w-4 h-4 mt-1 mr-3 stroke-current"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current"
             >
               <g fill="none" strokeWidth="2">
                 <path
@@ -217,7 +234,7 @@ const Footer = props => {
           >
             <svg
               viewBox="0 0 30.927 36.025"
-              className="w-4 h-4 mt-1 mr-3 stroke-current"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current"
             >
               <path
                 fill="none"
@@ -230,7 +247,7 @@ const Footer = props => {
             +1-857-267-3669
           </Link>
         </div>
-        <ul className="">
+        <ul>
           <li>
             <Link to="/" className="hover:text-gold-300 transition">
               Home
@@ -262,7 +279,7 @@ const Footer = props => {
             </Link>
           </li>
         </ul>
-        <div className="">
+        <div>
           <h3 className="text-gold-500">Social Media</h3>
           <ul className="mt-2">
             <li>
@@ -330,8 +347,8 @@ const Footer = props => {
         <Link
           out
           href="https://advictorem.agency"
-          className="block absolute right-0 bottom-0 mr-6 mb-5 text-gray-700 hover:text-white transition"
-          css={{ width: 28, height: 28 }}
+          className="block w-6 h-6 absolute right-0 bottom-0 mr-6 mb-5 text-gray-700 hover:text-white transition"
+          css={{ [media.tablet]: { width: 28, height: 28 } }}
         >
           <svg viewBox="0 0 153.4 128.1" fill="currentColor">
             <title>Design by Ad Victorem</title>

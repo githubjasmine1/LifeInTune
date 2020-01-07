@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Swiper from 'react-id-swiper'
 import 'swiper/css/swiper.css'
 
+import { media } from '../styles/tools'
+
 import Gallery from './Gallery'
 
 const Arrow = props => (
@@ -73,19 +75,29 @@ const FooterGallery = () => {
           <Swiper
             {...{
               // freeMode: true,
-              slidesPerView: 5,
+              slidesPerView: 2.35,
               navigation: {
                 nextEl: '.next-arrow',
                 prevEl: '.prev-arrow',
               },
+              breakpoints: {
+                600: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+              },
               renderPrevButton: () => (
                 <button
-                  className="prev-arrow w-10 h-10 -mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
+                  className="prev-arrow w-8 h-8 lg:w-10 lg:h-10 -mt-4 lg:-mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
                   css={{
                     top: '50%',
-                    left: 20,
+                    left: 10,
+                    [media.tablet]: { left: 20 },
                     '&.swiper-button-disabled': {
-                      opacity: 0.5,
+                      [media.tablet]: { opacity: 0.5 },
+                      opacity: 0,
                       pointerEvents: 'none',
                     },
                   }}
@@ -95,10 +107,11 @@ const FooterGallery = () => {
               ),
               renderNextButton: () => (
                 <button
-                  className="next-arrow w-10 h-10 -mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
+                  className="next-arrow w-8 h-8 lg:w-10 lg:h-10 -mt-4 lg:-mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
                   css={{
                     top: '50%',
-                    right: 20,
+                    right: 10,
+                    [media.tablet]: { right: 20 },
                     '&.swiper-button-disabled': {
                       opacity: 0.5,
                       pointerEvents: 'none',
@@ -121,7 +134,12 @@ const FooterGallery = () => {
                 <img
                   src={msrc}
                   className="w-full h-full object-cover transition cursor-pointer"
-                  css={{ filter: 'grayscale(1)', ':hover': { filter: 'none' } }}
+                  css={{
+                    '@media (hover: hover)': {
+                      filter: 'grayscale(1)',
+                      ':hover': { filter: 'none' },
+                    },
+                  }}
                 />
               </div>
             ))}

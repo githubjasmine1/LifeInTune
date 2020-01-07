@@ -21,6 +21,12 @@ import reuters from '../assets/logos/reuters.svg'
 import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import walmart from '../assets/logos/walmart.svg'
+import emLogo from '../assets/logos/em.svg'
+import microsoft from '../assets/logos/microsoft.svg'
+import iasb from '../assets/logos/iasb.svg'
+import sheraton from '../assets/logos/sheraton.svg'
+import morgan from '../assets/logos/morgan.svg'
+import roland from '../assets/logos/roland.svg'
 
 export const query = graphql`
   query {
@@ -108,7 +114,7 @@ const IndexPage = ({ data }) => (
         <Container>
           <h3
             className="mx-auto font-display leading-none text-white uppercase text-center"
-            css={{ fontSize: '3.5vw', paddingTop: '7vw' }}
+            css={{ fontSize: '3.2vw', paddingTop: '7vw' }}
           >
             BUZZ & Accolades
           </h3>
@@ -289,6 +295,41 @@ const IndexPage = ({ data }) => (
             className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
+            <img src={emLogo} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “The attendee reaction we received to Freddie Ravel’s presentation
+              at the cVent Elite Meetings Alliance last month was off the
+              charts! His message was smart, clear, humorous, entertaining,
+              energetic and provided real impactful lessons for our attendees.
+              Our morning audience was as engaged as I’ve ever seen them, and
+              thanks to Freddie, the rest of the day was as productive as I’ve
+              ever seen in the 11 years we’ve been having this event.”
+            </p>
+            <p className="mt-5 text-sm">
+              Kelly Foy, Founder of Elite Meetings International, a Cvent
+              Company
+            </p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={microsoft} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “Thank you for an amazing presentation. What you said about how
+              music applies to our business, listening and interaction with our
+              customers was absolutely phenomenal!”
+            </p>
+            <p className="mt-5 text-sm">
+              Colin McClive, Director of Financial Services, Microsoft
+            </p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
             <img src={cvent} alt="" className="block w-24 opacity-50" />
             <p className="mt-6">
               “The energy level was off the hook!
@@ -421,6 +462,61 @@ const IndexPage = ({ data }) => (
             <img src={reuters} alt="" className="block w-32 opacity-50" />
             <p className="mt-6">"A Fantastic Experience”</p>
             <p className="mt-5 text-sm">Reuters</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={iasb} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">
+              “Special thanks to Freddie for sharing his fabulous energy and
+              message at our 2016 Annual Convention!”
+            </p>
+            <p className="mt-5 text-sm">
+              IASB – International Association of Speakers Bureaus
+            </p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={sheraton} alt="" className="block w-24 opacity-50" />
+            <p className="mt-6">
+              “Learning Music’s role in leadership and how to ‘listen’ through
+              all the clutter of data – WOW!”
+            </p>
+            <p className="mt-5 text-sm">Sheraton Hotels & Resorts</p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={morgan} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “His powerful presentation was pure joy and full of valuable
+              lessons that we were able to implement immediately!”
+            </p>
+            <p className="mt-5 text-sm">
+              Lydia Hopps, Senior Executive Financial Strategist, Morgan Stanley
+            </p>
+          </AutoFade>
+          <AutoFade
+            as="li"
+            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            css={{ display: 'flex' }}
+          >
+            <img src={roland} alt="" className="block w-32 opacity-50" />
+            <p className="mt-6">
+              “Freddie’s message is as awe-inspiring as his talent is stunning–
+              he left my staff and I implementing his tools in our day-to-day
+              business and private lives.”
+            </p>
+            <p className="mt-5 text-sm">
+              Dennis Houlian, President, Roland Corporation, USA
+            </p>
           </AutoFade>
         </Masonry>
       </Container>
