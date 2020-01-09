@@ -176,12 +176,13 @@ const IndexPage = ({ data }) => (
             gridRow: 1,
             gridColumn: '1 / 4',
             zIndex: 3,
-            marginTop: '8vw',
+            marginTop: '5.4vw',
           }}
         >
           <Img
             fluid={data.freddie.childImageSharp.fluid}
             className="w-full self-start"
+            imgStyle={{ objectPosition: 'center top' }}
             css={{
               width: '100%',
               marginLeft: '8.5%',

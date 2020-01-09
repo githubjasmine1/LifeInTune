@@ -63,42 +63,92 @@ const IndexPage = ({ data }) => (
             className="w-full self-start select-none"
           />
         </AutoFade>
-        <AutoSlide
-          up
-          delay={300}
+        <Container
           css={{
             gridRow: 1,
-            gridColumn: '2 / -2',
+            gridColumn: '1 / -1',
             zIndex: 3,
             marginTop: '13.5vw',
           }}
         >
-          <VideoPlayer
-            label="Watch speaking demo"
-            webroll={bgVideoColor}
-            video={
-              <iframe
-                src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                title="Watch The Experience"
-                allowFullScreen
-                className="w-full h-full absolute top-0 left-0 bg-black"
+          <AutoSlide up delay={300} className="mb-32">
+            <header className="flex justify-center px-6 py-12 bg-black">
+              <h3
+                className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+                css={{
+                  backgroundImage:
+                    'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                The Rhythm of Success
+              </h3>
+            </header>
+            <div className="flex bg-white">
+              <VideoPlayer
+                className="flex-1 self-start"
+                css={{
+                  transform: 'translate(-48px, 48px)',
+                  boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
+                }}
+                webroll={bgVideoColor}
+                video={
+                  <iframe
+                    src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    title="Watch The Experience"
+                    allowFullScreen
+                    className="w-full h-full absolute top-0 left-0 bg-black"
+                  />
+                }
+                ratio={0.8}
               />
-            }
-            ratio={1080 / 1920}
-          />
-        </AutoSlide>
+              <div className="flex-1 py-12 px-6">
+                <div css={{ maxWidth: '42em' }}>
+                  <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                    The Rhythm of Success is a one-of-a-kind program designed to
+                    challenge and inspire organizations to discover their
+                    untapped potential through the power of Active Listening.
+                    The format is fast-paced, entertaining, and as the secrets
+                    of the world’s undisputed international language of music
+                    are revealed, full of surprises. In this multimedia,
+                    interactive “Keynote Concert” experience, your audience will
+                    learn to:
+                  </p>
+                  <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                    <li className="list-disc list-outside">
+                      Enhance interpersonal and professional leadership skills
+                    </li>
+                    <li className="list-disc list-outside">
+                      Amplify engagement
+                    </li>
+                    <li className="list-disc list-outside">
+                      Clarify and SCORE desired goals and outcomes
+                    </li>
+                  </ul>
+                  <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                    No matter what kind of organization—from small companies to
+                    large corporations—employees at all levels will tune up to a
+                    better future by becoming more collaborative, productive and
+                    ultimately, more profitable. This presentation is sure to
+                    open or close your meeting on a dynamic high note.
+                  </p>
+                  <ButtonLink
+                    to="/contact"
+                    className="inline-flex text-gray-900"
+                  >
+                    BOOK THIS KEYNOTE
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
+          </AutoSlide>
+        </Container>
       </div>
     </section>
     <div className="pb-20" css={{ backgroundColor: '#1b1b1b' }}>
       <Container>
-        <h3
-          className="mx-auto font-display leading-none text-white uppercase text-center"
-          css={{ fontSize: '3.2vw', padding: '7vw 0', maxWidth: '20em' }}
-        >
-          FEATURED KEYNOTE TOPICS
-        </h3>
-
         <AutoSlide up className="mb-32">
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3

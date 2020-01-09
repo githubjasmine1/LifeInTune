@@ -137,10 +137,10 @@ const IndexPage = ({ data }) => (
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-20">
+          <div className="relative px-12 py-20 pb-5">
             <div
               className="inline-flex flex-col items-center"
-              css={{ width: 'calc(100% - 28% + 2%)' }}
+              css={{ width: 'calc(100% - 26% + 2%)' }}
             >
               <p className="font-display text-3xl text-gray-1000 text-center uppercase">
                 “Freddie es puro corazon.”
@@ -151,6 +151,9 @@ const IndexPage = ({ data }) => (
               >
                 Carlos Santana, Rock and Roll Hall of Fame, 8 Grammys and over
                 100 million albums sold
+              </p>
+              <p className="mt-10 self-end italic text-xs text-gray-400 text-right">
+                Santana Photo Credit: Maryanne Bilham
               </p>
             </div>
             <Img
@@ -183,7 +186,7 @@ const IndexPage = ({ data }) => (
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-20">
+          <div className="relative px-12 py-20 pb-5">
             <Img
               fluid={data.madonna.childImageSharp.fluid}
               css={{
@@ -195,7 +198,7 @@ const IndexPage = ({ data }) => (
             />
             <div
               className="flex flex-col items-center ml-auto"
-              css={{ width: 'calc(100% - 28% + 2%)' }}
+              css={{ width: 'calc(100% - 33% + 2%)' }}
             >
               <p className="font-display text-3xl text-gray-1000 text-center uppercase">
                 “Freddie is brilliant.”
@@ -206,6 +209,9 @@ const IndexPage = ({ data }) => (
               >
                 Madonna, regarding Freddie’s studio and live performances with
                 her for the flim, “EVITA”
+              </p>
+              <p className="mt-10 self-start italic text-xs text-gray-400 text-right">
+                Madonna Photo Credit: Herb Ritts
               </p>
             </div>
           </div>
@@ -228,7 +234,7 @@ const IndexPage = ({ data }) => (
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-16">
+          <div className="relative px-12 py-16 pb-5">
             <div
               className="inline-flex flex-col items-center"
               css={{ width: 'calc(100% - 28% + 2%)' }}
@@ -246,6 +252,9 @@ const IndexPage = ({ data }) => (
               >
                 Dr. Deepak Chopra, TIME magazine: “One of the top 100 heroes and
                 icons of the 20th century.”
+              </p>
+              <p className="mt-6 self-end italic text-xs text-gray-400 text-right">
+                Deepak Photo Credit: Michael Allen
               </p>
             </div>
             <Img

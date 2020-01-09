@@ -351,7 +351,10 @@ const IndexPage = ({ data }) => (
                   Calabasas, CA 91302 USA
                 </p>
                 <a className="block mt-5" href="tel:1-857-267-3669">
-                  Phone: 1-857-267-3669
+                  Phone: +1-857-267-3669
+                </a>
+                <a className="block mt-5" href="mailto:booking@lifeintune.com">
+                  Email: booking@lifeintune.com
                 </a>
                 <Img
                   fluid={data.contact.childImageSharp.fluid}

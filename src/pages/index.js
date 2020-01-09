@@ -386,25 +386,25 @@ const Numbers = () => {
           <div className="text-white" css={{ fontSize: 78 }}>
             <span ref={n1}></span>M
           </div>
-          <p className="text-gray-600">Over 314 million Attendees Impacted</p>
+          <p className="text-white">Over 314 million Attendees Impacted</p>
         </AutoFade>
         <AutoFade delay={1 * 150} className="flex-1 text-center">
           <div className="text-white" css={{ fontSize: 78 }}>
             <span ref={n2}></span>
           </div>
-          <p className="text-gray-600">Topics Addressed</p>
+          <p className="text-white">Topics Addressed</p>
         </AutoFade>
         <AutoFade delay={2 * 150} className="flex-1 text-center">
           <div className="text-white" css={{ fontSize: 78 }}>
             <span ref={n3}></span>
           </div>
-          <p className="text-gray-600">Countries for Live Presentations</p>
+          <p className="text-white">Countries for Live Presentations</p>
         </AutoFade>
         <AutoFade delay={3 * 150} className="flex-1 text-center">
           <div className="text-white" css={{ fontSize: 78 }}>
             <span ref={n4}></span>,000
           </div>
-          <p className="mx-auto text-gray-600" css={{ maxWidth: '20em' }}>
+          <p className="mx-auto text-white" css={{ maxWidth: '20em' }}>
             Years from when the first musical instrument was found
           </p>
         </AutoFade>
@@ -463,7 +463,12 @@ const IndexPage = ({ data }) => (
           css={{ fontSize: '8vw', [media.tabletMd]: { fontSize: '3.2vw' } }}
         >
           <RotateWords
-            words={['Amplify Success', 'Unlock Potential', 'Increase Business']}
+            words={[
+              'Mind. Body. Business.',
+              'Amplify Success',
+              'Unlock Potential',
+              'Increase Business',
+            ]}
           />
         </AutoSlide>
         <Demo />

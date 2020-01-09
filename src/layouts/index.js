@@ -18,7 +18,7 @@ const Navbar = props => {
   return (
     <AutoFade duration={1500} className="w-full z-40 fixed top-0 left-0">
       <header
-        className="py-5 font-display font-hairline text-white transition-slow ease-out"
+        className="hidden lg:block py-5 font-display font-hairline text-white transition-slow ease-out"
         style={{
           paddingTop: 48,
           transform: isBelow ? 'translateY(-28px)' : 'none',
@@ -162,6 +162,7 @@ const Footer = props => {
         css={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
+          alignItems: 'center',
           gridGap: 32,
 
           [media.laptop]: {
@@ -206,9 +207,9 @@ const Footer = props => {
           >
             <svg
               viewBox="0 0 34 26.18"
-              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current opacity-75"
             >
-              <g fill="none" strokeWidth="2">
+              <g fill="none" strokeWidth="3">
                 <path
                   strokeMiterlimit="10"
                   d="M2.48 1h29.04c.817 0 1.48.663 1.48 1.48V23.7a1.48 1.48 0 01-1.48 1.48H2.48A1.48 1.48 0 011 23.7V2.48C1 1.663 1.663 1 2.48 1z"
@@ -230,21 +231,33 @@ const Footer = props => {
           </Link>
           <Link
             href="tel:+18572673669"
-            className="flex items-start mt-5 hover:text-gold-300 transition"
+            className="flex items-start mt-3 hover:text-gold-300 transition"
           >
             <svg
               viewBox="0 0 30.927 36.025"
-              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current opacity-75"
             >
               <path
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="3"
                 d="M17.85 24.889c1-.09 2.95-1.92 4-2a4.003 4.003 0 012.78.8l2.68 2 1.61 1.28a2.52 2.52 0 01.43 3.62l-3.11 4a1.12 1.12 0 01-1 .43C11.74 33.809 1 22.759 1 9.339c0-2.369.337-4.726 1-7a.66.66 0 01.5-.45l5.91-.83a2.63 2.63 0 013.12 2l.39 1.99.65 3.26c.193.96.003 1.958-.53 2.78-.54.84-3.09 1.68-3.64 2.53h0a19.39 19.39 0 009.45 11.43v-.16z"
               ></path>
             </svg>
             +1-857-267-3669
+          </Link>
+          <Link
+            href="mailto:booking@lifeintune.com"
+            className="flex items-start mt-3 hover:text-gold-300 transition"
+          >
+            <svg
+              viewBox="0 0 96.3 100.2"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 fill-current opacity-75"
+            >
+              <path d="M93.1 24.5A40.2 40.2 0 0070 3.1 54.5 54.5 0 0025 7 46.5 46.5 0 006.8 26 55 55 0 000 53.3C0 60.7 1.2 67.2 3.6 73 6 78.8 9.5 83.8 14 87.8s10.1 7.1 16.6 9.2a75 75 0 0035.2 2.1c3.9-.7 7.8-1.9 11.6-3.5l-3.1-7.4a60.8 60.8 0 01-21.6 3.9c-6.9 0-13.1-.9-18.6-2.6a38 38 0 01-13.9-7.6 32.5 32.5 0 01-8.7-12.2 49.2 49.2 0 01.2-34.2 42.7 42.7 0 0122.5-23.9 43.3 43.3 0 0143.4 5.7 31 31 0 0110.2 23.1c0 4.5-.5 8.5-1.6 12.1a29 29 0 01-4.3 9 20 20 0 01-6.3 5.7 16 16 0 01-7.7 2c-1.2 0-2-.3-2.5-1-.5-.6-.8-1.6-.8-2.7 0-.9.1-2 .4-3.4l.9-4.8 7.8-34.9H64l-1.1 5.2a19 19 0 00-6.6-4.7 21 21 0 00-8.6-1.6A22 22 0 0037.1 24a28 28 0 00-8.8 7.4 36.8 36.8 0 00-6 11.1 41.8 41.8 0 00-2.2 13.9c0 3.4.5 6.4 1.4 9a17.1 17.1 0 009.9 10.9 20.6 20.6 0 0016.8-.8c2.9-1.5 5.5-3.6 7.8-6.3a8.5 8.5 0 003.3 6.1c.9.8 2 1.4 3.3 1.8 1.2.4 2.6.7 4.1.7A27.9 27.9 0 0088.1 68a34 34 0 006.2-11.8c1.5-4.6 2.2-9.9 2.2-15.8-.2-5.7-1.2-11-3.4-15.9zM56.8 53.3c-.6 2.5-1.4 4.7-2.4 6.6a19.1 19.1 0 01-8.3 8.2c-1.7.7-3.4 1.1-5.3 1.1-6.9 0-10.4-4.4-10.4-13.1 0-3.6.5-7 1.4-10.2.9-3.2 2.2-6 3.8-8.3a20 20 0 015.5-5.7c2.1-1.4 4.2-2.1 6.5-2.1a16.7 16.7 0 0113.1 5.8l-3.9 17.7z" />
+            </svg>
+            booking@lifeintune.com
           </Link>
         </div>
         <ul>
