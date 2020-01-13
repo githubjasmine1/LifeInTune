@@ -293,9 +293,18 @@ const IndexPage = ({ data }) => (
           </ButtonLink>
         </AutoSlide>
       </div>
+      <p className="flex justify-center items-center mt-10 lg:mt-20 font-display text-sm uppercase text-gray-500">
+        <svg viewBox="0 0 23.1 29" className="w-8 h-8 mr-3 fill-current">
+          <path
+            d="M11.1 4c-.2-1.1-1.2-2-2.4-2a2.5 2.5 0 00-2.6 2.5v8.9c-2-1.8-4.2-3.2-5.6-1.8-2 2 2.2 5.9 5.4 11.8 2.3 4.1 5.5 5.6 8.7 5.6 4.7 0 8.5-3.8 8.5-8.5v-6c0-1.4-1.1-2.5-2.5-2.5-.6 0-1.1.2-1.5.5 0-1.4-1.1-2.5-2.5-2.5-.6 0-1.2.2-1.7.6a2.5 2.5 0 00-3.8-1.1V5h7l-3.2 3.2.8.8 4.5-4.5L15.7 0l-.8.8L18.2 4h-7.1zm3.5 24c4.1 0 7.5-3.6 7.5-7.5 0 0 0 2.3 0 0v-6c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v.5h-1v-2.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V14h-1v-2.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V15h-1V4.5c0-.8-.6-1.5-1.5-1.5-.8 0-1.5.7-1.5 1.5v11.3c-2.1-2.2-4.8-4.6-5.9-3.5C.2 13.4 3 16.4 6.9 23c1.7 2.9 4 5 7.7 5z"
+            fill-rule="evenodd"
+          />
+        </svg>
+        Swipe to explore timeline
+      </p>
     </section>
     <section
-      className="relative z-0 px-5 lg:px-20 pt-10 lg:pt-20 pb-5 lg:pb-10 text-white overflow-hidden"
+      className="relative z-0 px-5 lg:px-20 pt-6 pb-5 lg:pb-10 text-white overflow-hidden"
       css={{
         backgroundColor: '#1b1b1b',
         '.swiper-container': {
@@ -312,8 +321,7 @@ const IndexPage = ({ data }) => (
       <div
         className="w-full h-px absolute left-0 bg-gray-600"
         css={{
-          top: 'calc(10 * 4 / 16 * 1rem +  6 / 16 * 1rem)',
-          [media.laptop]: { top: 'calc(20 * 4 / 16 * 1rem +  6 / 16 * 1rem)' },
+          top: 'calc(6 * 4 / 16 * 1rem +  6 / 16 * 1rem)',
           zIndex: -1,
         }}
       ></div>
