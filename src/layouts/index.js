@@ -176,7 +176,7 @@ const Footer = props => {
             css={{ width: 150 }}
           />
           <p className="mt-5 text-xs text-gray-600 text-center">
-            ©2019 All Right Reserved.
+            ©2020 All Right Reserved.
             <br />
             Life In Tune™ with Freddie Ravel.
           </p>
@@ -189,10 +189,10 @@ const Footer = props => {
               className="flex-1 text-xs md:text-sm lg:text-base"
               css={{ [media.laptopLg]: { maxWidth: '30em' } }}
             >
-              Freddie Ravel Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ligula ullamcorper malesuada proin libero nunc consequat
-              interdum varius.
+              Freddie Ravel is the internationally acclaimed “Keynote Maestro”
+              who blends his expertise for business breakthroughs and the power
+              of music to unlock the minds, hearts and potential of audiences
+              around the world.
             </p>
             <Img
               fluid={data.goldLogo.childImageSharp.fluid}

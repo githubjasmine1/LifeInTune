@@ -828,8 +828,11 @@ const IndexPage = ({ data }) => (
               challenge and inspire organizations to discover their untapped
               potential through the power of Active Listening.
             </p>
-            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
-              Read more
+            <ButtonLink
+              to="/keynotes#the-rhythm-of-success"
+              className="self-center mt-10 text-gray-900"
+            >
+              LEARN MORE
             </ButtonLink>
           </AutoFade>
           <AutoFade
@@ -838,14 +841,17 @@ const IndexPage = ({ data }) => (
             className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <h4 className="text-xl leading-none">Listen Up</h4>
+            <h4 className="text-xl leading-none">The Music of Leadership</h4>
             <p className="mt-5">
-              The Rhythm of Success is a one-of-a-kind program designed to
-              challenge and inspire organizations to discover their untapped
-              potential through the power of Active Listening.
+              This presentation takes your audience on a deep dive into the role
+              of "melody" within music and its’ power as the central message to
+              bring life to your products and services.
             </p>
-            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
-              Read more
+            <ButtonLink
+              to="/keynotes#the-music-of-leadership"
+              className="self-center mt-10 text-gray-900"
+            >
+              LEARN MORE
             </ButtonLink>
           </AutoFade>
           <AutoFade
@@ -854,14 +860,18 @@ const IndexPage = ({ data }) => (
             className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <h4 className="text-xl leading-none">Keynote Maestro</h4>
+            <h4 className="text-xl leading-none">Resolving Disruption</h4>
             <p className="mt-5">
-              The Rhythm of Success is a one-of-a-kind program designed to
-              challenge and inspire organizations to discover their untapped
-              potential through the power of Active Listening.
+              This interactive experience takes your audience into what
+              disruption actually sounds like and then, through revealing
+              techniques to overcome adversity, transforms dissonance to
+              resolution.
             </p>
-            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
-              Read more
+            <ButtonLink
+              to="/keynotes#resolving-disruption"
+              className="self-center mt-10 text-gray-900"
+            >
+              LEARN MORE
             </ButtonLink>
           </AutoFade>
           <AutoFade
@@ -870,14 +880,17 @@ const IndexPage = ({ data }) => (
             className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <h4 className="text-xl leading-none">Master of Ceremonies</h4>
+            <h4 className="text-xl leading-none">Teamwork</h4>
             <p className="mt-5">
-              The Rhythm of Success is a one-of-a-kind program designed to
-              challenge and inspire organizations to discover their untapped
-              potential through the power of Active Listening.
+              This collaborative discussion unlocks the power of human harmonics
+              organizations need to gain a distinct advantage in today’s
+              hypercompetitive marketplace.
             </p>
-            <ButtonLink to="/" className="self-center mt-10 text-gray-900">
-              Read more
+            <ButtonLink
+              to="/keynotes#teamwork"
+              className="self-center mt-10 text-gray-900"
+            >
+              LEARN MORE
             </ButtonLink>
           </AutoFade>
         </ul>

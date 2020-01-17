@@ -42,7 +42,11 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <SEO title="Keynotes" />
-    <section className="pt-10 text-white" css={{ backgroundColor: '#1b1b1b' }}>
+    <section
+      id="the-rhythm-of-success"
+      className="pt-10 text-white"
+      css={{ backgroundColor: '#1b1b1b' }}
+    >
       <div
         css={{
           display: 'grid',
@@ -149,7 +153,13 @@ const IndexPage = ({ data }) => (
     </section>
     <div className="pb-20" css={{ backgroundColor: '#1b1b1b' }}>
       <Container>
-        <AutoSlide up className="mb-32">
+        <AutoSlide
+          as="section"
+          id="the-music-of-leadership"
+          up
+          className="mb-32"
+          css={{ scrollMargin: 150 }}
+        >
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3
               className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
@@ -221,7 +231,13 @@ const IndexPage = ({ data }) => (
           </div>
         </AutoSlide>
 
-        <AutoSlide up className="mb-32">
+        <AutoSlide
+          as="section"
+          id="resolving-disruption"
+          up
+          className="mb-32"
+          css={{ scrollMargin: 150 }}
+        >
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3
               className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
@@ -288,7 +304,13 @@ const IndexPage = ({ data }) => (
           </div>
         </AutoSlide>
 
-        <AutoSlide up className="mb-32">
+        <AutoSlide
+          as="section"
+          id="teamwork"
+          up
+          className="mb-32"
+          css={{ scrollMargin: 150 }}
+        >
           <header className="flex justify-center px-6 py-12 bg-black">
             <h3
               className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"

@@ -138,6 +138,11 @@ export const query = graphql`
     tl2019Lit: file(relativePath: { eq: "timeline/2019-LIT.png" }) {
       ...textContainerWide
     }
+    mississippimasalamovie: file(
+      relativePath: { eq: "timeline/freddie-ravel-mississippimasalamovie.jpg" }
+    ) {
+      ...textContainerWide
+    }
   }
 `
 
@@ -399,6 +404,22 @@ const IndexPage = ({ data }) => (
             <Img fluid={data.tl1995Earthwindfire.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Earth, Wind and Fire
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            1991
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.mississippimasalamovie.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Film Soundtrack for "Mississippi Masala” starring Denzel
+              Washington
             </div>
           </div>
         </div>
