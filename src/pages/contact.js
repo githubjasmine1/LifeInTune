@@ -30,6 +30,7 @@ const ContactForm = () => {
         phone: '',
         eventDate: '',
         eventLocation: '',
+        eventTopic: '',
         message: '',
       }}
       validationSchema={Yup.object().shape({
@@ -41,6 +42,7 @@ const ContactForm = () => {
         phone: Yup.string().required(),
         eventDate: Yup.string(),
         eventLocation: Yup.string(),
+        eventTopic: Yup.string(),
         message: Yup.string(),
       })}
       onSubmit={(formData, { setStatus }) => {
@@ -235,6 +237,58 @@ const ContactForm = () => {
               </div>
               <div className="w-full px-4 py-2">
                 <label
+                  htmlFor="eventTopic"
+                  className="block mb-2 leading-loose text-gray-600"
+                >
+                  Inquiry about a Keynote Topic
+                </label>
+                <div className="relative">
+                  <Field
+                    as="select"
+                    id="eventTopic"
+                    name="eventTopic"
+                    className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none bg-transparent"
+                    css={
+                      touched.topic && errors.topic && { borderColor: 'red' }
+                    }
+                  >
+                    <option disabled value="" selected>
+                      Select Keynote Topic
+                    </option>
+                    <option value="THE RHYTHM OF SUCCESS">
+                      THE RHYTHM OF SUCCESS
+                    </option>
+                    <option value="THE MUSIC OF LEADERSHIP">
+                      THE MUSIC OF LEADERSHIP
+                    </option>
+                    <option value="RESOLVING DISRUPTION">
+                      RESOLVING DISRUPTION
+                    </option>
+                    <option value="TEAMWORK">TEAMWORK</option>
+                    <option value="MASTER OF CEREMONIES">
+                      MASTER OF CEREMONIES
+                    </option>
+                    <option value="WORKSHOPS / BREAKOUT SESSIONS">
+                      WORKSHOPS / BREAKOUT SESSIONS
+                    </option>
+                  </Field>
+                  <div class="flex justify-center items-center w-16 h-full absolute top-0 right-0 pointer-events-none">
+                    <svg
+                      class="w-4 h-4 text-gray-600"
+                      viewBox="0 0 15.924 8.492"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M0.75,0.75l7.212,7.212l7.212-7.212" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full px-4 py-2">
+                <label
                   htmlFor="message"
                   className="block mb-2 leading-loose text-gray-600"
                 >
@@ -244,7 +298,7 @@ const ContactForm = () => {
                   as="textarea"
                   id="message"
                   name="message"
-                  className="block w-full h-32 lg:h-64 p-4 font-bold text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full h-32 lg:h-48 p-4 font-bold text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
                   css={
                     touched.message && errors.message && { borderColor: 'red' }
                   }
