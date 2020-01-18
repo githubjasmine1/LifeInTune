@@ -1,6 +1,7 @@
 const fontPreloadHeaders = [
   'Link: </fonts/turismo-cf-0.woff2>; rel=preload; as=font; crossorigin',
-  'Link: <https://use.typekit.net/nkd7jjw.css>; rel=preload; as=style',
+  'Link: </fonts/Museo-300.woff2>; rel=preload; as=font; crossorigin',
+  // 'Link: <https://use.typekit.net/nkd7jjw.css>; rel=preload; as=style',
 ]
 
 // Use it if we can't use H2 push
@@ -17,10 +18,10 @@ const fontPreloads = [
 ]
 
 const fontStyleSheets = [
-  {
-    rel: 'stylesheet',
-    href: 'https://use.typekit.net/nkd7jjw.css',
-  },
+  // {
+  //   rel: 'stylesheet',
+  //   href: 'https://use.typekit.net/nkd7jjw.css',
+  // },
 ]
 
 const fontFaces = [
@@ -30,6 +31,14 @@ const fontFaces = [
       fontStyle: 'normal',
       fontWeight: 100,
       src: 'url("/fonts/turismo-cf-0.woff2") format("woff2")',
+    },
+  },
+  {
+    '@font-face': {
+      fontFamily: 'museo',
+      fontStyle: 'normal',
+      fontWeight: 300,
+      src: 'url("/fonts/Museo-300.woff2") format("woff2")',
     },
   },
 ]
