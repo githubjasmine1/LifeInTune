@@ -506,8 +506,8 @@ const IndexPage = ({ data }) => (
               className="mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              1+1=11 when your audience discovers music’s most persuasive
+              communication techniques to stand out, establish trust and WIN.
             </p>
           </AutoSlide>
           <AutoSlide
@@ -531,8 +531,8 @@ const IndexPage = ({ data }) => (
               className="mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              From directing the best bands to elevating the best brands, Ravel
+              reveals what Music is to what Business does.
             </p>
           </AutoSlide>
           <AutoSlide
@@ -557,8 +557,8 @@ const IndexPage = ({ data }) => (
               className="mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              Unleash and Inspire the inner Rock Star of your people with the
+              most powerful motivational force on the planet.
             </p>
           </AutoSlide>
         </div>
@@ -790,9 +790,9 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <AutoFade>
           <p className="mt-5 text-center text-white" css={{ maxWidth: '34em' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
-            ullamcorper malesuada proin libero nunc consequat interdum varius.
+            GET L.I.T. with the Life in Tune™ system that’s harnessed a
+            revolution of solutions by conducting life through Music’s three key
+            elements.
           </p>
         </AutoFade>
         <AutoFade>

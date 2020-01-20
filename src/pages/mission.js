@@ -90,12 +90,8 @@ const IndexPage = ({ data }) => (
           className="mx-auto mt-10 text-white text-center"
           css={{ maxWidth: '36em' }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
-          ullamcorper malesuada proin libero nunc consequat interdum varius.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula
-          ullamcorper malesuada proin libero nunc consequat interdum varius.
+          GET L.I.T. with the Life in Tune™ system that’s harnessed a revolution
+          of solutions by conducting life through Music’s three key elements.
         </p>
 
         <MissionRings className="mt-12" />
