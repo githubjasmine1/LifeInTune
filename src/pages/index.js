@@ -467,7 +467,6 @@ const IndexPage = ({ data }) => (
               'Mind. Body. Business.',
               'Amplify Success',
               'Unlock Potential',
-              'Increase Business',
             ]}
           />
         </AutoSlide>
