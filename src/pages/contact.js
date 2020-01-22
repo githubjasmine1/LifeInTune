@@ -407,9 +407,9 @@ const IndexPage = ({ data }) => (
                 <a className="block mt-5" href="tel:1-857-267-3669">
                   Phone: +1-857-267-3669
                 </a>
-                <a className="block mt-5" href="mailto:booking@lifeintune.com">
+                {/* <a className="block mt-5" href="mailto:booking@lifeintune.com">
                   Email: booking@lifeintune.com
-                </a>
+                </a> */}
                 <Img
                   fluid={data.contact.childImageSharp.fluid}
                   className="mt-10"
