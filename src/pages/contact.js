@@ -397,19 +397,22 @@ const IndexPage = ({ data }) => (
                 <p css={{ maxWidth: '16em' }}>
                   To Contact or Book Freddie, send a message or contact:
                 </p>
-                <p className="mt-5">
+                {/* <p className="mt-5">
                   Freddie Ravel
                   <br />
                   22287 Mulholland Hwy Suite 516
                   <br />
                   Calabasas, CA 91302 USA
-                </p>
+                </p> */}
                 <a className="block mt-5" href="tel:1-857-267-3669">
                   Phone: +1-857-267-3669
                 </a>
-                {/* <a className="block mt-5" href="mailto:booking@lifeintune.com">
-                  Email: booking@lifeintune.com
-                </a> */}
+                <a
+                  className="block mt-5"
+                  href="mailto:manager@freddieravel.com"
+                >
+                  Email: manager@freddieravel.com
+                </a>
                 <Img
                   fluid={data.contact.childImageSharp.fluid}
                   className="mt-10"
