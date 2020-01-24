@@ -101,7 +101,7 @@ const IndexPage = ({ data }) => (
             Featured keynote topics
           </h3>
         </AutoFade>
-        <ul className="flex -m-5 mt-12 relative">
+        <ul className="flex flex-col lg:flex-row -m-5 mt-12 relative">
           <AutoFade
             as="li"
             delay={0 * 100}

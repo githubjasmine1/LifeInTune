@@ -75,10 +75,10 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <AutoSlide up delay={300} className="mb-32">
-            <header className="flex justify-center px-6 py-12 bg-black">
+          <AutoSlide up delay={300} className="mb-10 lg:mb-32">
+            <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
               <h3
-                className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+                className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
                 css={{
                   backgroundImage:
                     'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => (
             </header>
             <div className="flex bg-white">
               <VideoPlayer
-                className="flex-1 self-start"
+                className="hidden lg:block flex-1 self-start"
                 css={{
                   transform: 'translate(-48px, 48px)',
                   boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -108,7 +108,7 @@ const IndexPage = ({ data }) => (
                 }
                 ratio={0.8}
               />
-              <div className="flex-1 py-12 px-6">
+              <div className="flex-1 py-8 lg:py-12 px-6">
                 <div css={{ maxWidth: '42em' }}>
                   <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                     The Rhythm of Success is a one-of-a-kind program designed to
@@ -157,12 +157,12 @@ const IndexPage = ({ data }) => (
           as="section"
           id="the-music-of-leadership"
           up
-          className="mb-32"
+          className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -174,7 +174,7 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '42em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   This presentation takes your audience on a deep dive into the
@@ -211,7 +211,7 @@ const IndexPage = ({ data }) => (
               </div>
             </div>
             <VideoPlayer
-              className="flex-1 self-start"
+              className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -235,12 +235,12 @@ const IndexPage = ({ data }) => (
           as="section"
           id="resolving-disruption"
           up
-          className="mb-32"
+          className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -253,7 +253,7 @@ const IndexPage = ({ data }) => (
           </header>
           <div className="flex bg-white">
             <VideoPlayer
-              className="flex-1 self-start"
+              className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(-48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -270,7 +270,7 @@ const IndexPage = ({ data }) => (
               }
               ratio={0.8}
             />
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '42em' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   With Disruption ever-present and increasing at lightning
@@ -308,12 +308,12 @@ const IndexPage = ({ data }) => (
           as="section"
           id="teamwork"
           up
-          className="mb-32"
+          className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -327,7 +327,7 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '42em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   Have you ever heard a great-sounding band or orchestra where
@@ -368,7 +368,7 @@ const IndexPage = ({ data }) => (
               </div>
             </div>
             <VideoPlayer
-              className="flex-1 self-start"
+              className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -388,10 +388,10 @@ const IndexPage = ({ data }) => (
           </div>
         </AutoSlide>
 
-        <AutoSlide up className="mb-32">
-          <header className="flex justify-center px-6 py-12 bg-black">
+        <AutoSlide up className="mb-10 lg:mb-32">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -405,7 +405,7 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   Want to keep your meeting moving or add an extra spark to make
@@ -447,16 +447,16 @@ const IndexPage = ({ data }) => (
                 </ButtonLink>
               </div>
             </div>
-            <div className="flex-1 self-start p-12">
+            <div className="hidden lg:block flex-1 self-start p-12">
               <Img fluid={data.img1.childImageSharp.fluid} />
             </div>
           </div>
         </AutoSlide>
 
         <AutoSlide up>
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -468,7 +468,7 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   The Rhythm of Success is a one-of-a-kind program designed to
@@ -484,14 +484,16 @@ const IndexPage = ({ data }) => (
                 </ButtonLink>
               </div>
             </div>
-            <div className="flex-1 self-start p-12">
+            <div className="hidden lg:block flex-1 self-start p-12">
               <Img fluid={data.img2.childImageSharp.fluid} />
             </div>
           </div>
         </AutoSlide>
       </Container>
     </div>
-    <ClientRaves />
+    <div className="hidden md:block">
+      <ClientRaves />
+    </div>
     <BookFreddie />
     <FooterGallery />
   </>

@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import { media } from '../styles/tools'
+
 import SEO from '../components/SEO'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
@@ -34,12 +36,11 @@ const IndexPage = ({ data }) => (
       <div
         css={{
           display: 'grid',
-          '--space': '13vw',
+          '--space': '20px',
           gridTemplateColumns: 'var(--space) 1fr var(--space)',
-          // [media.laptop]: {
-          //   '--space': '13vw',
-          //   gridTemplateColumns: 'var(--space) 1fr 1fr 1.5fr var(--space)',
-          // },
+          [media.laptop]: {
+            '--space': '13vw',
+          },
         }}
       >
         <AutoFade
@@ -61,9 +62,9 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -75,7 +76,7 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-12 px-6">
+            <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
                   Meeting Planners engage Freddie and his team in the conference
@@ -89,11 +90,12 @@ const IndexPage = ({ data }) => (
                 </p>
                 <div css={{ maxWidth: 460 }}>
                   <ButtonLink
-                    className="mt-12 text-gray-900"
+                    className="mt-5 md:mt-12 text-gray-900"
+                    css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -102,11 +104,12 @@ const IndexPage = ({ data }) => (
                     Download one-sheet
                   </ButtonLink>
                   <ButtonLink
-                    className="mt-6 text-gray-900"
+                    className="mt-3 md:mt-6 text-gray-900"
+                    css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -115,11 +118,12 @@ const IndexPage = ({ data }) => (
                     Pre-Event Questionnaire
                   </ButtonLink>
                   <ButtonLink
-                    className="mt-6 text-gray-900"
+                    className="mt-3 md:mt-6 text-gray-900"
+                    css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -128,11 +132,12 @@ const IndexPage = ({ data }) => (
                     A/V Requirements
                   </ButtonLink>
                   <ButtonLink
-                    className="mt-6 text-gray-900"
+                    className="mt-3 md:mt-6 text-gray-900"
+                    css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -143,7 +148,7 @@ const IndexPage = ({ data }) => (
                 </div>
               </div>
             </div>
-            <div className="flex-1 self-start p-12">
+            <div className="hidden md:block flex-1 self-start p-12">
               <Img fluid={data.planners.childImageSharp.fluid} />
             </div>
           </div>

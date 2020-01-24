@@ -20,7 +20,7 @@ import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import walmart from '../assets/logos/walmart.svg'
 
-const ClientRaves = () => {
+const ClientRaves = ({ className, ...props }) => {
   const data = useStaticQuery(graphql`
     query {
       testimonialsBg: file(relativePath: { eq: "testimonials-bg.png" }) {
@@ -31,8 +31,9 @@ const ClientRaves = () => {
 
   return (
     <section
-      className="flex flex-col items-center relative py-20 bg-white"
+      className={`flex flex-col items-center relative py-20 bg-white ${className}`}
       css={{ paddingBottom: '20vw', background: '#f4f4f4' }}
+      {...props}
     >
       <Img
         fluid={data.testimonialsBg.childImageSharp.fluid}
@@ -196,7 +197,10 @@ const ClientRaves = () => {
           </AutoFade>
         </Masonry>
         <AutoFade css={{ display: 'flex', justifyContent: 'center' }}>
-          <ButtonLink to="/buzz" className="mt-20 text-gray-900">
+          <ButtonLink
+            to="/buzz"
+            className="hidden md:block mt-20 text-gray-900"
+          >
             READ MORE TESTIMONIALS
           </ButtonLink>
         </AutoFade>

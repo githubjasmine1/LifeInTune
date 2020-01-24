@@ -7,6 +7,8 @@ import Flatpickr from 'react-flatpickr'
 import 'flatpickr/dist/themes/airbnb.css'
 import Recaptcha from 'react-google-recaptcha'
 
+import { media } from '../styles/tools'
+
 import SEO from '../components/SEO'
 import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
@@ -109,7 +111,7 @@ const ContactForm = () => {
                 <Field
                   id="firstName"
                   name="firstName"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={
                     touched.firstName &&
                     errors.firstName && { borderColor: 'red' }
@@ -126,7 +128,7 @@ const ContactForm = () => {
                 <Field
                   id="lastName"
                   name="lastName"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={
                     touched.lastName &&
                     errors.lastName && { borderColor: 'red' }
@@ -181,7 +183,7 @@ const ContactForm = () => {
                       })
                     }}
                     onBlur={handleBlur}
-                    className="block w-full p-4 pl-12 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                    className="block w-full p-4 pl-12 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                     css={
                       touched.eventDate &&
                       errors.eventDate && { borderColor: 'red' }
@@ -199,7 +201,7 @@ const ContactForm = () => {
                 <Field
                   id="eventLocation"
                   name="eventLocation"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={
                     touched.eventLocation &&
                     errors.eventLocation && { borderColor: 'red' }
@@ -217,7 +219,7 @@ const ContactForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={touched.email && errors.email && { borderColor: 'red' }}
                 />
               </div>
@@ -231,7 +233,7 @@ const ContactForm = () => {
                 <Field
                   id="phone"
                   name="phone"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={touched.phone && errors.phone && { borderColor: 'red' }}
                 />
               </div>
@@ -247,7 +249,7 @@ const ContactForm = () => {
                     as="select"
                     id="eventTopic"
                     name="eventTopic"
-                    className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none bg-transparent"
+                    className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none rounded-none bg-transparent"
                     css={
                       touched.topic && errors.topic && { borderColor: 'red' }
                     }
@@ -298,17 +300,18 @@ const ContactForm = () => {
                   as="textarea"
                   id="message"
                   name="message"
-                  className="block w-full h-32 lg:h-48 p-4 font-bold text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none"
+                  className="block w-full h-32 lg:h-48 p-4 font-bold text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
                   css={
                     touched.message && errors.message && { borderColor: 'red' }
                   }
                 />
               </div>
-              <div className="w-full px-4 py-2">
+              <div className="w-full px-4 py-2 overflow-hidden">
                 <Recaptcha
                   ref={recaptchaRef}
                   sitekey={process.env.SITE_RECAPTCHA_KEY || 'test'}
-                  className="mt-2"
+                  className="overflow-hidden mt-2"
+                  css={{ [media.max.tablet]: { maxWidth: 270 } }}
                 />
               </div>
               <ButtonLink as="button" type="submit" className="m-4">
@@ -351,12 +354,11 @@ const IndexPage = ({ data }) => (
       <div
         css={{
           display: 'grid',
-          '--space': '13vw',
+          '--space': '20px',
           gridTemplateColumns: 'var(--space) 1fr var(--space)',
-          // [media.laptop]: {
-          //   '--space': '13vw',
-          //   gridTemplateColumns: 'var(--space) 1fr 1fr 1.5fr var(--space)',
-          // },
+          [media.laptop]: {
+            '--space': '13vw',
+          },
         }}
       >
         <AutoFade
@@ -378,9 +380,9 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <header className="flex justify-center px-6 py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
             <h3
-              className="relative font-display font-hairline text-xl sm:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative font-display font-hairline text-lg sm:text-3xl text-gold-500 leading-tight text-center uppercase"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -392,8 +394,8 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="bg-white overflow-hidden">
-            <div className="flex -m-6 p-10 text-gray-900">
-              <div className="w-1/3 m-6">
+            <div className="flex flex-col md:flex-row -m-6 p-5 md:p-10 text-gray-900">
+              <div className="md:w-1/3 m-6">
                 <p css={{ maxWidth: '16em' }}>
                   To Contact or Book Freddie, send a message or contact:
                 </p>
@@ -415,10 +417,10 @@ const IndexPage = ({ data }) => (
                 </a>
                 <Img
                   fluid={data.contact.childImageSharp.fluid}
-                  className="mt-10"
+                  className="hidden md:block mt-10"
                 />
               </div>
-              <div className="w-2/3 m-6">
+              <div className="md:w-2/3 m-6">
                 <ContactForm />
               </div>
             </div>

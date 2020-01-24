@@ -11,6 +11,7 @@ import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
 import VideoPlayer from '../components/VideoPlayer'
+import Container from '../components/Container'
 import { AutoSlide, AutoFade } from '../components/Animated'
 
 import bgVideoColor from '../assets/bg-video-color.mp4'
@@ -153,13 +154,65 @@ const IndexPage = ({ data }) => (
       className="pt-10 pb-10 text-white"
       css={{ backgroundColor: '#1b1b1b' }}
     >
+      <Container className="lg:hidden">
+        <Img
+          fluid={data.freddie.childImageSharp.fluid}
+          className="w-full self-start"
+          css={{ maxWidth: 500 }}
+        />
+        <h3
+          className="mt-6 font-display text-xl leading-none uppercase text-white"
+          css={{ maxWidth: '8em' }}
+        >
+          MEET FREDDIE RAVEL
+        </h3>
+        <p
+          className="mt-3 font-display text-base leading-none uppercase text-gold-300"
+          css={{ maxWidth: '20em' }}
+        >
+          Grammy-nominated performer, communication expert and business
+          visionary
+        </p>
+        <p className="mt-6 text-sm leading-relaxed text-gray-400">
+          With an unparalleled career that has consistently transcended the
+          boundaries of music, culture and thought leadership, Freddie Ravel
+          toured with Brazilian master Sergio Mendes, directed the legendary
+          band that bridged black and white America - Earth, Wind and Fire,
+          performed on the silver screen with the Queen of Pop - Madonna, rocked
+          stadiums with Afro-Latin-Blues-Rock icon Carlos Santana, performed the
+          Grammys with Prince, cut tracks with Kanye and led the teams behind J.
+          Lo, Jimmy Kimmel and Lady GaGa to become the “Expert’s Expert” on
+          multi-generational integration.
+        </p>
+        <p className="mt-6 text-sm leading-relaxed text-gray-400">
+          As an author, Freddie’s published works with Deepak Chopra on how
+          music and thought cannot exist without silence illuminated that the
+          “pause between the notes” is essential for effective communication.
+          Highlighting the power of listening - whether to clients, colleagues
+          or the signals that nature sends us - would lead to an invitation from
+          the family of Dr. Martin Luther King, Jr. to be a featured author
+          alongside Maya Angelou, Stevie Wonder, Muhammad Ali and Robert Kennedy
+          Jr. in the book, Open My Eyes, Open My Soul.
+        </p>
+        <p className="mt-6 text-sm leading-relaxed text-gray-400">
+          Freddie would later be dubbed the “Keynote Maestro” by the City of Los
+          Angeles for his groundbreaking Life In Tune™ system to “renew the
+          national and international economy.” In constant demand to bring
+          audiences in tune around the world, his clients include IBM, Toyota,
+          NASA, Apple, Blue Cross Health, Google and Prudential Financial
+          Services who call his “ideal balance of Entertainment and Content”
+          essential for businesses and entrepreneurs to transform from
+          dissonance to harmony.
+        </p>
+      </Container>
       <div
         css={{
-          display: 'grid',
+          display: 'none',
           minHeight: '100vh',
           '--space': '20px',
           gridTemplateColumns: 'var(--space) .2fr 1fr 1.5fr var(--space)',
           [media.laptop]: {
+            display: 'grid',
             '--space': '13vw',
             gridTemplateColumns: 'var(--space) 1fr 1fr 1.5fr var(--space)',
           },
@@ -298,7 +351,7 @@ const IndexPage = ({ data }) => (
           </ButtonLink>
         </AutoSlide>
       </div>
-      <p className="flex justify-center items-center mt-10 lg:mt-20 font-display text-sm uppercase text-gray-500">
+      <p className="flex justify-center items-center mt-10 lg:mt-20 font-display text-xs md:text-sm uppercase text-gray-500">
         <svg viewBox="0 0 23.1 29" className="w-8 h-8 mr-3 fill-current">
           <path
             d="M11.1 4c-.2-1.1-1.2-2-2.4-2a2.5 2.5 0 00-2.6 2.5v8.9c-2-1.8-4.2-3.2-5.6-1.8-2 2 2.2 5.9 5.4 11.8 2.3 4.1 5.5 5.6 8.7 5.6 4.7 0 8.5-3.8 8.5-8.5v-6c0-1.4-1.1-2.5-2.5-2.5-.6 0-1.1.2-1.5.5 0-1.4-1.1-2.5-2.5-2.5-.6 0-1.2.2-1.7.6a2.5 2.5 0 00-3.8-1.1V5h7l-3.2 3.2.8.8 4.5-4.5L15.7 0l-.8.8L18.2 4h-7.1zm3.5 24c4.1 0 7.5-3.6 7.5-7.5 0 0 0 2.3 0 0v-6c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v.5h-1v-2.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V14h-1v-2.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V15h-1V4.5c0-.8-.6-1.5-1.5-1.5-.8 0-1.5.7-1.5 1.5v11.3c-2.1-2.2-4.8-4.6-5.9-3.5C.2 13.4 3 16.4 6.9 23c1.7 2.9 4 5 7.7 5z"

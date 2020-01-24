@@ -306,8 +306,11 @@ const Demo = () => {
 const CrazyShenanigans = ({ video, videoPoster }) => {
   const [wavesCompleted, setWavesCompleted] = useState(false)
   const [inViewRef, inView] = useInView({ rootMargin: '-40% 0px' })
+  const isTablet = useMedia('(min-width: 768px)')
 
   useEffect(() => {
+    if (!isTablet) return
+
     inView && wavesCompleted
       ? videoRef.current.play()
       : videoRef.current.pause()
@@ -317,23 +320,30 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
 
   return (
     <>
-      <video
-        ref={ref => {
-          inViewRef(ref)
-          videoRef.current = ref
-        }}
-        src={video}
-        poster={videoPoster}
-        playsInline
-        loop
-        muted
-        className="w-full h-full absolute top-0 left-0 object-cover"
-      ></video>
-      {useMedia('(min-width: 768px)') && (
-        <Waves
-          className="w-full absolute left-0 pointer-events-none"
-          css={{ bottom: '-20vw' }}
-          onComplete={() => setWavesCompleted(true)}
+      {isTablet ? (
+        <>
+          <video
+            ref={ref => {
+              inViewRef(ref)
+              videoRef.current = ref
+            }}
+            src={video}
+            poster={videoPoster}
+            playsInline
+            loop
+            muted
+            className="w-full h-full absolute top-0 left-0 object-cover"
+          ></video>
+          <Waves
+            className="w-full absolute left-0 pointer-events-none"
+            css={{ bottom: '-20vw' }}
+            onComplete={() => setWavesCompleted(true)}
+          />
+        </>
+      ) : (
+        <img
+          src={videoPoster}
+          className="w-full h-full absolute top-0 left-0 object-cover"
         />
       )}
     </>
@@ -379,7 +389,7 @@ const Numbers = () => {
   return (
     <section
       ref={inViewRef}
-      className="flex flex-col items-center relative py-20 bg-black"
+      className="hidden lg:flex flex-col items-center relative py-20 bg-black"
     >
       <Container as="ul" className="flex">
         <AutoFade delay={0 * 150} className="flex-1 text-center">
@@ -452,7 +462,7 @@ const IndexPage = ({ data }) => (
         </AutoScale>
       </div>
       <Container
-        className="flex flex-col items-center relative"
+        className="flex flex-col items-center relative overflow-hidden"
         css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
@@ -480,7 +490,10 @@ const IndexPage = ({ data }) => (
           css={{
             width: '100%',
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridGap: 30,
+            [media.tabletLg]: {
+              gridTemplateColumns: 'repeat(3, 1fr)',
+            },
           }}
         >
           <AutoSlide
@@ -496,13 +509,13 @@ const IndexPage = ({ data }) => (
               fluid={data.expert.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
               Communication
               <br />
               expert
             </h3>
             <p
-              className="mt-5 text-gray-600 text-center"
+              className="hidden md:block mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
               1+1=11 when your audience discovers music’s most persuasive
@@ -521,13 +534,13 @@ const IndexPage = ({ data }) => (
               fluid={data.speaker.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
               Business
               <br />
               speaker
             </h3>
             <p
-              className="mt-5 text-gray-600 text-center"
+              className="hidden md:block mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
               From directing the best bands to elevating the best brands, Ravel
@@ -547,13 +560,13 @@ const IndexPage = ({ data }) => (
               fluid={data.performer.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl sm:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
               Celebrated
               <br />
               perfomer
             </h3>
             <p
-              className="mt-5 text-gray-600 text-center"
+              className="hidden md:block mt-5 text-gray-600 text-center"
               css={{ maxWidth: '20em' }}
             >
               Unleash and Inspire the inner Rock Star of your people with the
@@ -712,7 +725,7 @@ const IndexPage = ({ data }) => (
           </AutoScale>
         </ul>
         <AutoFade>
-          <ButtonLink to="/" className="mt-6 text-gray-900">
+          <ButtonLink to="/" className="hidden md:block mt-6 text-gray-900">
             Start Your Experience
           </ButtonLink>
         </AutoFade>

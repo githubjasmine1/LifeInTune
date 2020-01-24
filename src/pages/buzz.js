@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Masonry from 'react-masonry-css'
 
+import { media } from '../styles/tools'
+
 import SEO from '../components/SEO'
 import Container from '../components/Container'
 import BookFreddie from '../components/BookFreddie'
@@ -78,12 +80,11 @@ const IndexPage = ({ data }) => (
       <div
         css={{
           display: 'grid',
-          '--space': '13vw',
+          '--space': '20px',
           gridTemplateColumns: 'var(--space) 1fr var(--space)',
-          // [media.laptop]: {
-          //   '--space': '13vw',
-          //   gridTemplateColumns: 'var(--space) 1fr 1fr 1.5fr var(--space)',
-          // },
+          [media.laptop]: {
+            '--space': '13vw',
+          },
         }}
       >
         <AutoFade
@@ -109,12 +110,12 @@ const IndexPage = ({ data }) => (
         </AutoSlide>
       </div>
     </section>
-    <div className="pb-20" css={{ backgroundColor: '#1b1b1b' }}>
+    <div className="pb-10 md:pb-20" css={{ backgroundColor: '#1b1b1b' }}>
       <AutoFade>
         <Container>
           <h3
-            className="mx-auto font-display leading-none text-white uppercase text-center"
-            css={{ fontSize: '3.2vw', paddingTop: '7vw' }}
+            className="mx-auto pt-10 font-display text-xl leading-none text-white uppercase text-center"
+            css={{ [media.tablet]: { fontSize: '3.2vw', paddingTop: '7vw' } }}
           >
             BUZZ & Accolades
           </h3>
@@ -122,27 +123,29 @@ const IndexPage = ({ data }) => (
       </AutoFade>
     </div>
     <section
-      className="flex flex-col items-center relative py-20"
+      className="flex flex-col items-center relative pb-20 pt-5 md:pt-20 overflow-hidden"
       css={{ backgroundColor: '#1b1b1b' }}
     >
       <Container>
         <AutoSlide as="blockquote" className="relative bg-white">
           <svg
             viewBox="0 0 146.9 95.8"
-            className="w-24 h-24 absolute left-0 ml-12"
-            css={{ top: '-3.1rem' }}
+            className="w-12 h-12 md:w-24 md:h-24 absolute left-0 ml-5 md:ml-12"
+            css={{ top: '-1.5rem', [media.tablet]: { top: '-3.1rem' } }}
           >
             <path
               fill="#c1b063"
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-20 pb-5">
+          <div className="relative px-5 md:px-12 py-10 md:py-20 pb-5 md:pb-5">
             <div
               className="inline-flex flex-col items-center"
-              css={{ width: 'calc(100% - 26% + 2%)' }}
+              css={{
+                [media.tablet]: { width: 'calc(100% - 26% + 2%)' },
+              }}
             >
-              <p className="font-display text-3xl text-gray-1000 text-center uppercase">
+              <p className="font-display text-xl sm:text-3xl text-gray-1000 text-center uppercase">
                 “Freddie es puro corazon.”
               </p>
               <p
@@ -152,7 +155,7 @@ const IndexPage = ({ data }) => (
                 Carlos Santana, Rock and Roll Hall of Fame, 8 Grammys and over
                 100 million albums sold
               </p>
-              <p className="mt-10 self-end italic text-xs text-gray-400 text-right">
+              <p className="mt-10 md:self-end italic text-xs text-gray-400 text-right">
                 Santana Photo Credit: Maryanne Bilham
               </p>
             </div>
@@ -163,10 +166,11 @@ const IndexPage = ({ data }) => (
                 position: 'absolute !important',
                 bottom: 0,
                 right: '-5%',
+                [media.max.tablet]: { display: 'none' },
               }}
             />
           </div>
-          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+          <div className="px-5 md:px-12 py-10 font-display text-xl sm:text-3xl leading-tight text-center md:text-left uppercase text-gold-300 bg-gray-1000">
             CARLOS SANTANA
           </div>
         </AutoSlide>
@@ -178,15 +182,15 @@ const IndexPage = ({ data }) => (
         >
           <svg
             viewBox="0 0 146.9 95.8"
-            className="w-24 h-24 absolute left-0 ml-12"
-            css={{ top: '-3.1rem' }}
+            className="w-12 h-12 md:w-24 md:h-24 absolute left-0 ml-5 md:ml-12"
+            css={{ top: '-1.5rem', [media.tablet]: { top: '-3.1rem' } }}
           >
             <path
               fill="#c1b063"
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-20 pb-5">
+          <div className="relative px-5 md:px-12 py-10 md:py-20 pb-5 md:pb-5">
             <Img
               fluid={data.madonna.childImageSharp.fluid}
               css={{
@@ -194,13 +198,14 @@ const IndexPage = ({ data }) => (
                 position: 'absolute !important',
                 bottom: 0,
                 left: '10%',
+                [media.max.tablet]: { display: 'none' },
               }}
             />
             <div
               className="flex flex-col items-center ml-auto"
-              css={{ width: 'calc(100% - 33% + 2%)' }}
+              css={{ [media.tablet]: { width: 'calc(100% - 33% + 2%)' } }}
             >
-              <p className="font-display text-3xl text-gray-1000 text-center uppercase">
+              <p className="font-display text-xl sm:text-3xl text-gray-1000 text-center uppercase">
                 “Freddie is brilliant.”
               </p>
               <p
@@ -210,12 +215,12 @@ const IndexPage = ({ data }) => (
                 Madonna, regarding Freddie’s studio and live performances with
                 her for the flim, “EVITA”
               </p>
-              <p className="mt-10 self-start italic text-xs text-gray-400 text-right">
+              <p className="mt-10 md:self-start italic text-xs text-gray-400 text-right">
                 Madonna Photo Credit: Herb Ritts
               </p>
             </div>
           </div>
-          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+          <div className="px-5 md:px-12 py-10 font-display text-xl sm:text-3xl leading-tight text-center md:text-left uppercase text-gold-300 bg-gray-1000">
             Madonna
           </div>
         </AutoSlide>
@@ -226,21 +231,21 @@ const IndexPage = ({ data }) => (
         >
           <svg
             viewBox="0 0 146.9 95.8"
-            className="w-24 h-24 absolute left-0 ml-12"
-            css={{ top: '-3.1rem' }}
+            className="w-12 h-12 md:w-24 md:h-24 absolute left-0 ml-5 md:ml-12"
+            css={{ top: '-1.5rem', [media.tablet]: { top: '-3.1rem' } }}
           >
             <path
               fill="#c1b063"
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-12 py-16 pb-5">
+          <div className="relative px-5 md:px-12 py-10 md:py-16 pb-5 md:pb-5">
             <div
               className="inline-flex flex-col items-center"
-              css={{ width: 'calc(100% - 28% + 2%)' }}
+              css={{ [media.tablet]: { width: 'calc(100% - 28% + 2%)' } }}
             >
               <p
-                className="font-display text-3xl leading-tight text-gray-1000 text-center uppercase"
+                className="font-display text-xl sm:text-3xl leading-tight text-gray-1000 text-center uppercase"
                 css={{ maxWidth: '23em' }}
               >
                 “Freddie’s spirit is infinite silence and dynamism at the same
@@ -253,7 +258,7 @@ const IndexPage = ({ data }) => (
                 Dr. Deepak Chopra, TIME magazine: “One of the top 100 heroes and
                 icons of the 20th century.”
               </p>
-              <p className="mt-6 self-end italic text-xs text-gray-400 text-right">
+              <p className="mt-6 md:self-end italic text-xs text-gray-400 text-right">
                 Deepak Photo Credit: Michael Allen
               </p>
             </div>
@@ -264,17 +269,18 @@ const IndexPage = ({ data }) => (
                 position: 'absolute !important',
                 bottom: 0,
                 right: '4%',
+                [media.max.tablet]: { display: 'none' },
               }}
             />
           </div>
-          <div className="px-12 py-10 font-display text-3xl uppercase text-gold-300 bg-gray-1000">
+          <div className="px-5 md:px-12 py-10 font-display text-xl sm:text-3xl leading-tight text-center md:text-left uppercase text-gold-300 bg-gray-1000">
             Dr. Deepak Chopra
           </div>
         </AutoSlide>
       </Container>
     </section>
     <section
-      className="flex flex-col items-center relative py-20 bg-white"
+      className="flex flex-col items-center relative pt-10 md:pt-20 py-20 bg-white"
       css={{ paddingBottom: '17vw', background: '#f4f4f4' }}
     >
       <Img
@@ -285,7 +291,7 @@ const IndexPage = ({ data }) => (
       />
       <Container>
         <AutoFade>
-          <h3 className="relative font-display font-hairline text-3xl leading-tight text-center text-gray-700 uppercase">
+          <h3 className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase">
             Client Raves and Reviews
           </h3>
         </AutoFade>
@@ -297,7 +303,7 @@ const IndexPage = ({ data }) => (
             500: 1,
           }}
           columnClassName=""
-          className="flex -ml-5 mt-12 relative"
+          className="flex -ml-5 mt-5 md:mt-12 relative"
         >
           <AutoFade
             as="li"
