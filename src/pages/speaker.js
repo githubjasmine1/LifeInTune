@@ -337,6 +337,7 @@ const IndexPage = ({ data }) => (
             dissonance to harmony.
           </p>
           <ButtonLink
+            href="/LIT-Freddie-Ravel-Speaker-Programs2020-21_compressed.pdf"
             className="inline-flex mt-6 text-gray-900"
             icon={
               <svg

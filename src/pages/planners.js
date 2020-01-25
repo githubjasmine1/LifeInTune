@@ -90,6 +90,7 @@ const IndexPage = ({ data }) => (
                 </p>
                 <div css={{ maxWidth: 460 }}>
                   <ButtonLink
+                    href="/LIT-Freddie-Ravel-Speaker-Programs2020-21_compressed.pdf"
                     className="mt-5 md:mt-12 text-gray-900"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={

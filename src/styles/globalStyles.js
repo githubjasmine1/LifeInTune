@@ -16,6 +16,7 @@ export default [
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      overflowX: 'hidden',
     },
 
     body: {
@@ -26,6 +27,7 @@ export default [
       WebkitFontFeatureSettings: '"kern", "liga", "clig", "calt"',
       fontFeatureSettings: '"kern", "liga", "clig", "calt"',
       backgroundColor: theme.colors.gold['500'],
+      overflowX: 'hidden',
     },
 
     li: {

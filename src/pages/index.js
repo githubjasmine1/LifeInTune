@@ -462,7 +462,7 @@ const IndexPage = ({ data }) => (
         </AutoScale>
       </div>
       <Container
-        className="flex flex-col items-center relative overflow-hidden"
+        className="flex flex-col items-center relative"
         css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
