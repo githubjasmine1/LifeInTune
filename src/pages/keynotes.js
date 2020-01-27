@@ -29,7 +29,14 @@ export const query = graphql`
         }
       }
     }
-    img2: file(relativePath: { eq: "keynotes-img-2.png" }) {
+    img2: file(relativePath: { eq: "workshops.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    musicDiplomacy: file(relativePath: { eq: "music-diplomacy.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -399,6 +406,89 @@ const IndexPage = ({ data }) => (
                 WebkitTextFillColor: 'transparent',
               }}
             >
+              The Music of Diplomacy
+            </h3>
+          </header>
+          <div className="flex bg-white">
+            <div className="flex-1 py-8 lg:py-12 px-6">
+              <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
+                <q className="block mb-6 pr-5 text-xl italic leading-relaxed text-gray-600">
+                  Music’s the great invitation For mankind to transcend spoken
+                  word To enhance how we think And put into sync So we hear what
+                  is mostly not heard.
+                </q>
+                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                  Those words, from his number-one charting release, If Music
+                  Could Speak, sum up the central message of everything Freddie
+                  Ravel. Hailing from parents of Latin American and Eastern
+                  European decent, his humble beginnings as a newspaper boy to
+                  his rise as an internationally-renowned musical ambassador,
+                  Ravel is a living example of the classic American success
+                  story, highlighting that our strength and competitive
+                  advantage as a nation lie in our diverse cultural roots and
+                  experiences. Combined with his unrivaled passion for music and
+                  business, Ravel unlocks the minds, hearts and potential of
+                  audiences around the world.
+                </p>
+                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                  For his ongoing contributions to education through music,
+                  Ravel was recently knighted by the Knights of St. John, an
+                  organization who has championed hospitals and healthcare for
+                  over a 1,000 years. In this interactive program, Ravel
+                  combines proven solutions towards resolving conflicts and
+                  brings meaningful dialogue backed by scientific data and
+                  creative musical expression to appeal to the mind, body and
+                  soul of your conference participants.
+                </p>
+                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                  <li className="list-disc list-outside">
+                    Discover the three keys to genuine engagement.
+                  </li>
+                  <li className="list-disc list-outside">
+                    Ignite your team with collaboration’s ultimate super power:
+                    Harmony 
+                  </li>
+                  <li className="list-disc list-outside">
+                    Learn the science of how melodies and identity combine
+                    to strengthen connectivity.
+                  </li>
+                </ul>
+                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                  In these turbulent times of global chaos and relentless
+                  disruption, Ravel equips your group with tangible results
+                  revealing how music heals not only the sick—but the ills of
+                  today’s society by bridging cultural divides that allow
+                  conversations for peace to prosper and inspire greatness in
+                  leaders and entrepreneurs alike.
+                </p>
+                <p className="pr-5 leading-relaxed text-gray-600">
+                  Serving as a bridge between legendary music artists, business
+                  leaders and the Fortune 100, Ravel has co-published works with
+                  such visionaries as Earth, Wind and Fire, Carlos Santana,
+                  Deepak Chopra and Dr. Martin Luther King Jr.’s daughter,
+                  Yolanda King providing over two decades of
+                  music-applied-to-life successes in both the public and private
+                  sectors.
+                </p>
+              </div>
+            </div>
+            <div className="hidden lg:block flex-1 self-start p-12">
+              <Img fluid={data.musicDiplomacy.childImageSharp.fluid} />
+            </div>
+          </div>
+        </AutoSlide>
+
+        <AutoSlide up className="mb-10 lg:mb-32">
+          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+            <h3
+              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              css={{
+                backgroundImage:
+                  'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
               The “Keynote Maestro”
               <br />
               Your Master of Ceremonies
@@ -448,7 +538,12 @@ const IndexPage = ({ data }) => (
               </div>
             </div>
             <div className="hidden lg:block flex-1 self-start p-12">
-              <Img fluid={data.img1.childImageSharp.fluid} />
+              <Img
+                fluid={{
+                  ...data.img1.childImageSharp.fluid,
+                  aspectRatio: 1.05,
+                }}
+              />
             </div>
           </div>
         </AutoSlide>
