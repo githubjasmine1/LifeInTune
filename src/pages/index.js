@@ -563,7 +563,7 @@ const IndexPage = ({ data }) => (
             <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
               Celebrated
               <br />
-              perfomer
+              performer
             </h3>
             <p
               className="hidden md:block mt-5 text-gray-600 text-center"
