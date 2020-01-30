@@ -396,7 +396,7 @@ const Numbers = () => {
           <div className="text-white" css={{ fontSize: 78 }}>
             <span ref={n1}></span>M
           </div>
-          <p className="text-white">Over 314 million Attendees Impacted</p>
+          <p className="text-white">Over 314,000,000 Attendees Impacted</p>
         </AutoFade>
         <AutoFade delay={1 * 150} className="flex-1 text-center">
           <div className="text-white" css={{ fontSize: 78 }}>

@@ -474,6 +474,9 @@ const IndexPage = ({ data }) => (
             </div>
             <div className="hidden lg:block flex-1 self-start p-12">
               <Img fluid={data.musicDiplomacy.childImageSharp.fluid} />
+              <p className="mt-3 text-xs text-gray-500 text-right">
+                Photo Credit: ChrisSavas.com
+              </p>
             </div>
           </div>
         </AutoSlide>
