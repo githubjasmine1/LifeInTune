@@ -448,7 +448,7 @@ const IndexPage = ({ data }) => (
                 </p>
                 <p className="pr-5 leading-relaxed text-gray-600">
                   Serving as a bridge between legendary music artists, business
-                  leaders and the Fortune 100, Ravel has co-published works with
+                  leaders and the Fortune 500, Ravel has co-published works with
                   such visionaries as Earth, Wind and Fire, Carlos Santana,
                   Deepak Chopra and Dr. Martin Luther King Jr.’s daughter,
                   Yolanda King providing over two decades of

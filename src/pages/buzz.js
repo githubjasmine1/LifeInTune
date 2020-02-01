@@ -127,7 +127,11 @@ const IndexPage = ({ data }) => (
       css={{ backgroundColor: '#1b1b1b' }}
     >
       <Container>
-        <AutoSlide as="blockquote" className="relative bg-white">
+        <AutoSlide
+          as="blockquote"
+          className="relative bg-white"
+          css={{ marginTop: '3.05vw' }}
+        >
           <svg
             viewBox="0 0 146.9 95.8"
             className="w-12 h-12 md:w-24 md:h-24 absolute left-0 ml-5 md:ml-12"
@@ -138,40 +142,42 @@ const IndexPage = ({ data }) => (
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-5 md:px-12 py-10 md:py-20 pb-5 md:pb-5">
+          <div className="relative px-5 md:px-12 py-10 md:py-16 pb-5 md:pb-5">
             <div
               className="inline-flex flex-col items-center"
-              css={{
-                [media.tablet]: { width: 'calc(100% - 26% + 2%)' },
-              }}
+              css={{ [media.tablet]: { width: 'calc(100% - 28% + 2%)' } }}
             >
-              <p className="font-display text-xl sm:text-3xl text-gray-1000 text-center uppercase">
-                “Freddie es puro corazon.”
+              <p
+                className="font-display text-xl sm:text-3xl leading-tight text-gray-1000 text-center uppercase"
+                css={{ maxWidth: '23em' }}
+              >
+                “Freddie’s spirit is infinite silence and dynamism at the same
+                time.”
               </p>
               <p
-                className="mt-3 text-gray-600 text-center"
+                className="mt-4 text-gray-600 text-center"
                 css={{ maxWidth: '26em' }}
               >
-                Carlos Santana, Rock and Roll Hall of Fame, 8 Grammys and over
-                100 million albums sold
+                Dr. Deepak Chopra, TIME magazine: “One of the top 100 heroes and
+                icons of the 20th century.”
               </p>
-              <p className="mt-10 md:self-end italic text-xs text-gray-400 text-right">
-                Santana Photo Credit: Maryanne Bilham
+              <p className="mt-6 md:self-end italic text-xs text-gray-400 text-right">
+                Deepak Photo Credit: Michael Allen
               </p>
             </div>
             <Img
-              fluid={data.carlosSantana.childImageSharp.fluid}
+              fluid={data.chopra.childImageSharp.fluid}
               css={{
-                width: '28%',
+                width: '20%',
                 position: 'absolute !important',
                 bottom: 0,
-                right: '-5%',
+                right: '4%',
                 [media.max.tablet]: { display: 'none' },
               }}
             />
           </div>
           <div className="px-5 md:px-12 py-10 font-display text-xl sm:text-3xl leading-tight text-center md:text-left uppercase text-gold-300 bg-gray-1000">
-            CARLOS SANTANA
+            Dr. Deepak Chopra
           </div>
         </AutoSlide>
         <AutoSlide
@@ -239,42 +245,40 @@ const IndexPage = ({ data }) => (
               d="M47.1 35.1c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7C16 95.8 0 83.1 0 64.1c0-11.7 4.7-22.7 13-34.4L34.1 0h25.4L47.1 35.1zm80.1 0c12.4 4 19.7 15.4 19.7 29 0 19-15.4 31.7-32.7 31.7-18 0-34.1-12.7-34.1-31.7 0-11.7 4.7-22.7 13-34.4l21-29.7h25.4l-12.3 35.1z"
             />
           </svg>
-          <div className="relative px-5 md:px-12 py-10 md:py-16 pb-5 md:pb-5">
+          <div className="relative px-5 md:px-12 py-10 md:py-20 pb-5 md:pb-5">
             <div
               className="inline-flex flex-col items-center"
-              css={{ [media.tablet]: { width: 'calc(100% - 28% + 2%)' } }}
+              css={{
+                [media.tablet]: { width: 'calc(100% - 26% + 2%)' },
+              }}
             >
-              <p
-                className="font-display text-xl sm:text-3xl leading-tight text-gray-1000 text-center uppercase"
-                css={{ maxWidth: '23em' }}
-              >
-                “Freddie’s spirit is infinite silence and dynamism at the same
-                time.”
+              <p className="font-display text-xl sm:text-3xl text-gray-1000 text-center uppercase">
+                “Freddie es puro corazon.”
               </p>
               <p
-                className="mt-4 text-gray-600 text-center"
+                className="mt-3 text-gray-600 text-center"
                 css={{ maxWidth: '26em' }}
               >
-                Dr. Deepak Chopra, TIME magazine: “One of the top 100 heroes and
-                icons of the 20th century.”
+                Carlos Santana, Rock and Roll Hall of Fame, 8 Grammys and over
+                100 million albums sold
               </p>
-              <p className="mt-6 md:self-end italic text-xs text-gray-400 text-right">
-                Deepak Photo Credit: Michael Allen
+              <p className="mt-10 md:self-end italic text-xs text-gray-400 text-right">
+                Santana Photo Credit: Maryanne Bilham
               </p>
             </div>
             <Img
-              fluid={data.chopra.childImageSharp.fluid}
+              fluid={data.carlosSantana.childImageSharp.fluid}
               css={{
-                width: '20%',
+                width: '28%',
                 position: 'absolute !important',
                 bottom: 0,
-                right: '4%',
+                right: '-5%',
                 [media.max.tablet]: { display: 'none' },
               }}
             />
           </div>
           <div className="px-5 md:px-12 py-10 font-display text-xl sm:text-3xl leading-tight text-center md:text-left uppercase text-gold-300 bg-gray-1000">
-            Dr. Deepak Chopra
+            CARLOS SANTANA
           </div>
         </AutoSlide>
       </Container>

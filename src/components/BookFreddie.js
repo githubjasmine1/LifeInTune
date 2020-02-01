@@ -49,7 +49,7 @@ const BookFreddie = () => {
       </AutoFade>
       <AutoFade>
         <ButtonLink to="/speaker" className="mt-6 text-white">
-          Meet Freddie Ravel
+          Book Freddie Ravel
         </ButtonLink>
       </AutoFade>
       <AutoSlide up translate="50" duration={2000}>
