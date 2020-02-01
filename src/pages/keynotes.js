@@ -8,10 +8,7 @@ import ClientRaves from '../components/ClientRaves'
 import BookFreddie from '../components/BookFreddie'
 import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
-import VideoPlayer from '../components/VideoPlayer'
 import { AutoSlide, AutoFade } from '../components/Animated'
-
-import bgVideoColor from '../assets/bg-video-color.mp4'
 
 export const query = graphql`
   query {
@@ -37,6 +34,34 @@ export const query = graphql`
       }
     }
     musicDiplomacy: file(relativePath: { eq: "music-diplomacy.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    rhythmofsuccess: file(relativePath: { eq: "rhythmofsuccess.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    musicofleadership: file(relativePath: { eq: "musicofleadership.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    resolvedisruption: file(relativePath: { eq: "resolvedisruption.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    teamwork: file(relativePath: { eq: "teamwork.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -97,23 +122,13 @@ const IndexPage = ({ data }) => (
               </h3>
             </header>
             <div className="flex bg-white">
-              <VideoPlayer
+              <Img
+                fluid={data.rhythmofsuccess.childImageSharp.fluid}
                 className="hidden lg:block flex-1 self-start"
                 css={{
                   transform: 'translate(-48px, 48px)',
                   boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
                 }}
-                webroll={bgVideoColor}
-                video={
-                  <iframe
-                    src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    title="Watch The Experience"
-                    allowFullScreen
-                    className="w-full h-full absolute top-0 left-0 bg-black"
-                  />
-                }
-                ratio={0.8}
               />
               <div className="flex-1 py-8 lg:py-12 px-6">
                 <div css={{ maxWidth: '42em' }}>
@@ -217,23 +232,13 @@ const IndexPage = ({ data }) => (
                 </ButtonLink>
               </div>
             </div>
-            <VideoPlayer
+            <Img
+              fluid={data.musicofleadership.childImageSharp.fluid}
               className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
               }}
-              webroll={bgVideoColor}
-              video={
-                <iframe
-                  src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  title="Watch The Experience"
-                  allowFullScreen
-                  className="w-full h-full absolute top-0 left-0 bg-black"
-                />
-              }
-              ratio={0.8}
             />
           </div>
         </AutoSlide>
@@ -259,23 +264,13 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <VideoPlayer
+            <Img
+              fluid={data.resolvedisruption.childImageSharp.fluid}
               className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(-48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
               }}
-              webroll={bgVideoColor}
-              video={
-                <iframe
-                  src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  title="Watch The Experience"
-                  allowFullScreen
-                  className="w-full h-full absolute top-0 left-0 bg-black"
-                />
-              }
-              ratio={0.8}
             />
             <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '42em' }}>
@@ -374,23 +369,13 @@ const IndexPage = ({ data }) => (
                 </ButtonLink>
               </div>
             </div>
-            <VideoPlayer
+            <Img
+              fluid={data.teamwork.childImageSharp.fluid}
               className="hidden lg:block flex-1 self-start"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
               }}
-              webroll={bgVideoColor}
-              video={
-                <iframe
-                  src="https://player.vimeo.com/video/259618922?autoplay=1&color=b4903a"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  title="Watch The Experience"
-                  allowFullScreen
-                  className="w-full h-full absolute top-0 left-0 bg-black"
-                />
-              }
-              ratio={0.9}
             />
           </div>
         </AutoSlide>

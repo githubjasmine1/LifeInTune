@@ -343,6 +343,7 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
       ) : (
         <img
           src={videoPoster}
+          alt=""
           className="w-full h-full absolute top-0 left-0 object-cover"
         />
       )}
