@@ -554,13 +554,15 @@ const IndexPage = ({ data }) => (
             <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
-                  The Rhythm of Success is a one-of-a-kind program designed to
-                  challenge and inspire organizations to discover their untapped
-                  potential through the power of Active Listening. The format is
-                  fast-paced, entertaining, and as the secrets of the world’s
-                  undisputed international language of music are revealed, full
-                  of surprises. In this multimedia, interactive “Keynote
-                  Concert” experience, your audience will learn to
+                  While the Life In Tune Keynote Experience serves as the
+                  ultimate conference energizer, our WORKSHOPS take your
+                  attendees deeper by accessing Music’s communicative powers to
+                  fine tune your message. From elevating clarity of purpose to
+                  unleashing the courage it takes for authentic breakthroughs,
+                  your team will tune up to their greatest potential,
+                  synchronize their actions and strike the chords of People,
+                  Planet and Profits that take any out of tune business to a
+                  business that sings.
                 </p>
                 <ButtonLink to="/contact" className="inline-flex text-gray-900">
                   INQUIRE FOR MORE INFO

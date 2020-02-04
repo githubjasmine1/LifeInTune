@@ -626,7 +626,7 @@ const IndexPage = ({ data }) => (
             className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase"
             css={{ maxWidth: '27em' }}
           >
-            Inspiring Entrepreneurs, Start-ups and The Fortune 500
+            Inspiring Success-Driven Companies, Executives and the ForTUNE 500
           </h3>
         </AutoFade>
         <ul
