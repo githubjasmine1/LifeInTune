@@ -105,6 +105,7 @@ const IndexPage = ({ data }) => (
                     Download one-sheet
                   </ButtonLink>
                   <ButtonLink
+                    href="/Freddie-Ravel-Questionnaire.pdf"
                     className="mt-3 md:mt-6 text-gray-900"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
@@ -119,6 +120,7 @@ const IndexPage = ({ data }) => (
                     Pre-Event Questionnaire
                   </ButtonLink>
                   <ButtonLink
+                    href="/Freddie-Ravel-Questionnaire.pdf"
                     className="mt-3 md:mt-6 text-gray-900"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
@@ -133,6 +135,7 @@ const IndexPage = ({ data }) => (
                     A/V Requirements
                   </ButtonLink>
                   <ButtonLink
+                    href="/Ravel-Press-Photos.zip"
                     className="mt-3 md:mt-6 text-gray-900"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={

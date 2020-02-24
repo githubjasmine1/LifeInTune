@@ -365,7 +365,7 @@ const IndexPage = ({ data }) => (
           >
             <img src={anz} alt="" className="block w-24 opacity-50" />
             <p className="mt-6">
-              “He made it so relevant and so real for out audience.”
+              “He made it so relevant and so real for our audience.”
             </p>
             <p className="mt-5 text-sm">Australia New Zealand Bank</p>
           </AutoFade>

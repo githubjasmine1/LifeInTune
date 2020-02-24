@@ -94,6 +94,11 @@ export const query = graphql`
     tl2011Santana: file(relativePath: { eq: "timeline/2011-santana.png" }) {
       ...textContainerWide
     }
+    tl2012RavelKnightsofsaintjohn: file(
+      relativePath: { eq: "timeline/2012-ravel-knightsofsaintjohn.png" }
+    ) {
+      ...textContainerWide
+    }
     tl2014RavelAlbum4: file(
       relativePath: { eq: "timeline/2014-ravel-album4.png" }
     ) {
@@ -669,6 +674,29 @@ const IndexPage = ({ data }) => (
             <Img fluid={data.tl2011Santana.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
               Santana’s Guitar Heaven
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2012
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img
+              fluid={{
+                ...data.tl2012RavelKnightsofsaintjohn.childImageSharp.fluid,
+                aspectRatio: 0.95,
+              }}
+              imgStyle={{ objectPosition: 'top' }}
+            />
+            <div className="p-5 bg-white text-gray-600">
+              Knighted by the world’s oldest historic Order, “The Knights of St.
+              John” , championing humanitarian work and health care for over
+              1,000 years.
             </div>
           </div>
         </div>

@@ -288,8 +288,8 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src={`https://player.vimeo.com/video/259618922?color=b4903a${
-                isOpen ? '&autoplay=1' : ''
+              src={`https://www.youtube.com/embed/ckHe6AUapwo${
+                isOpen ? '?autoplay=1' : ''
               }`}
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               title="Watch The Experience"

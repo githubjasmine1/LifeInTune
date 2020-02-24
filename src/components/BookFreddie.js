@@ -48,7 +48,7 @@ const BookFreddie = () => {
         </h3>
       </AutoFade>
       <AutoFade>
-        <ButtonLink to="/speaker" className="mt-6 text-white">
+        <ButtonLink to="/contact" className="mt-6 text-white">
           Book Freddie Ravel
         </ButtonLink>
       </AutoFade>

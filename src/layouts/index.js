@@ -96,11 +96,11 @@ const Navbar = props => {
           <div className="relative">
             <div className="flex absolute" css={{ top: 0, right: '100%' }}>
               <Link
-                to="/keynotes"
+                to="/programs"
                 className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
-                Keynotes
+                Programs
               </Link>
               <Link
                 to="/speaker"
@@ -197,7 +197,7 @@ const Navbar = props => {
         <Link
           to="/"
           onClick={() => setMobileNavOpen(false)}
-          className="flex items-center"
+          className="flex items-center mx-auto"
         >
           <svg
             viewBox="0 0 78.415 78.415"
@@ -235,7 +235,7 @@ const Navbar = props => {
           </svg>
         </Link>
         <HamburgerBtn
-          className={`block lg:hidden relative ml-auto text-gold-300 focus:outline-none ${isMobileNavOpen &&
+          className={`block lg:hidden relative text-gold-300 focus:outline-none ${isMobileNavOpen &&
             'is-open'}`}
           css={{ marginRight: -10 }}
           onClick={() => setMobileNavOpen(isOpen => !isOpen)}
