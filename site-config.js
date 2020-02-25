@@ -28,6 +28,6 @@ module.exports = {
   ],
   twitterCreator: '@freddieravel',
   twitterSite: '@freddieravel',
-  gaTrackingId: '__TODO__________________________________',
+  gaTrackingId: 'UA-16565216-2',
   fbAppId: '__TODO__________________________________',
 }
