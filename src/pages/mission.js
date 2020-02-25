@@ -74,6 +74,7 @@ const IndexPage = ({ data }) => (
               />
             }
             ratio={1080 / 1920}
+            css={{ '.gatsby-image-wrapper': { opacity: 0.8 } }}
           />
         </AutoSlide>
       </div>
