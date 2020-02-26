@@ -825,7 +825,7 @@ const IndexPage = ({ data }) => (
       <Container>
         <AutoFade>
           <h3 className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase">
-            Featured keynote topics
+            Featured Programs
           </h3>
         </AutoFade>
         <ul className="flex flex-col lg:flex-row -m-5 mt-12 relative">
