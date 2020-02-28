@@ -562,7 +562,7 @@ const IndexPage = ({ data }) => (
               imgStyle={{ objectFit: 'contain' }}
             />
             <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
-              Celebrated
+              Award-Winning
               <br />
               performer
             </h3>
