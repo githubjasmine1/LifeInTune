@@ -293,11 +293,11 @@ const Navbar = props => {
           onClick={() => setMobileNavOpen(false)}
         >
           <Link
-            to="/keynotes"
+            to="/programs"
             className="px-5 py-3 font-display text-2xl uppercase"
             activeClassName="text-gold-300"
           >
-            Keynotes
+            Programs
           </Link>
           <Link
             to="/speaker"

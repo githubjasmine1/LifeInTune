@@ -274,9 +274,9 @@ const ContactForm = () => {
                       WORKSHOPS / BREAKOUT SESSIONS
                     </option>
                   </Field>
-                  <div class="flex justify-center items-center w-16 h-full absolute top-0 right-0 pointer-events-none">
+                  <div className="flex justify-center items-center w-16 h-full absolute top-0 right-0 pointer-events-none">
                     <svg
-                      class="w-4 h-4 text-gray-600"
+                      className="w-4 h-4 text-gray-600"
                       viewBox="0 0 15.924 8.492"
                       fill="none"
                       stroke="currentColor"
