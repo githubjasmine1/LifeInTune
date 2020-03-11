@@ -726,7 +726,10 @@ const IndexPage = ({ data }) => (
           </AutoScale>
         </ul>
         <AutoFade>
-          <ButtonLink to="/" className="hidden md:block mt-6 text-gray-900">
+          <ButtonLink
+            to="/contact"
+            className="hidden md:block mt-6 text-gray-900"
+          >
             Start Your Experience
           </ButtonLink>
         </AutoFade>
@@ -842,7 +845,7 @@ const IndexPage = ({ data }) => (
               potential through the power of Active Listening.
             </p>
             <ButtonLink
-              to="/keynotes#the-rhythm-of-success"
+              to="/programs#the-rhythm-of-success"
               className="self-center mt-10 text-gray-900"
             >
               LEARN MORE
@@ -861,7 +864,7 @@ const IndexPage = ({ data }) => (
               bring life to your products and services.
             </p>
             <ButtonLink
-              to="/keynotes#the-music-of-leadership"
+              to="/programs#the-music-of-leadership"
               className="self-center mt-10 text-gray-900"
             >
               LEARN MORE
@@ -873,7 +876,7 @@ const IndexPage = ({ data }) => (
             className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
             css={{ display: 'flex' }}
           >
-            <h4 className="text-xl leading-none">Resolving Disruption</h4>
+            <h4 className="text-xl leading-none">Getting in Tune With ESG</h4>
             <p className="mt-5">
               This interactive experience takes your audience into what
               disruption actually sounds like and then, through revealing
@@ -881,7 +884,7 @@ const IndexPage = ({ data }) => (
               resolution.
             </p>
             <ButtonLink
-              to="/keynotes#resolving-disruption"
+              to="/programs#getting-in-tune-with-esg"
               className="self-center mt-10 text-gray-900"
             >
               LEARN MORE
@@ -900,7 +903,7 @@ const IndexPage = ({ data }) => (
               hypercompetitive marketplace.
             </p>
             <ButtonLink
-              to="/keynotes#teamwork"
+              to="/programs#teamwork"
               className="self-center mt-10 text-gray-900"
             >
               LEARN MORE

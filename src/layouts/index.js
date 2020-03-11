@@ -508,7 +508,7 @@ const Footer = props => {
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/keynotes" className="hover:text-gold-300 transition">
+            <Link to="/programs" className="hover:text-gold-300 transition">
               Keynotes
             </Link>
           </li>

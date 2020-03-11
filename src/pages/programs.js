@@ -245,7 +245,7 @@ const IndexPage = ({ data }) => (
 
         <AutoSlide
           as="section"
-          id="resolving-disruption"
+          id="getting-in-tune-with-esg"
           up
           className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
@@ -260,13 +260,16 @@ const IndexPage = ({ data }) => (
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              RESOLVING DISRUPTION
+              Getting in Tune With ESG
+              <span class="block text-sm lg:text-lg">
+                (Environmental, Social, and Governance)
+              </span>
             </h3>
           </header>
           <div className="flex bg-white">
             <Img
               fluid={data.resolvedisruption.childImageSharp.fluid}
-              className="hidden lg:block flex-1 self-start"
+              className="hidden lg:block flex-1"
               css={{
                 transform: 'translate(-48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -275,27 +278,38 @@ const IndexPage = ({ data }) => (
             <div className="flex-1 py-8 lg:py-12 px-6">
               <div css={{ maxWidth: '42em' }}>
                 <p className="mb-6 pr-5 leading-relaxed text-gray-600">
-                  With Disruption ever-present and increasing at lightning
-                  speed, it’s easy for organizations to get out of tune and out
-                  of sync. This interactive experience takes your audience into
-                  what disruption actually sounds like and then, through
-                  revealing tangible techniques to overcome adversity,
-                  transforms dissonance to resolution. The stunning new
-                  composition that is co-created with the audience reveals their
-                  own wisdom and capability to discover surprising solutions
-                  towards achieving their highest potential. Your teams and
-                  organization will learn:
+                  As we enter this decisive decade, the urgency for companies to
+                  move toward the issues of Environmental, Social, and
+                  Governance (ESG) is greater than ever. However, many
+                  organizations either don’t acknowledge the need nor have a
+                  clear approach to help guide them, leaving them out of sync
+                  and out of tune with their employees, colleagues and
+                  customers. ESG is often viewed as just sustainability and
+                  investments, but it’s much more than that – and includes a
+                  host of areas ranging from workforce diversity and inclusion
+                  to better treatment of workers. So how to get to good
+                  governance? First, it’s important to listen – a vital skill
+                  top musicians and business leaders share. In this revealing
+                  and high-energy presentation, Ravel unlocks the secrets to
+                  this keystone of all communication, helping your audience
+                  understand the unique parallels between music and business
+                  while gaining the ability to cut through the noise and achieve
+                  clarity. This fun, interactive experience will help leaders
+                  understand what disruption really sounds like, and then reveal
+                  fresh techniques to overcome adversity and get in harmony with
+                  the new corporate social responsibilities.
                 </p>
                 <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                  <li className="list-disc list-outside">
+                    How to get from Good Governance to GREAT Governance.
+                  </li>
                   <li className="list-disc list-outside">
                     What Disruption sounds like and more importantly, how to
                     resolve it.
                   </li>
                   <li className="list-disc list-outside">
-                    How to get from out of tune to in tune.
-                  </li>
-                  <li className="list-disc list-outside">
-                    The only way to manage change is to create change.
+                    Why symphonic sustainability replaces superficial
+                    sustainability.
                   </li>
                 </ul>
                 <ButtonLink to="/contact" className="inline-flex text-gray-900">

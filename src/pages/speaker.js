@@ -462,7 +462,8 @@ const IndexPage = ({ data }) => (
           <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl1995Earthwindfire.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
-              Earth, Wind and Fire
+              Composer, Director, Producer and Performer with Earth, Wind and
+              Fire.
             </div>
           </div>
         </div>
@@ -726,7 +727,7 @@ const IndexPage = ({ data }) => (
           <div className="img-hover-effect w-full transition">
             <Img fluid={data.tl2015DonMiguel.childImageSharp.fluid} />
             <div className="p-5 bg-white text-gray-600">
-              Creating with author of ‘The Four Agreements
+              Writing with author Don Miguel Ruiz, Sr. of “The Four Agreements.”
             </div>
           </div>
         </div>
