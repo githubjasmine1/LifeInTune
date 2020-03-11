@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => (
                     Pre-Event Questionnaire
                   </ButtonLink>
                   <ButtonLink
-                    href="/Freddie-Ravel-Questionnaire.pdf"
+                    href="/Freddie-Ravel_Rider_Keyboard.pdf"
                     className="mt-3 md:mt-6 text-gray-900"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
