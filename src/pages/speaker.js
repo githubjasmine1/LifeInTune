@@ -149,6 +149,23 @@ export const query = graphql`
     ) {
       ...textContainerWide
     }
+    i2016usc: file(relativePath: { eq: "timeline/2016-usc.jpg" }) {
+      ...textContainerWide
+    }
+    i2017TexasHurricaneHarvey: file(
+      relativePath: { eq: "timeline/2017-texas-hurricane-harvey.jpg" }
+    ) {
+      ...textContainerWide
+    }
+    i2018ibm: file(relativePath: { eq: "timeline/2018-ibm.jpg" }) {
+      ...textContainerWide
+    }
+    i2019PncBank: file(relativePath: { eq: "timeline/2019-pnc-bank.jpg" }) {
+      ...textContainerWide
+    }
+    i2019Esg: file(relativePath: { eq: "timeline/2019-esg.jpg" }) {
+      ...textContainerWide
+    }
   }
 `
 
@@ -744,6 +761,97 @@ const IndexPage = ({ data }) => (
             <div className="p-5 bg-white text-gray-600">
               Speaking at IASB alongside Mexico’s former President, Felipe
               Caldron
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2016
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.i2016usc.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Life In Tune expands to universities across the USA including USC,
+              SIU and UCLA
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2017
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.i2017TexasHurricaneHarvey.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Overcoming Adversity Keynote to the Farm Credit Bank of Texas
+              following Hurricane Harvey
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2018
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.i2018ibm.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              “Working with the IBM Teams in Europe, USA and Asia.”
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2019
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.i2019PncBank.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Advising PNC Bank’s “Diversity and Inclusion Leadership
+              Conference” - Pittsburgh HQ
+              <ButtonLink
+                to="/programs"
+                className="hidden md:block mt-6 text-gray-900"
+              >
+                SEE PROGRAM
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div
+            className="mb-4 rounded-full bg-gold-300"
+            css={{ width: 13, height: 13 }}
+          ></div>
+          <div className="mb-4 font-display text-3xl text-gold-300 text-center">
+            2019
+          </div>
+          <div className="img-hover-effect w-full transition">
+            <Img fluid={data.i2019Esg.childImageSharp.fluid} />
+            <div className="p-5 bg-white text-gray-600">
+              Addressing ESG - Environment, Social and Governance to multiple
+              global policy leaders.
+              <ButtonLink
+                to="/programs"
+                className="hidden md:block mt-6 text-gray-900"
+              >
+                SEE PROGRAM
+              </ButtonLink>
             </div>
           </div>
         </div>
