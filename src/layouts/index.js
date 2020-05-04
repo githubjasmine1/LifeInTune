@@ -12,6 +12,8 @@ import Logo from '../components/Logo'
 import { AutoFade } from '../components/Animated'
 import { media, max } from '../styles/tools'
 
+import muse from '../assets/muse.gif'
+
 const HamburgerBtn = props => (
   <button
     css={{
@@ -73,10 +75,10 @@ const Navbar = props => {
     <AutoFade
       options={{ triggerOnce: true, rootMargin: '0px' }}
       duration={1500}
-      className="w-full z-40 fixed top-0 left-0"
+      className="fixed top-0 left-0 z-40 w-full"
     >
       <header
-        className="hidden lg:block py-5 font-display font-hairline text-white transition-slow ease-out"
+        className="hidden py-5 font-hairline text-white ease-out lg:block font-display transition-slow"
         style={{
           paddingTop: 48,
           transform: isBelow ? 'translateY(-28px)' : 'none',
@@ -84,34 +86,40 @@ const Navbar = props => {
         {...props}
       >
         <div
-          className="w-full h-full absolute top-0 left-0 transition-slow ease-out"
+          className="absolute top-0 left-0 w-full h-full ease-out transition-slow"
           css={{ backgroundColor: 'rgba(26, 26, 26, .8)' }}
           style={{ opacity: isBelow ? 1 : 0 }}
         ></div>
+        <img
+          src={muse}
+          alt="Muse Award"
+          className="absolute top-0 left-0 w-10 ml-4 ease-out transition-slow"
+          style={{ transform: isBelow ? 'translateY(28px)' : 'none' }}
+        />
         <Container
           as="nav"
-          className="flex justify-center items-center"
+          className="flex items-center justify-center"
           css={{ lineHeight: '50px' }}
         >
           <div className="relative">
-            <div className="flex absolute" css={{ top: 0, right: '100%' }}>
+            <div className="absolute flex" css={{ top: 0, right: '100%' }}>
               <Link
                 to="/programs"
-                className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Programs
               </Link>
               <Link
                 to="/speaker"
-                className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Speaker
               </Link>
               <Link
                 to="/mission"
-                className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Mission
@@ -128,7 +136,7 @@ const Navbar = props => {
             >
               <svg
                 viewBox="0 0 330 17.6"
-                className="transition-slow ease-out"
+                className="ease-out transition-slow"
                 css={{ gridArea: 'center', width: 260, height: 50 }}
                 style={{
                   opacity: isBelow ? 1 : 0,
@@ -154,7 +162,7 @@ const Navbar = props => {
                 />
               </svg>
               <Logo
-                className="absolute hover:text-gold-300 transition-slow ease-out"
+                className="absolute ease-out hover:text-gold-300 transition-slow"
                 css={{
                   gridArea: 'center',
                   width: 150,
@@ -169,19 +177,19 @@ const Navbar = props => {
               />
             </Link>
             <div
-              className="flex items-center absolute"
+              className="absolute flex items-center"
               css={{ top: 0, left: '100%' }}
             >
               <Link
                 to="/buzz"
-                className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Buzz
               </Link>
               <Link
                 to="/planners"
-                className="px-2 lg:px-5 xl:px-10 text-sm uppercase hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Planners
@@ -193,7 +201,12 @@ const Navbar = props => {
           </div>
         </Container>
       </header>
-      <header className="flex items-center lg:hidden w-full h-16 fixed top-0 left-0 px-5 bg-black">
+      <header className="fixed top-0 left-0 flex items-center w-full h-16 pr-5 bg-black lg:hidden">
+        <img
+          src={muse}
+          alt="Muse Award"
+          className="self-start object-contain object-top w-6 h-full ml-2 sm:w-12 sm:h-auto sm:ml-5"
+        />
         <Link
           to="/"
           onClick={() => setMobileNavOpen(false)}
@@ -213,7 +226,7 @@ const Navbar = props => {
           </svg>
           <svg
             viewBox="0 0 330 17.6"
-            className="transition-slow ease-out"
+            className="ease-out transition-slow"
             css={{ width: 210, [media.tablet]: { width: 260 } }}
           >
             <linearGradient
@@ -241,7 +254,7 @@ const Navbar = props => {
           onClick={() => setMobileNavOpen(isOpen => !isOpen)}
         />
         <div
-          className="flex flex-col w-full h-screen absolute left-0 pt-5 pb-20 text-white bg-gray-900 transition-slow"
+          className="absolute left-0 flex flex-col w-full h-screen pt-5 pb-20 text-white bg-gray-900 transition-slow"
           css={{
             top: '100%',
             '> *': {
@@ -294,42 +307,42 @@ const Navbar = props => {
         >
           <Link
             to="/programs"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Programs
           </Link>
           <Link
             to="/speaker"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Speaker
           </Link>
           <Link
             to="/mission"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Mission
           </Link>
           <Link
             to="/buzz"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Buzz
           </Link>
           <Link
             to="/planners"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Planners
           </Link>
           <Link
             to="/contact"
-            className="px-5 py-3 font-display text-2xl uppercase"
+            className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
             Booking
@@ -395,7 +408,7 @@ const Footer = props => {
 
   return (
     <footer
-      className="relative py-20 pt-10 lg:pt-20 text-white"
+      className="relative py-20 pt-10 text-white lg:pt-20"
       css={{ backgroundColor: '#0a0a0a' }}
       {...props}
     >
@@ -411,12 +424,12 @@ const Footer = props => {
           },
         }}
       >
-        <div className="hidden lg:flex flex-col items-center">
+        <div className="flex-col items-center hidden lg:flex">
           <Img
             fluid={data.goldLogo.childImageSharp.fluid}
             css={{ width: 150 }}
           />
-          <p className="mt-5 text-xs text-gray-600 text-center">
+          <p className="mt-5 text-xs text-center text-gray-600">
             ©2020 All Right Reserved.
             <br />
             Life In Tune™ with Freddie Ravel.
@@ -437,18 +450,18 @@ const Footer = props => {
             </p>
             <Img
               fluid={data.goldLogo.childImageSharp.fluid}
-              className="lg:hidden ml-5"
+              className="ml-5 lg:hidden"
               css={{ width: 85 }}
             />
           </div>
           {/* <Link
             out
             href="https://www.google.pl/maps/place/22287+Mulholland+Hwy+%23516,+Calabasas,+CA+91302,+Stany+Zjednoczone/@34.1485337,-118.6140125,13.84z/data=!4m5!3m4!1s0x80c29ee517aca377:0x493574b19ff5cd59!8m2!3d34.1468839!4d-118.6130005"
-            className="flex items-start mt-6 hover:text-gold-300 transition"
+            className="flex items-start mt-6 transition hover:text-gold-300"
           >
             <svg
               viewBox="0 0 34 26.18"
-              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current opacity-75"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 opacity-75 stroke-current"
             >
               <g fill="none" strokeWidth="3">
                 <path
@@ -472,11 +485,11 @@ const Footer = props => {
           </Link> */}
           <Link
             href="tel:+18572673669"
-            className="flex items-start mt-3 hover:text-gold-300 transition"
+            className="flex items-start mt-3 transition hover:text-gold-300"
           >
             <svg
               viewBox="0 0 30.927 36.025"
-              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 stroke-current opacity-75"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 opacity-75 stroke-current"
             >
               <path
                 fill="none"
@@ -490,11 +503,11 @@ const Footer = props => {
           </Link>
           <Link
             href="mailto:manager@freddieravel.com"
-            className="flex items-start mt-3 hover:text-gold-300 transition"
+            className="flex items-start mt-3 transition hover:text-gold-300"
           >
             <svg
               viewBox="0 0 96.3 100.2"
-              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 fill-current opacity-75"
+              className="flex-shrink-0 w-4 h-4 mt-1 mr-3 opacity-75 fill-current"
             >
               <path d="M93.1 24.5A40.2 40.2 0 0070 3.1 54.5 54.5 0 0025 7 46.5 46.5 0 006.8 26 55 55 0 000 53.3C0 60.7 1.2 67.2 3.6 73 6 78.8 9.5 83.8 14 87.8s10.1 7.1 16.6 9.2a75 75 0 0035.2 2.1c3.9-.7 7.8-1.9 11.6-3.5l-3.1-7.4a60.8 60.8 0 01-21.6 3.9c-6.9 0-13.1-.9-18.6-2.6a38 38 0 01-13.9-7.6 32.5 32.5 0 01-8.7-12.2 49.2 49.2 0 01.2-34.2 42.7 42.7 0 0122.5-23.9 43.3 43.3 0 0143.4 5.7 31 31 0 0110.2 23.1c0 4.5-.5 8.5-1.6 12.1a29 29 0 01-4.3 9 20 20 0 01-6.3 5.7 16 16 0 01-7.7 2c-1.2 0-2-.3-2.5-1-.5-.6-.8-1.6-.8-2.7 0-.9.1-2 .4-3.4l.9-4.8 7.8-34.9H64l-1.1 5.2a19 19 0 00-6.6-4.7 21 21 0 00-8.6-1.6A22 22 0 0037.1 24a28 28 0 00-8.8 7.4 36.8 36.8 0 00-6 11.1 41.8 41.8 0 00-2.2 13.9c0 3.4.5 6.4 1.4 9a17.1 17.1 0 009.9 10.9 20.6 20.6 0 0016.8-.8c2.9-1.5 5.5-3.6 7.8-6.3a8.5 8.5 0 003.3 6.1c.9.8 2 1.4 3.3 1.8 1.2.4 2.6.7 4.1.7A27.9 27.9 0 0088.1 68a34 34 0 006.2-11.8c1.5-4.6 2.2-9.9 2.2-15.8-.2-5.7-1.2-11-3.4-15.9zM56.8 53.3c-.6 2.5-1.4 4.7-2.4 6.6a19.1 19.1 0 01-8.3 8.2c-1.7.7-3.4 1.1-5.3 1.1-6.9 0-10.4-4.4-10.4-13.1 0-3.6.5-7 1.4-10.2.9-3.2 2.2-6 3.8-8.3a20 20 0 015.5-5.7c2.1-1.4 4.2-2.1 6.5-2.1a16.7 16.7 0 0113.1 5.8l-3.9 17.7z" />
             </svg>
@@ -503,32 +516,32 @@ const Footer = props => {
         </div>
         <ul>
           <li>
-            <Link to="/" className="hover:text-gold-300 transition">
+            <Link to="/" className="transition hover:text-gold-300">
               Home
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/programs" className="hover:text-gold-300 transition">
+            <Link to="/programs" className="transition hover:text-gold-300">
               Keynotes
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/speaker" className="hover:text-gold-300 transition">
+            <Link to="/speaker" className="transition hover:text-gold-300">
               Speaker
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/mission" className="hover:text-gold-300 transition">
+            <Link to="/mission" className="transition hover:text-gold-300">
               Mission
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/buzz" className="hover:text-gold-300 transition">
+            <Link to="/buzz" className="transition hover:text-gold-300">
               Buzz
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/planners" className="hover:text-gold-300 transition">
+            <Link to="/planners" className="transition hover:text-gold-300">
               Planners
             </Link>
           </li>
@@ -540,7 +553,7 @@ const Footer = props => {
               <Link
                 out
                 href="http://www.linkedin.com/in/freddieravel"
-                className="flex items-center hover:text-gold-300 transition"
+                className="flex items-center transition hover:text-gold-300"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                   <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z" />
@@ -552,7 +565,7 @@ const Footer = props => {
               <Link
                 out
                 href="http://twitter.com/freddieravel"
-                className="flex items-center hover:text-gold-300 transition"
+                className="flex items-center transition hover:text-gold-300"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                   <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
@@ -564,7 +577,7 @@ const Footer = props => {
               <Link
                 out
                 href="https://www.instagram.com/freddieravel/"
-                className="flex items-center hover:text-gold-300 transition"
+                className="flex items-center transition hover:text-gold-300"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                   <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
@@ -576,7 +589,7 @@ const Footer = props => {
               <Link
                 out
                 href="http://www.facebook.com/pages/Freddie-Ravel/63497511550"
-                className="flex items-center hover:text-gold-300 transition"
+                className="flex items-center transition hover:text-gold-300"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                   <path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" />
@@ -588,7 +601,7 @@ const Footer = props => {
               <Link
                 out
                 href="https://www.youtube.com/user/maximjasmine"
-                className="flex items-center hover:text-gold-300 transition"
+                className="flex items-center transition hover:text-gold-300"
               >
                 <svg className="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
                   <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
@@ -601,7 +614,7 @@ const Footer = props => {
         <Link
           out
           href="https://advictorem.agency"
-          className="block w-6 h-6 absolute right-0 bottom-0 mr-6 mb-5 text-gray-700 hover:text-white transition"
+          className="absolute bottom-0 right-0 block w-6 h-6 mb-5 mr-6 text-gray-700 transition hover:text-white"
           css={{ [media.tablet]: { width: 28, height: 28 } }}
         >
           <svg viewBox="0 0 153.4 128.1" fill="currentColor">
