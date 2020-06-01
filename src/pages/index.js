@@ -259,7 +259,7 @@ const Demo = () => {
         </ButtonLink>
       </AutoSlide>
       <div
-        className="flex justify-center items-center w-full h-full fixed z-50 top-0 left-0 transition-slow ease-out"
+        className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full ease-out transition-slow"
         style={
           isOpen
             ? { visibility: 'visible', opacity: 1 }
@@ -267,24 +267,24 @@ const Demo = () => {
         }
       >
         <div
-          className="w-full h-full absolute top-0 left-0 bg-black opacity-50"
+          className="absolute top-0 left-0 w-full h-full bg-black opacity-50"
           onClick={() => setIsOpen(false)}
         />
         <button
           onClick={() => setIsOpen(false)}
-          className="block absolute top-0 right-0 p-5 text-4xl leading-none text-white hover:text-gold-300 transition focus:outline-none"
+          className="absolute top-0 right-0 block p-5 text-4xl leading-none text-white transition hover:text-gold-300 focus:outline-none"
         >
           &times;
         </button>
         <div
-          className="w-4/5 transition-slow ease-out"
+          className="w-4/5 ease-out transition-slow"
           style={{
             transform: isOpen ? 'scale(1)' : 'scale(.9)',
             pointerEvents: isOpen ? 'all' : 'none',
           }}
         >
           <div
-            className="w-full h-0 relative mt-10"
+            className="relative w-full h-0 mt-10"
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
@@ -294,7 +294,7 @@ const Demo = () => {
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               title="Watch The Experience"
               allowFullScreen
-              className="w-full h-full absolute top-0 left-0 bg-black"
+              className="absolute top-0 left-0 w-full h-full bg-black"
             />
           </div>
         </div>
@@ -332,10 +332,10 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
             playsInline
             loop
             muted
-            className="w-full h-full absolute top-0 left-0 object-cover"
+            className="absolute top-0 left-0 object-cover w-full h-full"
           ></video>
           <Waves
-            className="w-full absolute left-0 pointer-events-none"
+            className="absolute left-0 w-full pointer-events-none"
             css={{ bottom: '-20vw' }}
             onComplete={() => setWavesCompleted(true)}
           />
@@ -344,7 +344,7 @@ const CrazyShenanigans = ({ video, videoPoster }) => {
         <img
           src={videoPoster}
           alt=""
-          className="w-full h-full absolute top-0 left-0 object-cover"
+          className="absolute top-0 left-0 object-cover w-full h-full"
         />
       )}
     </>
@@ -390,7 +390,7 @@ const Numbers = () => {
   return (
     <section
       ref={inViewRef}
-      className="hidden lg:flex flex-col items-center relative py-20 bg-black"
+      className="relative flex-col items-center hidden py-20 bg-black lg:flex"
     >
       <Container as="ul" className="flex">
         <AutoFade delay={0 * 150} className="flex-1 text-center">
@@ -428,7 +428,7 @@ const IndexPage = ({ data }) => (
   <>
     <SEO />
     <section
-      className="flex flex-col items-center h-screen relative text-white"
+      className="relative flex flex-col items-center h-screen text-white"
       css={{
         backgroundColor: '#2a282a',
         [media.tabletMd]: { height: 'calc(50vh + 28vw)' },
@@ -438,7 +438,7 @@ const IndexPage = ({ data }) => (
         video={headerBg}
         videoPoster={data.headerBgPoster.childImageSharp.fixed.src}
       />
-      <div className="w-full md:h-full md:absolute order-last md:order-first mt-auto md:mt-0 top-0 left-0 pointer-events-none overflow-hidden">
+      <div className="top-0 left-0 order-last w-full mt-auto overflow-hidden pointer-events-none md:h-full md:absolute md:order-first md:mt-0">
         <AutoScale
           up
           delay={300}
@@ -463,28 +463,24 @@ const IndexPage = ({ data }) => (
         </AutoScale>
       </div>
       <Container
-        className="flex flex-col items-center relative"
+        className="relative flex flex-col items-center"
         css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
           as="h2"
           up
           delay={100}
-          className="font-display font-hairline leading-tight uppercase text-center"
+          className="font-hairline leading-tight text-center uppercase font-display"
           css={{ fontSize: '8vw', [media.tabletMd]: { fontSize: '3.2vw' } }}
         >
           <RotateWords
-            words={[
-              'Mind. Body. Business.',
-              'Amplify Success',
-              'Unlock Potential',
-            ]}
+            words={['AMPLIFY CLARITY', 'CONNECTIVITY', 'STRENGTH', 'SUCCESS']}
           />
         </AutoSlide>
         <Demo />
       </Container>
     </section>
-    <section className="bg-white pb-20">
+    <section className="pb-20 bg-white">
       <div css={{ height: '12vw' }}></div>
       <Container className="flex flex-col items-center">
         <div
@@ -510,13 +506,13 @@ const IndexPage = ({ data }) => (
               fluid={data.expert.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 text-xl leading-tight text-center text-gray-700 uppercase font-display xl:text-3xl">
               Communication
               <br />
               expert
             </h3>
             <p
-              className="hidden md:block mt-5 text-gray-600 text-center"
+              className="hidden mt-5 text-center text-gray-600 md:block"
               css={{ maxWidth: '20em' }}
             >
               1+1=11 when your audience discovers music’s most persuasive
@@ -535,13 +531,13 @@ const IndexPage = ({ data }) => (
               fluid={data.speaker.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 text-xl leading-tight text-center text-gray-700 uppercase font-display xl:text-3xl">
               Business
               <br />
               speaker
             </h3>
             <p
-              className="hidden md:block mt-5 text-gray-600 text-center"
+              className="hidden mt-5 text-center text-gray-600 md:block"
               css={{ maxWidth: '20em' }}
             >
               From directing the best bands to elevating the best brands, Ravel
@@ -561,13 +557,13 @@ const IndexPage = ({ data }) => (
               fluid={data.performer.childImageSharp.fluid}
               imgStyle={{ objectFit: 'contain' }}
             />
-            <h3 className="mt-5 font-display text-xl xl:text-3xl leading-tight text-gray-700 uppercase text-center">
+            <h3 className="mt-5 text-xl leading-tight text-center text-gray-700 uppercase font-display xl:text-3xl">
               Award-Winning
               <br />
               performer
             </h3>
             <p
-              className="hidden md:block mt-5 text-gray-600 text-center"
+              className="hidden mt-5 text-center text-gray-600 md:block"
               css={{ maxWidth: '20em' }}
             >
               Unleash and Inspire the inner Rock Star of your people with the
@@ -583,13 +579,13 @@ const IndexPage = ({ data }) => (
     <section className="relative pt-20 pb-32 bg-gray-900">
       <Img
         fluid={data.videoBg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
+        className="top-0 left-0 w-full h-full"
         css={{ position: 'absolute !important' }}
       />
       <Container>
         <AutoFade
           as="h3"
-          className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center uppercase"
+          className="relative text-xl font-hairline leading-tight text-center uppercase font-display sm:text-3xl"
           css={{
             backgroundImage:
               'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -599,7 +595,7 @@ const IndexPage = ({ data }) => (
         >
           Watch The Experience
         </AutoFade>
-        <AutoFade className="w-full sm:w-4/5 mx-auto">
+        <AutoFade className="w-full mx-auto sm:w-4/5">
           <VideoPlayer
             // label="Watch speaking demo"
             webroll={bgVideoColor}
@@ -609,7 +605,7 @@ const IndexPage = ({ data }) => (
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 title="Watch The Experience"
                 allowFullScreen
-                className="w-full h-full absolute top-0 left-0 bg-black"
+                className="absolute top-0 left-0 w-full h-full bg-black"
               />
             }
             ratio={1080 / 1920}
@@ -623,7 +619,7 @@ const IndexPage = ({ data }) => (
       <Container className="flex flex-col items-center">
         <AutoFade>
           <h3
-            className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase"
+            className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl"
             css={{ maxWidth: '27em' }}
           >
             Inspiring Success-Driven Companies, Executives and the ForTUNE 500
@@ -728,7 +724,7 @@ const IndexPage = ({ data }) => (
         <AutoFade>
           <ButtonLink
             to="/contact"
-            className="hidden md:block mt-6 text-gray-900"
+            className="hidden mt-6 text-gray-900 md:block"
           >
             Start Your Experience
           </ButtonLink>
@@ -742,14 +738,14 @@ const IndexPage = ({ data }) => (
     >
       <Img
         fluid={data.bioBg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
+        className="top-0 left-0 w-full h-full"
         css={{ position: 'absolute !important' }}
         imgStyle={{ objectFit: 'contain', objectPosition: 'right bottom' }}
       />
       <Container className="relative">
         <AutoFade>
           <h3
-            className="relative mt-6 font-display font-hairline text-xl sm:text-3xl leading-tight uppercase"
+            className="relative mt-6 text-xl font-hairline leading-tight uppercase font-display sm:text-3xl"
             css={{
               backgroundImage:
                 'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -790,7 +786,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <AutoFade>
           <h3
-            className="relative mt-6 font-display font-hairline text-xl sm:text-3xl leading-tight text-center uppercase"
+            className="relative mt-6 text-xl font-hairline leading-tight text-center uppercase font-display sm:text-3xl"
             css={{
               maxWidth: '16em',
               backgroundImage:
@@ -819,23 +815,23 @@ const IndexPage = ({ data }) => (
         <MissionRings className="w-1/3 mt-16" />
       </Container>
     </section>
-    <section className="flex flex-col items-center relative py-20 pb-24 bg-white">
+    <section className="relative flex flex-col items-center py-20 pb-24 bg-white">
       <Img
         fluid={data.keynoteBg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
+        className="top-0 left-0 w-full h-full"
         css={{ position: 'absolute !important' }}
       />
       <Container>
         <AutoFade>
-          <h3 className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase">
+          <h3 className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl">
             Featured Programs
           </h3>
         </AutoFade>
-        <ul className="flex flex-col lg:flex-row -m-5 mt-12 relative">
+        <ul className="relative flex flex-col mt-12 -m-5 lg:flex-row">
           <AutoFade
             as="li"
             delay={0 * 100}
-            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col flex-1 px-5 py-10 m-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <h4 className="text-xl leading-none">Rhythm of Success</h4>
@@ -854,7 +850,7 @@ const IndexPage = ({ data }) => (
           <AutoFade
             as="li"
             delay={1 * 100}
-            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col flex-1 px-5 py-10 m-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <h4 className="text-xl leading-none">The Music of Leadership</h4>
@@ -873,7 +869,7 @@ const IndexPage = ({ data }) => (
           <AutoFade
             as="li"
             delay={2 * 100}
-            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col flex-1 px-5 py-10 m-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <h4 className="text-xl leading-none">Getting in Tune With ESG</h4>
@@ -893,7 +889,7 @@ const IndexPage = ({ data }) => (
           <AutoFade
             as="li"
             delay={3 * 100}
-            className="flex-1 flex flex-col m-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col flex-1 px-5 py-10 m-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <h4 className="text-xl leading-none">Teamwork</h4>
