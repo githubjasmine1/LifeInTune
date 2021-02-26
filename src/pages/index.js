@@ -872,7 +872,7 @@ const IndexPage = ({ data }) => (
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              ROCKSTAR KEYNOTE & CELEBRITY KEYBOARDIST
+              VIRTUAL ROCKSTAR SPEAKER & SUCCESS AMPLIFIER
             </h3>
           </AutoFade>
           <AutoFade>
