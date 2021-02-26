@@ -78,7 +78,7 @@ const Navbar = props => {
       className="fixed top-0 left-0 z-40 w-full"
     >
       <header
-        className="hidden py-5 font-hairline text-white ease-out lg:block font-display transition-slow"
+        className="hidden py-5 font-hairline text-white ease-out xl:block font-display transition-slow"
         style={{
           paddingTop: 48,
           transform: isBelow ? 'translateY(-28px)' : 'none',
@@ -105,21 +105,21 @@ const Navbar = props => {
             <div className="absolute flex" css={{ top: 0, right: '100%' }}>
               <Link
                 to="/programs"
-                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase 2xl:text-sm lg:px-5 2xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Programs
               </Link>
               <Link
                 to="/about"
-                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase 2xl:text-sm lg:px-5 2xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 About
               </Link>
               <Link
                 to="/mission"
-                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase 2xl:text-sm lg:px-5 2xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Mission
@@ -182,19 +182,19 @@ const Navbar = props => {
             >
               <Link
                 to="/buzz"
-                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase 2xl:text-sm lg:px-5 2xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Buzz
               </Link>
               <Link
                 to="/planners"
-                className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
+                className="px-2 text-xs uppercase 2xl:text-sm lg:px-5 2xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
                 Planners
               </Link>
-              <div className="px-2 lg:px-5 xl:px-10">
+              <div className="px-2 lg:px-5 2xl:px-10">
                 <div className="relative">
                   <a
                     href="tel:+18572673669"
@@ -205,7 +205,7 @@ const Navbar = props => {
                   </a>
                   <ButtonLink
                     to="/contact"
-                    className="pl-4 pr-4 tracking-tighter whitespace-no-wrap"
+                    className="pl-4 pr-4 tracking-tighter whitespace-no-wrap sm:text-xs 2xl:text-sm"
                   >
                     BOOK NOW/CONTACT
                   </ButtonLink>
@@ -215,7 +215,7 @@ const Navbar = props => {
           </div>
         </Container>
       </header>
-      <header className="fixed top-0 left-0 flex items-center w-full h-16 pr-5 bg-black lg:hidden">
+      <header className="fixed top-0 left-0 flex items-center w-full h-16 pr-5 bg-black xl:hidden">
         {/* <img
           src={muse}
           alt="Muse Award"
@@ -262,7 +262,7 @@ const Navbar = props => {
           </svg>
         </Link>
         <HamburgerBtn
-          className={`block lg:hidden relative text-gold-300 focus:outline-none ${isMobileNavOpen &&
+          className={`block xl:hidden relative text-gold-300 focus:outline-none ${isMobileNavOpen &&
             'is-open'}`}
           css={{ marginRight: -10 }}
           onClick={() => setMobileNavOpen(isOpen => !isOpen)}

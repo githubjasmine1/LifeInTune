@@ -5,6 +5,9 @@ const theme = require('./src/styles/theme')
 module.exports = {
   theme: {
     extend: {
+      screens: {
+        '2xl': '1500px',
+      },
       fontFamily: {
         display: 'turismo, sans-serif',
         body: 'museo, sans-serif',
