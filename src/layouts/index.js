@@ -198,12 +198,17 @@ const Navbar = props => {
                 <div className="relative">
                   <a
                     href="tel:+18572673669"
-                    className="absolute top-0 left-0 block w-full text-xs text-center text-gray-400 transition hover:text-white"
+                    className="absolute top-0 left-0 block w-full text-xs font-bold text-center text-white transition"
                     css={{ top: -38 }}
                   >
                     (857) 267-3669
                   </a>
-                  <ButtonLink to="/contact">Booking</ButtonLink>
+                  <ButtonLink
+                    to="/contact"
+                    className="pl-4 pr-4 tracking-tighter whitespace-no-wrap"
+                  >
+                    BOOK NOW/CONTACT
+                  </ButtonLink>
                 </div>
               </div>
             </div>
@@ -211,11 +216,11 @@ const Navbar = props => {
         </Container>
       </header>
       <header className="fixed top-0 left-0 flex items-center w-full h-16 pr-5 bg-black lg:hidden">
-        <img
+        {/* <img
           src={muse}
           alt="Muse Award"
           className="self-start object-contain object-top w-6 h-full ml-2 sm:w-12 sm:h-auto sm:ml-5"
-        />
+        /> */}
         <Link
           to="/"
           onClick={() => setMobileNavOpen(false)}
@@ -354,9 +359,27 @@ const Navbar = props => {
             className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
-            Booking
+            BOOK NOW/CONTACT
           </Link>
-          <ul className="flex items-center mt-16 ml-5 text-gold-300">
+          <Link
+            href="tel:+18572673669"
+            className="flex items-center mt-16 ml-5 text-xl transition hover:text-gold-300"
+          >
+            <svg
+              viewBox="0 0 30.927 36.025"
+              className="flex-shrink-0 w-4 h-4 mr-2 opacity-75 stroke-current"
+            >
+              <path
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
+                d="M17.85 24.889c1-.09 2.95-1.92 4-2a4.003 4.003 0 012.78.8l2.68 2 1.61 1.28a2.52 2.52 0 01.43 3.62l-3.11 4a1.12 1.12 0 01-1 .43C11.74 33.809 1 22.759 1 9.339c0-2.369.337-4.726 1-7a.66.66 0 01.5-.45l5.91-.83a2.63 2.63 0 013.12 2l.39 1.99.65 3.26c.193.96.003 1.958-.53 2.78-.54.84-3.09 1.68-3.64 2.53h0a19.39 19.39 0 009.45 11.43v-.16z"
+              ></path>
+            </svg>
+            +1-857-267-3669
+          </Link>
+          <ul className="flex items-center mt-5 ml-5 text-gold-300">
             <li>
               <Link out href="http://www.linkedin.com/in/freddieravel">
                 <svg className="w-6 h-6 mr-6 fill-current" viewBox="0 0 24 24">
@@ -552,6 +575,13 @@ const Footer = props => {
           <li className="mt-2">
             <Link to="/planners" className="transition hover:text-gold-300">
               Planners
+            </Link>
+          </li>
+          <li className="mt-2">
+            <Link to="/contact" className="transition hover:text-gold-300">
+              Book Now
+              <wbr />
+              /Contact
             </Link>
           </li>
         </ul>

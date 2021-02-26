@@ -57,7 +57,7 @@ const BookFreddie = () => {
       </AutoFade>
       <AutoFade>
         <ButtonLink to="/contact" className="mt-6 text-white">
-          Book Freddie Ravel
+          BOOK ON STAGE OR ONLINE
         </ButtonLink>
       </AutoFade>
       <AutoSlide up translate="50" duration={2000}>

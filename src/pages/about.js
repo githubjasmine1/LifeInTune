@@ -381,7 +381,7 @@ const IndexPage = ({ data }) => (
             fill-rule="evenodd"
           />
         </svg>
-        Swipe to explore timeline
+        EXPLORE TIMELINE
       </p>
     </section>
     <section

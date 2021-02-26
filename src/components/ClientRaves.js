@@ -198,7 +198,7 @@ const ClientRaves = ({ className, ...props }) => {
         </Masonry>
         <AutoFade css={{ display: 'flex', justifyContent: 'center' }}>
           <ButtonLink to="/buzz" className="hidden mt-20 md:block">
-            READ MORE TESTIMONIALS
+            SEE RAVES & REVIEWS
           </ButtonLink>
         </AutoFade>
       </Container>

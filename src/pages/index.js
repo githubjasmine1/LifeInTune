@@ -23,6 +23,7 @@ import bgVideoColor from '../assets/bg-video-color.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
+import warnerBros from '../assets/logos/WarnerBros.svg'
 import apple from '../assets/logos/apple.svg'
 import bluesCross from '../assets/logos/blue-cross.svg'
 import citi from '../assets/logos/citi.svg'
@@ -274,7 +275,7 @@ const Demo = () => {
             </svg>
           }
         >
-          WATCH VIRTUAL KEYNOTE
+          WATCH VIRTUAL KEYNOTE DEMO
         </ButtonLink>
       </AutoSlide>
       <div
@@ -307,7 +308,7 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src={`https://www.youtube.com/embed/JEAyclAXqAg${
+              src={`https://www.youtube.com/embed/abfmkq2c8pQ${
                 isOpen ? '?autoplay=1' : ''
               }`}
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -666,7 +667,7 @@ const IndexPage = ({ data }) => (
           </AutoSlide>
         </div>
         <ButtonLink to="/about" className="mt-16">
-          Meet Freddie Ravel
+          READ FREDDIE’S BIO
         </ButtonLink>
       </Container>
     </section>
@@ -687,7 +688,7 @@ const IndexPage = ({ data }) => (
             WebkitTextFillColor: 'transparent',
           }}
         >
-          WATCH VIRTUAL KEYNOTE
+          PREVIEW VIRTUAL KEYNOTE
         </AutoFade>
         <AutoFade className="w-full mx-auto sm:w-4/5">
           <VideoPlayer
@@ -695,9 +696,9 @@ const IndexPage = ({ data }) => (
             webroll={bgVideoColor}
             video={
               <iframe
-                src="https://www.youtube.com/embed/JEAyclAXqAg?autoplay=1"
+                src="https://www.youtube.com/embed/abfmkq2c8pQ?autoplay=1"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                title="WATCH VIRTUAL KEYNOTE"
+                title="WATCH VIRTUAL KEYNOTE DEMO"
                 allowFullScreen
                 className="absolute top-0 left-0 w-full h-full bg-black"
               />
@@ -743,7 +744,7 @@ const IndexPage = ({ data }) => (
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: '#efefef',
+              backgroundColor: '#222',
               padding: '6vw',
               [media.laptop]: {
                 padding: '3vw',
@@ -754,7 +755,8 @@ const IndexPage = ({ data }) => (
               width: '20vw',
               height: '12vw',
               objectFit: 'contain',
-              opacity: 0.5,
+              opacity: 1,
+              filter: 'invert(1)',
               // [media.tablet]: {
               //   width: '6.5vw',
               //   height: '6.5vw',
@@ -819,6 +821,24 @@ const IndexPage = ({ data }) => (
           </AutoScale>
           <AutoScale as="li">
             <img src={livenation} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={tiktok} alt="" style={{ transform: 'scale(1.1)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={peloton} alt="" style={{ transform: 'scale(1.3)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={amazonMusic} alt="" style={{ transform: 'scale(1.3)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={PNCBank} alt="" style={{ transform: 'scale(1.3)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={warnerBros} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={COXMedia} alt="" />
           </AutoScale>
         </ul>
         <AutoFade>
