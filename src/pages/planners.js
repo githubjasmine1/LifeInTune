@@ -10,6 +10,8 @@ import FooterGallery from '../components/FooterGallery'
 import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
 
+import abwa from '../assets/logos/ABWA.svg'
+
 export const query = graphql`
   query {
     waves: file(relativePath: { eq: "gold-wave.png" }) {
@@ -49,7 +51,7 @@ const IndexPage = ({ data }) => (
         >
           <Img
             fluid={data.waves.childImageSharp.fluid}
-            className="w-full self-start select-none"
+            className="self-start w-full select-none"
           />
         </AutoFade>
         <AutoSlide
@@ -62,9 +64,9 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex flex-col justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative mx-auto text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -72,13 +74,19 @@ const IndexPage = ({ data }) => (
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              Resources for Meeting Planners
+              "NO MAINTENANCE AND DELIVERS"
             </h3>
+            <img
+              src={abwa}
+              alt=""
+              className="mx-auto mt-5 opacity-50"
+              css={{ maxWidth: 150, filter: 'invert(1)' }}
+            />
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   Meeting Planners engage Freddie and his team in the conference
                   planning process to help design and incorporate their
                   objectives into an exciting, interactive and energizing event.
@@ -91,12 +99,12 @@ const IndexPage = ({ data }) => (
                 <div css={{ maxWidth: 460 }}>
                   <ButtonLink
                     href="/LIT-Freddie-Ravel-Speaker-Programs2020-21_compressed.pdf"
-                    className="mt-5 md:mt-12 text-gray-900"
+                    className="mt-5 md:mt-12"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden w-5 h-5 ml-3 -mr-2 fill-current md:block"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -106,12 +114,12 @@ const IndexPage = ({ data }) => (
                   </ButtonLink>
                   <ButtonLink
                     href="/Freddie-Ravel-Questionnaire.pdf"
-                    className="mt-3 md:mt-6 text-gray-900"
+                    className="mt-3 md:mt-6"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden w-5 h-5 ml-3 -mr-2 fill-current md:block"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -121,12 +129,12 @@ const IndexPage = ({ data }) => (
                   </ButtonLink>
                   <ButtonLink
                     href="/Freddie-Ravel_Rider_Keyboard.pdf"
-                    className="mt-3 md:mt-6 text-gray-900"
+                    className="mt-3 md:mt-6"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden w-5 h-5 ml-3 -mr-2 fill-current md:block"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -136,12 +144,12 @@ const IndexPage = ({ data }) => (
                   </ButtonLink>
                   <ButtonLink
                     href="/Ravel-Press-Photos.zip"
-                    className="mt-3 md:mt-6 text-gray-900"
+                    className="mt-3 md:mt-6"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={
                       <svg
                         viewBox="0 0 30 30"
-                        className="hidden md:block w-5 h-5 ml-3 -mr-2 fill-current"
+                        className="hidden w-5 h-5 ml-3 -mr-2 fill-current md:block"
                       >
                         <path d="M0 30V20h2v8h26v-8h2v10H0zm14.5-7L7 15.5 8.5 14l5.5 5.5V0h2v19.5l5.5-5.5 1.5 1.5-7.5 7.5h-1z" />
                       </svg>
@@ -152,7 +160,7 @@ const IndexPage = ({ data }) => (
                 </div>
               </div>
             </div>
-            <div className="hidden md:block flex-1 self-start p-12">
+            <div className="self-start flex-1 hidden p-12 md:block">
               <Img fluid={data.planners.childImageSharp.fluid} />
             </div>
           </div>

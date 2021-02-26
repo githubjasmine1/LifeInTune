@@ -23,40 +23,56 @@ import bgVideoColor from '../assets/bg-video-color.mp4'
 import signet from '../assets/signet.svg'
 
 import aia from '../assets/logos/aia.svg'
-// import anz from '../assets/logos/anz.svg'
 import apple from '../assets/logos/apple.svg'
 import bluesCross from '../assets/logos/blue-cross.svg'
-// import bluecross from '../assets/logos/bluecross.svg'
 import citi from '../assets/logos/citi.svg'
-// import cox from '../assets/logos/cox.svg'
-// import cvent from '../assets/logos/cvent.svg'
 import disney from '../assets/logos/disney.svg'
-// import em from '../assets/logos/em.svg'
 import google from '../assets/logos/google.svg'
 import grammy from '../assets/logos/grammy.svg'
-// import iasb from '../assets/logos/iasb.svg'
 import ibm from '../assets/logos/ibm.svg'
-// import jdpower from '../assets/logos/jdpower.svg'
 import livenation from '../assets/logos/livenation.svg'
-// import microsoft from '../assets/logos/microsoft.svg'
-// import morgan from '../assets/logos/morgan.svg'
 import nasa from '../assets/logos/nasa.svg'
 import nbc from '../assets/logos/nbc.svg'
 import prudential from '../assets/logos/prudential.svg'
 import redbull from '../assets/logos/redbull.svg'
-// import reuters from '../assets/logos/reuters.svg'
-// import roland from '../assets/logos/roland.svg'
-// import sheraton from '../assets/logos/sheraton.svg'
 import ted from '../assets/logos/ted.svg'
 import toyota from '../assets/logos/toyota.svg'
 import twitter from '../assets/logos/twitter.svg'
 import universal from '../assets/logos/universal.svg'
 import walmart from '../assets/logos/walmart.svg'
+import AIAHongkong from '../assets/logos/AIA-hongkong.svg'
+import amazonMusic from '../assets/logos/Amazon-Music.svg'
+import COXMedia from '../assets/logos/COX-media.svg'
+import peloton from '../assets/logos/Peloton.svg'
+import PNCBank from '../assets/logos/PNC-Bank.svg'
+import tiktok from '../assets/logos/TikTok.svg'
+
 import useMedia from '../hooks/useMedia'
 import { media } from '../styles/tools'
 
 export const query = graphql`
   query {
+    ns1: file(relativePath: { eq: "ns-1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    ns2: file(relativePath: { eq: "ns-2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    ns3: file(relativePath: { eq: "ns-3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
     freddieHero: file(relativePath: { eq: "Freddie-hero.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 80) {
@@ -92,6 +108,9 @@ export const query = graphql`
       ...windowWide
     }
     bioBg: file(relativePath: { eq: "bio.png" }) {
+      ...windowWide
+    }
+    goldRibbon: file(relativePath: { eq: "gold-ribbon.png" }) {
       ...windowWide
     }
     headerBgPoster: file(relativePath: { eq: "header-bg-poster.png" }) {
@@ -255,7 +274,7 @@ const Demo = () => {
             </svg>
           }
         >
-          Watch Freddie Speak
+          WATCH VIRTUAL KEYNOTE
         </ButtonLink>
       </AutoSlide>
       <div
@@ -288,7 +307,7 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src={`https://www.youtube.com/embed/ckHe6AUapwo${
+              src={`https://www.youtube.com/embed/JEAyclAXqAg${
                 isOpen ? '?autoplay=1' : ''
               }`}
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -467,21 +486,96 @@ const IndexPage = ({ data }) => (
         css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
-          as="h2"
           up
           delay={100}
-          className="font-hairline leading-tight text-center uppercase font-display"
-          css={{ fontSize: '8vw', [media.tabletMd]: { fontSize: '3.2vw' } }}
+          className="font-hairline leading-tight text-center font-display"
+          css={{ fontSize: '8vw', [media.tabletMd]: { fontSize: '3vw' } }}
         >
-          <RotateWords
+          {/* <RotateWords
             words={['AMPLIFY CLARITY', 'CONNECTIVITY', 'STRENGTH', 'SUCCESS']}
-          />
+          /> */}
+          <h2>AMPLIFY YOUR SUCCESS</h2>
+          <p className="mt-2 text-2xl text-white font-body">
+            Discover the power of rhythm to drive new business value.
+          </p>
         </AutoSlide>
         <Demo />
       </Container>
     </section>
     <section className="pb-20 bg-white">
-      <div css={{ height: '12vw' }}></div>
+      <div css={{ height: '11vw' }}></div>
+      <Container className="flex flex-col items-center">
+        <AutoFade>
+          <h3
+            className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl"
+            css={{ maxWidth: '27em' }}
+          >
+            Featured Clients
+          </h3>
+        </AutoFade>
+        <ul
+          className="mt-8 mb-10"
+          css={{
+            width: '100%',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridGap: 10,
+            [media.tablet]: {
+              gridTemplateColumns: 'repeat(3, 1fr)',
+            },
+            [media.laptop]: {
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              gridGap: '1vw',
+            },
+            li: {
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              // backgroundColor: '#efefef',
+              padding: '5vw',
+              [media.laptop]: {
+                padding: '2vw',
+              },
+            },
+            img: {
+              display: 'block',
+              width: '20vw',
+              height: '12vw',
+              objectFit: 'contain',
+              opacity: 0.5,
+              // [media.tablet]: {
+              //   width: '6.5vw',
+              //   height: '6.5vw',
+              // },
+              [media.laptop]: {
+                width: '8.5vw',
+                height: '8.5vw',
+              },
+            },
+          }}
+        >
+          <AutoScale as="li">
+            <img src={tiktok} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={peloton} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={amazonMusic} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={disney} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={bluesCross} alt="" style={{ transform: 'scale(.6)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={apple} alt="" style={{ transform: 'scale(.55)' }} />
+          </AutoScale>
+        </ul>
+      </Container>
+    </section>
+    <section className="pb-20 bg-white">
       <Container className="flex flex-col items-center">
         <div
           css={{
@@ -571,7 +665,7 @@ const IndexPage = ({ data }) => (
             </p>
           </AutoSlide>
         </div>
-        <ButtonLink to="/speaker" className="mt-16">
+        <ButtonLink to="/about" className="mt-16">
           Meet Freddie Ravel
         </ButtonLink>
       </Container>
@@ -593,7 +687,7 @@ const IndexPage = ({ data }) => (
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Watch The Experience
+          WATCH VIRTUAL KEYNOTE
         </AutoFade>
         <AutoFade className="w-full mx-auto sm:w-4/5">
           <VideoPlayer
@@ -601,9 +695,9 @@ const IndexPage = ({ data }) => (
             webroll={bgVideoColor}
             video={
               <iframe
-                src="https://www.youtube.com/embed/t5-jZ-01b2I?autoplay=1"
+                src="https://www.youtube.com/embed/JEAyclAXqAg?autoplay=1"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                title="Watch The Experience"
+                title="WATCH VIRTUAL KEYNOTE"
                 allowFullScreen
                 className="absolute top-0 left-0 w-full h-full bg-black"
               />
@@ -622,8 +716,14 @@ const IndexPage = ({ data }) => (
             className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl"
             css={{ maxWidth: '27em' }}
           >
-            Inspiring Success-Driven Companies, Executives and the ForTUNE 500
+            "ROCKED US WITH RELEVANCE, HOPE AND VALUE"
           </h3>
+          <img
+            src={AIAHongkong}
+            alt=""
+            className="mx-auto mt-5 opacity-50"
+            css={{ maxWidth: 150 }}
+          />
         </AutoFade>
         <ul
           className="mt-16 mb-10"
@@ -722,11 +822,8 @@ const IndexPage = ({ data }) => (
           </AutoScale>
         </ul>
         <AutoFade>
-          <ButtonLink
-            to="/contact"
-            className="hidden mt-6 text-gray-900 md:block"
-          >
-            Start Your Experience
+          <ButtonLink to="/contact" className="hidden mt-6 md:block">
+            BOOK FREDDIE NOW
           </ButtonLink>
         </AutoFade>
       </Container>
@@ -734,52 +831,74 @@ const IndexPage = ({ data }) => (
     <ClientRaves />
     <section
       className="relative py-20 bg-gray-900"
-      css={{ paddingBottom: '37vh' }}
+      css={{ paddingBottom: '17vh' }}
     >
       <Img
-        fluid={data.bioBg.childImageSharp.fluid}
-        className="top-0 left-0 w-full h-full"
+        fluid={data.goldRibbon.childImageSharp.fluid}
+        className="bottom-0 left-0 w-11/12 h-full -mb-3"
         css={{ position: 'absolute !important' }}
-        imgStyle={{ objectFit: 'contain', objectPosition: 'right bottom' }}
+        imgStyle={{ objectFit: 'contain', objectPosition: 'left bottom' }}
       />
-      <Container className="relative">
-        <AutoFade>
-          <h3
-            className="relative mt-6 text-xl font-hairline leading-tight uppercase font-display sm:text-3xl"
+      <Container className="relative flex flex-col md:flex-row">
+        <div className="flex-1">
+          <AutoFade>
+            <h3
+              className="relative mt-6 text-xl font-bold leading-none uppercase font-display sm:text-4xl"
+              css={{
+                maxWidth: '37ex',
+                backgroundImage:
+                  'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              ROCKSTAR KEYNOTE & CELEBRITY KEYBOARDIST
+            </h3>
+          </AutoFade>
+          <AutoFade>
+            <p
+              className="mt-8 text-3xl leading-snug text-white font-body"
+              css={{ maxWidth: '38ex' }}
+            >
+              Discover Freddie’s proven and effective key strategies to solve
+              problems and empower YOU to get back in rhythm to what matters
+              most.
+            </p>
+          </AutoFade>
+          <AutoFade>
+            <ButtonLink to="/" className="inline-flex mt-8 text-white">
+              BOOK NOW ON STAGE OR ONLINE
+            </ButtonLink>
+          </AutoFade>
+        </div>
+        <div className="flex-1 mt-10 md:mt-0">
+          <div
             css={{
-              backgroundImage:
-                'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              maxHeight: '100vh',
+              display: 'grid',
+              gridTemplate: '1fr .5fr .5fr 1fr / repeat(12, 1fr)',
             }}
           >
-            MEET FREDDIE RAVEL
-          </h3>
-        </AutoFade>
-        <AutoFade>
-          <p className="mt-8 text-white" css={{ maxWidth: '26em' }}>
-            Freddie Ravel’s realization of music’s power to affect human
-            behavior was launched in a most unlikely way. At age eight, he found
-            himself suddenly trapped in a sealed container facing sure death
-            when an impulse to pound out specific rhythms would alert and lead
-            to his eventual rescue.
-          </p>
-          <p className="mt-5 text-white" css={{ maxWidth: '26em' }}>
-            Having learned to overcome adversity and adapt, he grew to cultivate
-            a mastery of music that would propel him onto the world stage with
-            the music legends and top social change makers of our time. Today,
-            Freddie shares the lessons he’s learned by giving his clients the
-            vital tools to live their own Life In Tune.
-          </p>
-        </AutoFade>
-        <AutoFade>
-          <ButtonLink to="/" className="inline-flex mt-10 text-white">
-            Read full BIO
-          </ButtonLink>
-        </AutoFade>
+            <Img
+              fluid={data.ns1.childImageSharp.fluid}
+              className=""
+              css={{ gridRow: '2 / 4', gridColumn: '1 / 8', zIndex: 1 }}
+            />
+            <Img
+              fluid={data.ns2.childImageSharp.fluid}
+              className=""
+              css={{ gridRow: '1 / 3', gridColumn: '4 / 11' }}
+            />
+            <Img
+              fluid={data.ns3.childImageSharp.fluid}
+              className=""
+              css={{ gridRow: '3 / 5', gridColumn: '5 / 13' }}
+            />
+          </div>
+        </div>
       </Container>
     </section>
-    <section className="relative py-20 bg-black">
+    {/* <section className="relative py-20 bg-black">
       <Container className="flex flex-col items-center">
         <AutoFade>
           <img src={signet} alt="" className="w-24 h-24 text-white" />
@@ -814,7 +933,7 @@ const IndexPage = ({ data }) => (
         </AutoFade>
         <MissionRings className="w-1/3 mt-16" />
       </Container>
-    </section>
+    </section> */}
     <section className="relative flex flex-col items-center py-20 pb-24 bg-white">
       <Img
         fluid={data.keynoteBg.childImageSharp.fluid}
@@ -842,7 +961,7 @@ const IndexPage = ({ data }) => (
             </p>
             <ButtonLink
               to="/programs#the-rhythm-of-success"
-              className="self-center mt-10 text-gray-900"
+              className="self-center mt-10"
             >
               LEARN MORE
             </ButtonLink>
@@ -861,7 +980,7 @@ const IndexPage = ({ data }) => (
             </p>
             <ButtonLink
               to="/programs#the-music-of-leadership"
-              className="self-center mt-10 text-gray-900"
+              className="self-center mt-10"
             >
               LEARN MORE
             </ButtonLink>
@@ -881,7 +1000,7 @@ const IndexPage = ({ data }) => (
             </p>
             <ButtonLink
               to="/programs#getting-in-tune-with-esg"
-              className="self-center mt-10 text-gray-900"
+              className="self-center mt-10"
             >
               LEARN MORE
             </ButtonLink>
@@ -898,10 +1017,7 @@ const IndexPage = ({ data }) => (
               organizations need to gain a distinct advantage in today’s
               hypercompetitive marketplace.
             </p>
-            <ButtonLink
-              to="/programs#teamwork"
-              className="self-center mt-10 text-gray-900"
-            >
+            <ButtonLink to="/programs#teamwork" className="self-center mt-10">
               LEARN MORE
             </ButtonLink>
           </AutoFade>

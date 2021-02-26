@@ -6,6 +6,8 @@ import ButtonLink from './ButtonLink'
 import { AutoSlide, AutoFade } from './Animated'
 import { media } from '../styles/tools'
 
+import warnerBros from '../assets/logos/WarnerBros.svg'
+
 const BookFreddie = () => {
   const data = useStaticQuery(graphql`
     {
@@ -27,25 +29,31 @@ const BookFreddie = () => {
   `)
 
   return (
-    <section className="flex flex-col items-center relative py-20 bg-gray-900 overflow-hidden">
+    <section className="relative flex flex-col items-center py-20 overflow-hidden bg-gray-900">
       <Img
         fluid={data.bg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
+        className="top-0 left-0 w-full h-full"
         css={{ position: 'absolute !important' }}
       />
       <AutoFade>
         <h3
-          className="relative font-display font-hairline text-xl sm:text-3xl text-gold-500 leading-tight text-center uppercase"
+          className="relative text-xl font-hairline leading-tight text-center uppercase font-display sm:text-3xl text-gold-500"
           css={{
-            maxWidth: '16em',
+            maxWidth: '50ex',
             backgroundImage:
               'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Bring freddie to your next event
+          "PERFECT BALANCE OF ENTERTAINMENT AND CONTENT"
         </h3>
+        <img
+          src={warnerBros}
+          alt=""
+          className="mx-auto mt-5 opacity-75"
+          css={{ maxWidth: 80, filter: 'invert(1)' }}
+        />
       </AutoFade>
       <AutoFade>
         <ButtonLink to="/contact" className="mt-6 text-white">

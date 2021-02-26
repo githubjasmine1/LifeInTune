@@ -14,6 +14,7 @@ import ButtonLink from '../components/ButtonLink'
 import { AutoSlide, AutoFade } from '../components/Animated'
 
 import litSignetBlack from '../assets/lit-signet-black.png'
+import ibm from '../assets/logos/ibm.svg'
 
 const encode = data =>
   Object.keys(data)
@@ -84,15 +85,15 @@ const ContactForm = () => {
           className="h-full"
         >
           {sent ? (
-            <div className="flex flex-col justify-center items-center h-full">
+            <div className="flex flex-col items-center justify-center h-full">
               <img src={litSignetBlack} alt="Logo" className="w-64 mb-10" />
               <div
-                className="font-display leading-none uppercase text-center"
+                className="leading-none text-center uppercase font-display"
                 css={{ fontSize: '3.2vw' }}
               >
                 THANK YOU!
               </div>
-              <div className="mt-2 leading-loose text-gray-600  text-center">
+              <div className="mt-2 leading-loose text-center text-gray-600">
                 We’received your message and will be in touch shortly!
               </div>
             </div>
@@ -101,7 +102,7 @@ const ContactForm = () => {
               <noscript className="w-full px-4 py-2">
                 <p>This form won’t work with Javascript disabled</p>
               </noscript>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="firstName"
                   className="block mb-2 leading-loose text-gray-600"
@@ -111,14 +112,14 @@ const ContactForm = () => {
                 <Field
                   id="firstName"
                   name="firstName"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                   css={
                     touched.firstName &&
                     errors.firstName && { borderColor: 'red' }
                   }
                 />
               </div>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="lastName"
                   className="block mb-2 leading-loose text-gray-600"
@@ -128,14 +129,14 @@ const ContactForm = () => {
                 <Field
                   id="lastName"
                   name="lastName"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                   css={
                     touched.lastName &&
                     errors.lastName && { borderColor: 'red' }
                   }
                 />
               </div>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="eventDate"
                   className="block mb-2 leading-loose text-gray-600"
@@ -145,7 +146,7 @@ const ContactForm = () => {
                 <div className="flex items-center">
                   <svg
                     viewBox="0 0 48 47"
-                    className="w-6 h-6 ml-4 -mr-10 relative fill-current pointer-events-none"
+                    className="relative w-6 h-6 ml-4 -mr-10 pointer-events-none fill-current"
                   >
                     <path d="M47 4.3h-5.8V0h-2v4.3h-4.6V0h-2v4.3H15.4V0h-2v4.3H8.8V0h-2v4.3H1c-.6 0-1 .4-1 1V46c0 .6.4 1 1 1h46c.6 0 1-.4 1-1V5.3c0-.6-.4-1-1-1zm-40.2 2v3.2h2V6.3h4.6v3.2h2V6.3h17.2v3.2h2V6.3h4.6v3.2h2V6.3H46v6.6H2V6.3h4.8zM2 45V14.9h44V45H2z" />
                     <path d="M11.3 18.2H6.6c-.6 0-1 .4-1 1v4.7c0 .6.4 1 1 1h4.7c.6 0 1-.4 1-1v-4.7c0-.6-.4-1-1-1zm-1 4.7H7.6v-2.7h2.7v2.7z" />
@@ -183,7 +184,7 @@ const ContactForm = () => {
                       })
                     }}
                     onBlur={handleBlur}
-                    className="block w-full p-4 pl-12 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                    className="block w-full p-4 pl-12 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                     css={
                       touched.eventDate &&
                       errors.eventDate && { borderColor: 'red' }
@@ -191,7 +192,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="eventLocation"
                   className="block mb-2 leading-loose text-gray-600"
@@ -201,14 +202,14 @@ const ContactForm = () => {
                 <Field
                   id="eventLocation"
                   name="eventLocation"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                   css={
                     touched.eventLocation &&
                     errors.eventLocation && { borderColor: 'red' }
                   }
                 />
               </div>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="email"
                   className="block mb-2 leading-loose text-gray-600"
@@ -219,11 +220,11 @@ const ContactForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                   css={touched.email && errors.email && { borderColor: 'red' }}
                 />
               </div>
-              <div className="w-full lg:w-1/2 px-4 py-2">
+              <div className="w-full px-4 py-2 lg:w-1/2">
                 <label
                   htmlFor="phone"
                   className="block mb-2 leading-loose text-gray-600"
@@ -233,7 +234,7 @@ const ContactForm = () => {
                 <Field
                   id="phone"
                   name="phone"
-                  className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full p-4 text-lg text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                   css={touched.phone && errors.phone && { borderColor: 'red' }}
                 />
               </div>
@@ -249,7 +250,7 @@ const ContactForm = () => {
                     as="select"
                     id="eventTopic"
                     name="eventTopic"
-                    className="block w-full p-4 text-lg text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none rounded-none bg-transparent"
+                    className="block w-full p-4 text-lg text-gray-900 bg-transparent border border-gray-400 border-solid rounded-none outline-none appearance-none focus:border-gray-800"
                     css={
                       touched.topic && errors.topic && { borderColor: 'red' }
                     }
@@ -274,7 +275,7 @@ const ContactForm = () => {
                       WORKSHOPS / BREAKOUT SESSIONS
                     </option>
                   </Field>
-                  <div className="flex justify-center items-center w-16 h-full absolute top-0 right-0 pointer-events-none">
+                  <div className="absolute top-0 right-0 flex items-center justify-center w-16 h-full pointer-events-none">
                     <svg
                       className="w-4 h-4 text-gray-600"
                       viewBox="0 0 15.924 8.492"
@@ -300,7 +301,7 @@ const ContactForm = () => {
                   as="textarea"
                   id="message"
                   name="message"
-                  className="block w-full h-32 lg:h-48 p-4 font-bold text-gray-900 border border-solid border-gray-400 focus:border-gray-800 outline-none appearance-none rounded-none"
+                  className="block w-full h-32 p-4 font-bold text-gray-900 border border-gray-400 border-solid rounded-none outline-none appearance-none lg:h-48 focus:border-gray-800"
                   css={
                     touched.message && errors.message && { borderColor: 'red' }
                   }
@@ -310,7 +311,7 @@ const ContactForm = () => {
                 <Recaptcha
                   ref={recaptchaRef}
                   sitekey={process.env.SITE_RECAPTCHA_KEY || 'test'}
-                  className="overflow-hidden mt-2"
+                  className="mt-2 overflow-hidden"
                   css={{ [media.max.tablet]: { maxWidth: 270 } }}
                 />
               </div>
@@ -367,7 +368,7 @@ const IndexPage = ({ data }) => (
         >
           <Img
             fluid={data.waves.childImageSharp.fluid}
-            className="w-full self-start select-none"
+            className="self-start w-full select-none"
           />
         </AutoFade>
         <AutoSlide
@@ -380,22 +381,29 @@ const IndexPage = ({ data }) => (
             marginTop: '13.5vw',
           }}
         >
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex flex-col justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg sm:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative mx-auto text-lg font-hairline leading-tight text-center uppercase font-display sm:text-3xl text-gold-500"
               css={{
+                maxWidth: '70ex',
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              Inspire and Transform Your Audience
+              "THE BEST MOTIVATIONAL PERFORMANCE WE’VE EXPERIENCED"
             </h3>
+            <img
+              src={ibm}
+              alt=""
+              className="mx-auto mt-5 opacity-50"
+              css={{ maxWidth: 130, filter: 'invert(1)' }}
+            />
           </header>
-          <div className="bg-white overflow-hidden">
-            <div className="flex flex-col md:flex-row -m-6 p-5 md:p-10 text-gray-900">
-              <div className="md:w-1/3 m-6">
+          <div className="overflow-hidden bg-white">
+            <div className="flex flex-col p-5 -m-6 text-gray-900 md:flex-row md:p-10">
+              <div className="m-6 md:w-1/3">
                 <p css={{ maxWidth: '16em' }}>
                   To Contact or Book Freddie, send a message or contact:
                 </p>
@@ -417,10 +425,10 @@ const IndexPage = ({ data }) => (
                 </a>
                 <Img
                   fluid={data.contact.childImageSharp.fluid}
-                  className="hidden md:block mt-10"
+                  className="hidden mt-10 md:block"
                 />
               </div>
-              <div className="md:w-2/3 m-6">
+              <div className="m-6 md:w-2/3">
                 <ContactForm />
               </div>
             </div>

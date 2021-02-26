@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => (
         >
           <Img
             fluid={data.waves.childImageSharp.fluid}
-            className="w-full self-start select-none"
+            className="self-start w-full select-none"
           />
         </AutoFade>
         <Container
@@ -108,9 +108,9 @@ const IndexPage = ({ data }) => (
           }}
         >
           <AutoSlide up delay={300} className="mb-10 lg:mb-32">
-            <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+            <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
               <h3
-                className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+                className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
                 css={{
                   backgroundImage:
                     'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -124,15 +124,15 @@ const IndexPage = ({ data }) => (
             <div className="flex bg-white">
               <Img
                 fluid={data.rhythmofsuccess.childImageSharp.fluid}
-                className="hidden lg:block flex-1 self-start"
+                className="self-start flex-1 hidden lg:block"
                 css={{
                   transform: 'translate(-48px, 48px)',
                   boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
                 }}
               />
-              <div className="flex-1 py-8 lg:py-12 px-6">
+              <div className="flex-1 px-6 py-8 lg:py-12">
                 <div css={{ maxWidth: '42em' }}>
-                  <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                  <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                     The Rhythm of Success is a one-of-a-kind program designed to
                     challenge and inspire organizations to discover their
                     untapped potential through the power of Active Listening.
@@ -142,7 +142,7 @@ const IndexPage = ({ data }) => (
                     interactive “Keynote Concert” experience, your audience will
                     learn to:
                   </p>
-                  <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                  <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                     <li className="list-disc list-outside">
                       Enhance interpersonal and professional leadership skills
                     </li>
@@ -153,17 +153,14 @@ const IndexPage = ({ data }) => (
                       Clarify and SCORE desired goals and outcomes
                     </li>
                   </ul>
-                  <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                  <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                     No matter what kind of organization—from small companies to
                     large corporations—employees at all levels will tune up to a
                     better future by becoming more collaborative, productive and
                     ultimately, more profitable. This presentation is sure to
                     open or close your meeting on a dynamic high note.
                   </p>
-                  <ButtonLink
-                    to="/contact"
-                    className="inline-flex text-gray-900"
-                  >
+                  <ButtonLink to="/contact" className="inline-flex">
                     BOOK THIS KEYNOTE
                   </ButtonLink>
                 </div>
@@ -182,9 +179,9 @@ const IndexPage = ({ data }) => (
           className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -196,9 +193,9 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '42em', marginLeft: 'auto' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   This presentation takes your audience on a deep dive into the
                   role of "melody" within music and its’ power as the central
                   message to bring life to your products and services. When
@@ -206,7 +203,7 @@ const IndexPage = ({ data }) => (
                   the entire company’s culture. The Music of Leadership will
                   reveal:
                 </p>
-                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                   <li className="list-disc list-outside">
                     How the strategic use of passion and purpose provide the
                     competitive edge to win.
@@ -220,21 +217,21 @@ const IndexPage = ({ data }) => (
                     ultimately serves others.
                   </li>
                 </ul>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   No matter what kind of organization—from small companies to
                   large corporations—employees at all levels will tune up to a
                   better future by becoming more collaborative, productive and
                   ultimately, more profitable. This presentation is sure to open
                   or close your meeting on a dynamic high note.
                 </p>
-                <ButtonLink to="/contact" className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
             </div>
             <Img
               fluid={data.musicofleadership.childImageSharp.fluid}
-              className="hidden lg:block flex-1 self-start"
+              className="self-start flex-1 hidden lg:block"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -250,9 +247,9 @@ const IndexPage = ({ data }) => (
           className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -261,7 +258,7 @@ const IndexPage = ({ data }) => (
               }}
             >
               Getting in Tune With ESG
-              <span class="block text-sm lg:text-lg">
+              <span className="block text-sm lg:text-lg">
                 (Environmental, Social, and Governance)
               </span>
             </h3>
@@ -269,15 +266,15 @@ const IndexPage = ({ data }) => (
           <div className="flex bg-white">
             <Img
               fluid={data.resolvedisruption.childImageSharp.fluid}
-              className="hidden lg:block flex-1"
+              className="flex-1 hidden lg:block"
               css={{
                 transform: 'translate(-48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
               }}
             />
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '42em' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   As we enter this decisive decade, the urgency for companies to
                   move toward the issues of Environmental, Social, and
                   Governance (ESG) is greater than ever. However, many
@@ -299,7 +296,7 @@ const IndexPage = ({ data }) => (
                   fresh techniques to overcome adversity and get in harmony with
                   the new corporate social responsibilities.
                 </p>
-                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                   <li className="list-disc list-outside">
                     How to get from Good Governance to GREAT Governance.
                   </li>
@@ -312,7 +309,7 @@ const IndexPage = ({ data }) => (
                     sustainability.
                   </li>
                 </ul>
-                <ButtonLink to="/contact" className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
@@ -327,9 +324,9 @@ const IndexPage = ({ data }) => (
           className="mb-10 lg:mb-32"
           css={{ scrollMargin: 150 }}
         >
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -343,9 +340,9 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '42em', marginLeft: 'auto' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   Have you ever heard a great-sounding band or orchestra where
                   everyone is a soloist? It simply doesn’t exist. For over a
                   decade, the Gallup polls reveal that four out of five
@@ -365,7 +362,7 @@ const IndexPage = ({ data }) => (
                   in today’s hypercompetitive marketplace. Your organization
                   will discover:
                 </p>
-                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                   <li className="list-disc list-outside">
                     Music’s 3 KEYS to unlocking your potential.
                   </li>
@@ -378,14 +375,14 @@ const IndexPage = ({ data }) => (
                     music and daily life.
                   </li>
                 </ul>
-                <ButtonLink to="/contact" className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex">
                   BOOK THIS KEYNOTE
                 </ButtonLink>
               </div>
             </div>
             <Img
               fluid={data.teamwork.childImageSharp.fluid}
-              className="hidden lg:block flex-1 self-start"
+              className="self-start flex-1 hidden lg:block"
               css={{
                 transform: 'translate(48px, 48px)',
                 boxShadow: '0 5px 50px rgba(0, 0, 0, .4)',
@@ -395,9 +392,9 @@ const IndexPage = ({ data }) => (
         </AutoSlide>
 
         <AutoSlide up className="mb-10 lg:mb-32">
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -409,14 +406,14 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
-                <q className="block mb-6 pr-5 text-xl italic leading-relaxed text-gray-600">
+                <q className="block pr-5 mb-6 text-xl italic leading-relaxed text-gray-600">
                   Music’s the great invitation For mankind to transcend spoken
                   word To enhance how we think And put into sync So we hear what
                   is mostly not heard.
                 </q>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   Those words, from his number-one charting release, If Music
                   Could Speak, sum up the central message of everything Freddie
                   Ravel. Hailing from parents of Latin American and Eastern
@@ -429,7 +426,7 @@ const IndexPage = ({ data }) => (
                   business, Ravel unlocks the minds, hearts and potential of
                   audiences around the world.
                 </p>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   For his ongoing contributions to education through music,
                   Ravel was recently knighted by the Knights of St. John, an
                   organization who has championed hospitals and healthcare for
@@ -439,7 +436,7 @@ const IndexPage = ({ data }) => (
                   creative musical expression to appeal to the mind, body and
                   soul of your conference participants.
                 </p>
-                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                   <li className="list-disc list-outside">
                     Discover the three keys to genuine engagement.
                   </li>
@@ -452,7 +449,7 @@ const IndexPage = ({ data }) => (
                     to strengthen connectivity.
                   </li>
                 </ul>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   In these turbulent times of global chaos and relentless
                   disruption, Ravel equips your group with tangible results
                   revealing how music heals not only the sick—but the ills of
@@ -471,9 +468,9 @@ const IndexPage = ({ data }) => (
                 </p>
               </div>
             </div>
-            <div className="hidden lg:block flex-1 self-start p-12">
+            <div className="self-start flex-1 hidden p-12 lg:block">
               <Img fluid={data.musicDiplomacy.childImageSharp.fluid} />
-              <p className="mt-3 text-xs text-gray-500 text-right">
+              <p className="mt-3 text-xs text-right text-gray-500">
                 Photo Credit: ChrisSavas.com
               </p>
             </div>
@@ -481,9 +478,9 @@ const IndexPage = ({ data }) => (
         </AutoSlide>
 
         <AutoSlide up className="mb-10 lg:mb-32">
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -497,9 +494,9 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   Want to keep your meeting moving or add an extra spark to make
                   your event unforgettable? Freddie Ravel as your emcee is the
                   answer. He combines your business themes and customized music
@@ -512,7 +509,7 @@ const IndexPage = ({ data }) => (
                   to your next speaker or award presenter. Count on a
                   world-class approach to:
                 </p>
-                <ul className="mb-6 ml-5 pr-5 leading-relaxed text-gray-600">
+                <ul className="pr-5 mb-6 ml-5 leading-relaxed text-gray-600">
                   <li className="list-disc list-outside">
                     Transform the mundane to the magnificent.
                   </li>
@@ -525,7 +522,7 @@ const IndexPage = ({ data }) => (
                     presenter and announcements.
                   </li>
                 </ul>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   In constant demand as a keynote presenter, performer and
                   emcee, Freddie’s high energy and powerful stage presence
                   guarantees a lively and highly successful event as he ties
@@ -534,12 +531,12 @@ const IndexPage = ({ data }) => (
                   mundane transforms to magnificent and why so many clients
                   invite him back year after year!
                 </p>
-                <ButtonLink to="/contact" className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex">
                   Request Freddie
                 </ButtonLink>
               </div>
             </div>
-            <div className="hidden lg:block flex-1 self-start p-12">
+            <div className="self-start flex-1 hidden p-12 lg:block">
               <Img
                 fluid={{
                   ...data.img1.childImageSharp.fluid,
@@ -551,9 +548,9 @@ const IndexPage = ({ data }) => (
         </AutoSlide>
 
         <AutoSlide up>
-          <header className="flex justify-center px-6 py-6 lg:py-12 bg-black">
+          <header className="flex justify-center px-6 py-6 bg-black lg:py-12">
             <h3
-              className="relative font-display font-hairline text-lg lg:text-3xl text-gold-500 leading-tight text-center uppercase"
+              className="relative text-lg font-hairline leading-tight text-center uppercase font-display lg:text-3xl text-gold-500"
               css={{
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
@@ -565,9 +562,9 @@ const IndexPage = ({ data }) => (
             </h3>
           </header>
           <div className="flex bg-white">
-            <div className="flex-1 py-8 lg:py-12 px-6">
+            <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
-                <p className="mb-6 pr-5 leading-relaxed text-gray-600">
+                <p className="pr-5 mb-6 leading-relaxed text-gray-600">
                   Ready to SCORE your next success story? While the Life In Tune
                   Keynote Experience serves as the ultimate conference
                   energizer, our WORKSHOPS take your attendees deeper by
@@ -581,12 +578,12 @@ const IndexPage = ({ data }) => (
                   world’s most influential businesses and institutions
                   including EY, Thompson Reuters and NASA.
                 </p>
-                <ButtonLink to="/contact" className="inline-flex text-gray-900">
+                <ButtonLink to="/contact" className="inline-flex">
                   INQUIRE FOR MORE INFO
                 </ButtonLink>
               </div>
             </div>
-            <div className="hidden lg:block flex-1 self-start p-12">
+            <div className="self-start flex-1 hidden p-12 lg:block">
               <Img fluid={data.img2.childImageSharp.fluid} />
             </div>
           </div>

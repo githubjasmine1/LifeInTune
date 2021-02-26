@@ -6,35 +6,20 @@ const ButtonLink = forwardRef(
   ({ as: As = Link, className, icon, children, ...props }, ref) => (
     <As
       ref={ref}
-      className={`flex justify-center items-center relative py-2 px-10 font-display font-hariline text-sm leading-relaxed text-center uppercase rounded-full hover:text-white focus:outline-none ${className}`}
+      className={`flex justify-center items-center relative py-2 px-10 font-display font-hariline text-sm leading-relaxed text-center uppercase rounded-full text-white focus:outline-none ${className}`}
       css={{
-        backgroundSize: '500% 100%',
-        backgroundPosition: '100% center',
+        backgroundSize: '100% 200%',
+        backgroundPosition: 'center bottom',
         backgroundImage:
-          'linear-gradient(to right, #91742d 7%, #fffea6 24.5%, #91742d 47%, #91742d 50%, transparent 60%, transparent 120%)',
-        transition: 'color 1s, background-position 1s, background-size .8s',
-        transitionTimingFunction: 'cubic-bezier(0.76, 0.01, 0.19, 0.99)',
+          'linear-gradient(-8deg,#91742d 16%,#c5ae47 50%,#91742d 70%)',
+        transition: 'background-position .3s',
+        // transitionTimingFunction: 'cubic-bezier(0.76, 0.01, 0.19, 0.99)',
         ':hover': {
-          backgroundSize: '200% 100%',
-          backgroundPosition: '0% center',
-          borderColor: 'transparent',
+          backgroundPosition: 'center top',
         },
       }}
       {...props}
     >
-      <div
-        className="w-full h-full absolute top-0 left-0 border border-solid rounded-full pointer-events-none outline-none"
-        css={{
-          borderColor: 'currentColor',
-          transition: '.7s .4s',
-          transform: 'scale(1.001)',
-          '*:hover > &': {
-            opacity: 0,
-            transform: 'scale(1.1)',
-            transition: '.5s cubic-bezier(0.76, 0.01, 0.19, 0.99)',
-          },
-        }}
-      ></div>
       {children}
       {icon}
     </As>

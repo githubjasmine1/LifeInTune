@@ -90,12 +90,12 @@ const Navbar = props => {
           css={{ backgroundColor: 'rgba(26, 26, 26, .8)' }}
           style={{ opacity: isBelow ? 1 : 0 }}
         ></div>
-        <img
+        {/* <img
           src={muse}
           alt="Muse Award"
           className="absolute top-0 left-0 w-10 ml-4 ease-out transition-slow"
           style={{ transform: isBelow ? 'translateY(28px)' : 'none' }}
-        />
+        /> */}
         <Container
           as="nav"
           className="flex items-center justify-center"
@@ -111,11 +111,11 @@ const Navbar = props => {
                 Programs
               </Link>
               <Link
-                to="/speaker"
+                to="/about"
                 className="px-2 text-xs uppercase xl:text-sm lg:px-5 xl:px-8 hover:text-gold-300 transition-fast"
                 activeClassName="text-gold-300"
               >
-                Speaker
+                About
               </Link>
               <Link
                 to="/mission"
@@ -195,7 +195,16 @@ const Navbar = props => {
                 Planners
               </Link>
               <div className="px-2 lg:px-5 xl:px-10">
-                <ButtonLink to="/contact">Booking</ButtonLink>
+                <div className="relative">
+                  <a
+                    href="tel:+18572673669"
+                    className="absolute top-0 left-0 block w-full text-xs text-center text-gray-400 transition hover:text-white"
+                    css={{ top: -38 }}
+                  >
+                    (857) 267-3669
+                  </a>
+                  <ButtonLink to="/contact">Booking</ButtonLink>
+                </div>
               </div>
             </div>
           </div>
@@ -313,11 +322,11 @@ const Navbar = props => {
             Programs
           </Link>
           <Link
-            to="/speaker"
+            to="/about"
             className="px-5 py-3 text-2xl uppercase font-display"
             activeClassName="text-gold-300"
           >
-            Speaker
+            About
           </Link>
           <Link
             to="/mission"
@@ -430,7 +439,7 @@ const Footer = props => {
             css={{ width: 150 }}
           />
           <p className="mt-5 text-xs text-center text-gray-600">
-            ©2020 All Right Reserved.
+            ©{new Date().getFullYear()} All Right Reserved.
             <br />
             Life In Tune™ with Freddie Ravel.
           </p>
@@ -526,8 +535,8 @@ const Footer = props => {
             </Link>
           </li>
           <li className="mt-2">
-            <Link to="/speaker" className="transition hover:text-gold-300">
-              Speaker
+            <Link to="/about" className="transition hover:text-gold-300">
+              About
             </Link>
           </li>
           <li className="mt-2">

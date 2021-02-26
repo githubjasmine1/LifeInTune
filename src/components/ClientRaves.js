@@ -37,13 +37,13 @@ const ClientRaves = ({ className, ...props }) => {
     >
       <Img
         fluid={data.testimonialsBg.childImageSharp.fluid}
-        className="w-full h-full top-0 left-0"
+        className="top-0 left-0 w-full h-full"
         imgStyle={{ objectFit: 'contain', objectPosition: 'bottom' }}
         css={{ position: 'absolute !important' }}
       />
       <Container>
         <AutoFade>
-          <h3 className="relative font-display font-hairline text-xl sm:text-3xl leading-tight text-center text-gray-700 uppercase">
+          <h3 className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl">
             Client Raves and Reviews
           </h3>
         </AutoFade>
@@ -55,11 +55,11 @@ const ClientRaves = ({ className, ...props }) => {
             500: 1,
           }}
           columnClassName=""
-          className="flex -ml-5 mt-12 relative"
+          className="relative flex mt-12 -ml-5"
         >
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={cvent} alt="" className="block w-24 opacity-50" />
@@ -73,7 +73,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={anz} alt="" className="block w-24 opacity-50" />
@@ -84,7 +84,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={bluecross} alt="" className="block w-32 opacity-50" />
@@ -95,7 +95,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={cox} alt="" className="block w-32 opacity-50" />
@@ -107,7 +107,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={ibm} alt="" className="block w-20 opacity-50" />
@@ -118,7 +118,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={toyota} alt="" className="block w-16 opacity-50" />
@@ -127,7 +127,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={twitter} alt="" className="block w-12 opacity-50" />
@@ -139,7 +139,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={nasa} alt="" className="block w-16 opacity-50" />
@@ -151,7 +151,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={walmart} alt="" className="block w-32 opacity-50" />
@@ -160,7 +160,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={jdpower} alt="" className="block w-16 opacity-50" />
@@ -176,7 +176,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={aia} alt="" className="block w-16 opacity-50" />
@@ -188,7 +188,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
           <AutoFade
             as="li"
-            className="flex flex-col mt-5 ml-5 px-5 py-10 bg-white text-gray-900"
+            className="flex flex-col px-5 py-10 mt-5 ml-5 text-gray-900 bg-white"
             css={{ display: 'flex' }}
           >
             <img src={reuters} alt="" className="block w-32 opacity-50" />
@@ -197,10 +197,7 @@ const ClientRaves = ({ className, ...props }) => {
           </AutoFade>
         </Masonry>
         <AutoFade css={{ display: 'flex', justifyContent: 'center' }}>
-          <ButtonLink
-            to="/buzz"
-            className="hidden md:block mt-20 text-gray-900"
-          >
+          <ButtonLink to="/buzz" className="hidden mt-20 md:block">
             READ MORE TESTIMONIALS
           </ButtonLink>
         </AutoFade>

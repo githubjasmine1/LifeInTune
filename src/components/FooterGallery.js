@@ -16,6 +16,9 @@ const Arrow = props => (
 const FooterGallery = () => {
   const data = useStaticQuery(graphql`
     {
+      img00a: file(relativePath: { eq: "gallery/Freddie_Virtual.jpg" }) {
+        ...photoSwipeImage
+      }
       img00: file(relativePath: { eq: "gallery/freddie-audience3.jpg" }) {
         ...photoSwipeImage
       }
@@ -93,7 +96,7 @@ const FooterGallery = () => {
               },
               renderPrevButton: () => (
                 <button
-                  className="prev-arrow w-8 h-8 lg:w-10 lg:h-10 -mt-4 lg:-mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
+                  className="absolute z-10 w-8 h-8 -mt-4 text-white transition prev-arrow lg:w-10 lg:h-10 lg:-mt-5 hover:text-gold-300 focus:outline-none"
                   css={{
                     top: '50%',
                     left: 10,
@@ -110,7 +113,7 @@ const FooterGallery = () => {
               ),
               renderNextButton: () => (
                 <button
-                  className="next-arrow w-8 h-8 lg:w-10 lg:h-10 -mt-4 lg:-mt-5 absolute z-10 text-white hover:text-gold-300 transition focus:outline-none"
+                  className="absolute z-10 w-8 h-8 -mt-4 text-white transition next-arrow lg:w-10 lg:h-10 lg:-mt-5 hover:text-gold-300 focus:outline-none"
                   css={{
                     top: '50%',
                     right: 10,
@@ -136,13 +139,7 @@ const FooterGallery = () => {
               >
                 <img
                   src={msrc}
-                  className="w-full h-full object-cover transition cursor-pointer"
-                  css={{
-                    '@media (hover: hover)': {
-                      filter: 'grayscale(1)',
-                      ':hover': { filter: 'none' },
-                    },
-                  }}
+                  className="object-cover w-full h-full transition cursor-pointer"
                 />
               </div>
             ))}
