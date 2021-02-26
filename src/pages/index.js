@@ -311,7 +311,7 @@ const Demo = () => {
               src={`https://www.youtube.com/embed/abfmkq2c8pQ${
                 isOpen ? '?autoplay=1' : ''
               }`}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               title="Watch The Experience"
               allowFullScreen
               className="absolute top-0 left-0 w-full h-full bg-black"
@@ -697,7 +697,7 @@ const IndexPage = ({ data }) => (
             video={
               <iframe
                 src="https://www.youtube.com/embed/abfmkq2c8pQ?autoplay=1"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 title="WATCH VIRTUAL KEYNOTE DEMO"
                 allowFullScreen
                 className="absolute top-0 left-0 w-full h-full bg-black"
