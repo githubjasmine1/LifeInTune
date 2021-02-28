@@ -865,7 +865,10 @@ const IndexPage = ({ data }) => (
             <h3
               className="relative mt-6 text-xl font-bold leading-none uppercase font-display sm:text-4xl"
               css={{
-                maxWidth: '37ex',
+                // maxWidth: '37ex',
+                [media.laptopMd]: {
+                  width: '120%',
+                },
                 backgroundImage:
                   'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
                 WebkitBackgroundClip: 'text',
