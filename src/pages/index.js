@@ -483,7 +483,7 @@ const IndexPage = ({ data }) => (
         </AutoScale>
       </div>
       <Container
-        className="relative flex flex-col items-center"
+        className="relative flex flex-col items-center h-full"
         css={{ marginTop: 'calc(16vh + 10vw)' }}
       >
         <AutoSlide
@@ -501,11 +501,70 @@ const IndexPage = ({ data }) => (
           </p>
         </AutoSlide>
         <Demo />
+        <AutoSlide
+          as="ul"
+          up
+          delay={300}
+          className="absolute bottom-0 mt-8 mb-10"
+          css={{
+            display: 'none',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridGap: 10,
+            [media.tablet]: {
+              gridTemplateColumns: 'repeat(3, 1fr)',
+            },
+            [media.laptop]: {
+              display: 'grid',
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              gridGap: '1vw',
+            },
+            li: {
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              // backgroundColor: '#efefef',
+              padding: '5vw',
+              [media.laptop]: {
+                padding: '2vw',
+              },
+            },
+            img: {
+              display: 'block',
+              width: '20vw',
+              height: '12vw',
+              objectFit: 'contain',
+              filter: 'invert(1)',
+              [media.laptop]: {
+                width: '8.5vw',
+                height: '8.5vw',
+              },
+            },
+          }}
+        >
+          <AutoScale as="li">
+            <img src={tiktok} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={peloton} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={amazonMusic} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={disney} alt="" />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={bluesCross} alt="" style={{ transform: 'scale(.6)' }} />
+          </AutoScale>
+          <AutoScale as="li">
+            <img src={apple} alt="" style={{ transform: 'scale(.55)' }} />
+          </AutoScale>
+        </AutoSlide>
       </Container>
     </section>
     <section className="pb-20 bg-white">
       <div css={{ height: '11vw' }}></div>
-      <Container className="flex flex-col items-center">
+      <Container className="flex flex-col items-center lg:hidden">
         <AutoFade>
           <h3
             className="relative text-xl font-hairline leading-tight text-center text-gray-700 uppercase font-display sm:text-3xl"
