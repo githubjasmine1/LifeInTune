@@ -308,8 +308,8 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src={`https://www.youtube.com/embed/abfmkq2c8pQ${
-                isOpen ? '?autoplay=1' : ''
+              src={`https://player.vimeo.com/video/517438226?color=b4903a${
+                isOpen ? '&autoplay=1' : ''
               }`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               title="Watch The Experience"
@@ -696,7 +696,7 @@ const IndexPage = ({ data }) => (
             webroll={bgVideoColor}
             video={
               <iframe
-                src="https://www.youtube.com/embed/abfmkq2c8pQ?autoplay=1"
+                src="https://player.vimeo.com/video/517438226?autoplay=1&color=b4903a"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 title="WATCH VIRTUAL KEYNOTE DEMO"
                 allowFullScreen
