@@ -75,7 +75,7 @@ const HamburgerBtn = props => (
 )
 
 const NewsletterModal = props => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
