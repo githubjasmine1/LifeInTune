@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -11,8 +11,15 @@ import ButtonLink from '../components/ButtonLink'
 import Logo from '../components/Logo'
 import { AutoFade } from '../components/Animated'
 import { media, max } from '../styles/tools'
+import { Formik, Form, Field } from 'formik'
+import * as Yup from 'yup'
 
-import muse from '../assets/muse.gif'
+import newsletterImage from '../assets/newsletter-image.png'
+
+const encode = data =>
+  Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
 
 const HamburgerBtn = props => (
   <button
@@ -66,6 +73,200 @@ const HamburgerBtn = props => (
     />
   </button>
 )
+
+const NewsletterModal = props => {
+  const [open, setOpen] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(true)
+    }, 10 * 1000)
+  }, [])
+
+  return (
+    <div
+      css={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+        position: 'fixed',
+        zIndex: 40,
+        top: 0,
+        left: 0,
+        padding: 20,
+        transition: '.5s',
+      }}
+      style={{
+        opacity: open ? 1 : 0,
+        pointerEvents: open ? 'all' : 'none',
+      }}
+    >
+      <div
+        css={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          backgroundColor: 'rgba(255, 255, 255, .2)',
+        }}
+        onClick={() => setOpen(false)}
+      />
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: 600,
+          height: 300,
+          position: 'relative',
+          padding: 20,
+          backgroundColor: '#1b1b1b',
+          borderRadius: 10,
+          [media.tablet]: {
+            transform: 'translateX(15%)',
+            padding: '3% 2% 3% 7%',
+          },
+        }}
+      >
+        <img
+          src={newsletterImage}
+          css={{
+            height: '162%',
+            position: 'absolute',
+            top: '-37%',
+            left: '-40%',
+            display: 'none',
+            [media.tablet]: {
+              display: 'block',
+            },
+          }}
+        />
+        <button
+          css={{
+            position: 'absolute',
+            top: 14,
+            right: 14,
+            opacity: 0.6,
+            transition: '.2s',
+            ':focus': { outline: 'none' },
+            ':hover': { opacity: 1 },
+          }}
+          onClick={() => setOpen(false)}
+        >
+          <svg viewBox="0 0 24 24" css={{ width: 26, height: 26 }}>
+            <path
+              fill="white"
+              d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+            />
+          </svg>
+        </button>
+
+        <h3
+          className="relative mx-auto text-lg font-hairline leading-tight text-center uppercase font-display sm:text-3xl text-gold-500"
+          css={{
+            backgroundImage:
+              'linear-gradient(to right, #91742d 10%, #fffea6 49%, #91742d 94%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          STAY IN TUNE!
+        </h3>
+        <p
+          className="relative mx-auto mt-2 text-center text-white"
+          css={{ maxWidth: '30ch' }}
+        >
+          With tips, techniques, and tons of fun from Freddie Ravel.
+        </p>
+        <Formik
+          initialValues={{
+            email: '',
+          }}
+          validationSchema={Yup.object().shape({
+            email: Yup.string()
+              .email()
+              .required(),
+          })}
+          onSubmit={(formData, { setStatus }) => {
+            fetch('/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: encode({
+                'form-name': 'newsletter',
+                ...formData,
+              }),
+            })
+              .then(() => setStatus({ sent: true }))
+              .catch(() => setStatus({ sent: false }))
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            status: { sent } = {},
+            handleChange,
+            handleBlur,
+          }) => (
+            <Form
+              name="newsletter"
+              data-netlify="true"
+              className="relative mx-auto mt-4"
+              css={{ display: 'grid', gridTemplate: '1fr / 1fr' }}
+            >
+              <div
+                className="flex"
+                css={{ gridColumn: '1', gridRow: '1', transition: '.3s' }}
+                style={{
+                  opacity: !sent ? 1 : 0,
+                  pointerEvents: !sent ? 'all' : 'none',
+                }}
+              >
+                <Field
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  className="block w-full h-12 pl-4 pr-6 -mr-6 text-lg text-gray-900 rounded-l-lg outline-none appearance-none sm:w-64 focus:border-gray-800"
+                />
+                <ButtonLink
+                  as="button"
+                  type="submit"
+                  className="h-12"
+                  css={{ padding: '0 30px' }}
+                >
+                  JOIN
+                </ButtonLink>
+              </div>
+              <div
+                className="text-2xl text-white"
+                css={{
+                  justifySelf: 'center',
+                  alignSelf: 'center',
+                  gridColumn: '1',
+                  gridRow: '1',
+                  transition: '.3s',
+                }}
+                style={{
+                  opacity: sent ? 1 : 0,
+                  pointerEvents: sent ? 'all' : 'none',
+                }}
+              >
+                Thank you
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </div>
+  )
+}
 
 const Navbar = props => {
   const isBelow = useScrolledBelow(30)
@@ -673,6 +874,7 @@ const Layout = ({ children }) => (
     <Navbar />
     <main css={{ flexGrow: 1 }}>{children}</main>
     <Footer />
+    <NewsletterModal />
   </div>
 )
 
