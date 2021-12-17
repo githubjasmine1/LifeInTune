@@ -87,18 +87,20 @@ const IndexPage = ({ data }) => (
             <div className="flex-1 px-6 py-8 lg:py-12">
               <div css={{ maxWidth: '39em', marginLeft: 'auto' }}>
                 <p className="pr-5 mb-6 leading-relaxed text-gray-600">
-                  Meeting Planners engage Freddie and his team in the conference
-                  planning process to help design and incorporate their
-                  objectives into an exciting, interactive and energizing event.
-                  Serving for over two decades as an international Keynote
-                  Presenter and Emcee, coupled with an uncanny ability to pivot,
-                  adapt and deliver the client’s theme, vision and objectives,
-                  Freddie delivers in English or Spanish to uplift your audience
-                  to success.
+                  Every year you've got to top yourself and your upcoming
+                  virtual/live event is no different. The pressure is ON…and…We
+                  Get It. That’s why our team tunes in deep to your goals and
+                  desires to deliver solid solutions. Getting drop-the-mic
+                  results from our clients is not a stretch - it’s what we do.
+                  With years of RAVE reviews from start ups to the Fortune 500
+                  who describe our customized keynotes as the “perfect balance
+                  of entertainment and content,” we’ll make sure you too receive
+                  rave kudos for that YES-we-nailed-it feeling you and your
+                  people deserve. Let Freddie amplify YOUR event to 11.
                 </p>
                 <div css={{ maxWidth: 460 }}>
                   <ButtonLink
-                    href="/LIT-Freddie-Ravel-Speaker-Programs2020-21_compressed.pdf"
+                    href="/LIT-Freddie-Ravel-Programs.pdf"
                     className="mt-5 md:mt-12"
                     css={{ [media.max.tablet]: { fontSize: 10 } }}
                     icon={

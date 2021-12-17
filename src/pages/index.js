@@ -497,7 +497,7 @@ const IndexPage = ({ data }) => (
           /> */}
           <h2>AMPLIFY YOUR SUCCESS</h2>
           <p className="mt-2 text-2xl text-white font-body">
-            Discover the power of rhythm to drive new business value.
+            Music principles to empower daily life.
           </p>
         </AutoSlide>
         <Demo />
