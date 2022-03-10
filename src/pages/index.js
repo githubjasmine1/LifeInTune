@@ -33,6 +33,7 @@ import grammy from '../assets/logos/grammy.svg'
 import ibm from '../assets/logos/ibm.svg'
 import livenation from '../assets/logos/livenation.svg'
 import nasa from '../assets/logos/nasa.svg'
+import microsoft from '../assets/logos/microsoft.svg'
 import nbc from '../assets/logos/nbc.svg'
 import prudential from '../assets/logos/prudential.svg'
 import redbull from '../assets/logos/redbull.svg'
@@ -308,7 +309,7 @@ const Demo = () => {
             css={{ paddingTop: '56.25%' }}
           >
             <iframe
-              src={`https://player.vimeo.com/video/517438226?color=b4903a${
+              src={`https://player.vimeo.com/video/264657556?color=b4903a${
                 isOpen ? '&autoplay=1' : ''
               }`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -542,10 +543,10 @@ const IndexPage = ({ data }) => (
           }}
         >
           <AutoScale as="li">
-            <img src={tiktok} alt="" />
+            <img src={microsoft} alt="" />
           </AutoScale>
           <AutoScale as="li">
-            <img src={peloton} alt="" />
+            <img src={nasa} alt=""style={{ transform: 'scale(.75)' }} />
           </AutoScale>
           <AutoScale as="li">
             <img src={amazonMusic} alt="" />
